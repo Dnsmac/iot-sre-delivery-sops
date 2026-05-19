@@ -10,7 +10,6 @@
 ## 1. 快速定界（≤5min）
 
 ```bash
-# 替换为实际命名空间/Pod
 kubectl get pods -n <ns> -o wide
 kubectl describe pod <pod> -n <ns>
 kubectl logs <pod> -n <ns> --previous
@@ -25,7 +24,7 @@ kubectl get events -n <ns> --sort-by='.lastTimestamp'
 ## 2. 根因
 
 - 结论：
-- 证据（日志/Events 片段）：
+- 证据：
 
 ## 3. 修复
 
@@ -37,7 +36,6 @@ kubectl get events -n <ns> --sort-by='.lastTimestamp'
 
 ```bash
 kubectl get pod <pod> -n <ns>
-# 预期：READY 1/1，RESTARTS 不持续增长
 ```
 
 ## 5. 防复发
