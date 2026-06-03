@@ -1,0 +1,115 @@
+---
+description: 规划/手册/画像变更须走 brainstorming → writing-plans → 改文档 → verification 四步
+globs: PLAN.md,README.md,PROGRESS_LOG.md,**/*手册*.md,05-Interview-Prep/**,docs/**
+alwaysApply: true
+---
+
+# 规划文档变更工作流（强制）
+
+适用：改 `PLAN.md`、周手册、个人画像、投递节奏、`.cursorrules`、README 等**规划类文档**。
+
+**禁止**：未走完前三步就直接改多文件；未 verification 就声称「已对齐/已完成」。
+
+## 流程总览
+
+```text
+1. brainstorming   → 设计稿（用户批准）
+2. writing-plans  → 实施计划（用户批准）
+3. 改文档          → 按计划逐文件修改
+4. verification    → 对照清单 + 命令证据，再报完成
+```
+
+---
+
+## 1. Brainstorming（REQUIRED SUB-SKILL: superpowers:brainstorming）
+
+**开场声明**：「使用 brainstorming skill 分析规划变更。」
+
+1. **读上下文**：`PLAN.md`、`05-Interview-Prep/个人画像.md`、`PROGRESS_LOG.md`、当周手册、`.cursorrules`
+2. **澄清约束**（一次一问）：时间投入、启动日、投递 KPI、技术栈事实（如 Pulsar≠EMQX）
+3. **给 2～3 方案**：含取舍与推荐项
+4. **呈现设计**：范围、改哪些文件、不改什么、验收标准
+5. **用户口头批准设计后** → 写入：
+   `docs/superpowers/specs/YYYY-MM-DD-<主题>-design.md`
+6. **Spec 自检**：无 TBD、内部不矛盾、范围可一次实施
+7. **用户批准 spec 文件** → 进入 Step 2
+
+**硬门槛**：无批准 design/spec，禁止改 `PLAN.md` 等主文档。
+
+---
+
+## 2. Writing-plans（REQUIRED SUB-SKILL: superpowers:writing-plans）
+
+**开场声明**：「使用 writing-plans skill 写实施计划。」
+
+1. 基于已批准 spec，写：
+   `docs/superpowers/plans/YYYY-MM-DD-<主题>.md`
+2. 计划须含：**Goal**、**Architecture（2～3 句）**、逐 Task 的文件路径清单（Create/Modify）
+3. 每 Task 用 `- [ ]`；一步 = 一个文件或一处明确替换
+4. 计划自检：spec 每条需求对应至少一个 Task
+5. **用户批准计划** → 进入 Step 3
+
+---
+
+## 3. 改文档
+
+1. 严格按计划 Task 顺序执行；不扩 scope
+2. 改完在 plan 文件勾选 `- [x]`
+3. 若发现 spec 有误 → **停**，回 Step 1/2，不边改边漂
+
+**本仓库常见联动文件**（按变更类型选子集，全写在 plan 里）：
+
+| 变更类型 | 通常联动 |
+|----------|----------|
+| 时间/周历 | `PLAN.md`、`README.md`、`PROGRESS_LOG.md`、`.cursorrules`、当周手册头部 |
+| 投递节奏 | `PLAN.md`、`05-Interview-Prep/个人画像.md` |
+| 技术栈表述 | `PLAN.md`、`生产服务清单.md`、相关 README |
+
+---
+
+## 4. Verification（REQUIRED SUB-SKILL: superpowers:verification-before-completion）
+
+**开场声明**：「使用 verification-before-completion 做变更验收。」
+
+**硬门槛**：无下列证据，禁止说「已完成/已对齐」。
+
+### 4.1 对照 spec 清单
+
+逐条打勾 spec 中的验收项；未满足则报 gap，不报完成。
+
+### 4.2 一致性命令（每次变更后必跑）
+
+```powershell
+# 每日投入：应只剩 2h，不应残留 1.5h
+rg "1\.5h|1\.5 h" PLAN.md README.md .cursorrules "**/*手册*.md"
+
+# 投递：W5 起投 vs W6 起投 不应并存
+rg "W5.*投|投递" PLAN.md "05-Interview-Prep/个人画像.md"
+
+# 启动日：PLAN 与 README 一致
+rg "2026-09-01" PLAN.md README.md PROGRESS_LOG.md
+```
+
+### 4.3 链接与路径
+
+改过的 Markdown 内链指向的文件须存在（手动 spot-check 或 `rg` 目标路径）。
+
+### 4.4 输出格式
+
+```text
+## Verification
+- Spec 项 1/N：✅ / ❌（证据：…）
+- rg 1.5h：0 命中 / N 命中（列文件）
+- 联动文件：已改 A、B、C
+- 结论：通过 / 未通过（缺什么）
+```
+
+---
+
+## 例外（可跳过完整四步）
+
+| 场景 | 允许 |
+|------|------|
+| 纯错别字、链接修复 | 直接改 + 仅 4.3 spot-check |
+| 学员当日手册填写区 | 不算规划变更，不走本流程 |
+| 用户明确说「跳过 brainstorming，按 X 直接改」 | 仍须 writing-plans（可压缩为 3 行 plan）+ verification |
