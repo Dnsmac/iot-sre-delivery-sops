@@ -1,0 +1,6 @@
+.browser-profile/
+out/raw/
+__pycache__/
+*.pyc
+.pytest_cache/
+config.yaml

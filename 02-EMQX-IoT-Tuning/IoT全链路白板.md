@@ -113,13 +113,16 @@ API / 规则引擎
 
 ---
 
-## §8 规模与我负责（待你补数字）
+## §8 规模与我负责（2026-05 定稿 · 四问）
 
 | 项 | 内容 |
 |----|------|
-| 设备规模 / 压测 | 参与 **40 万级**压测（角色=协助，W6 复盘补细节） |
+| **设备连谁** | 对外 **MQTT TCP 1883** → MetalLB VIP → iot-web(nginx) 透传 → **iot-server 内嵌 MqttServer**（**JVM 线程**监听 1883，非独立 EMQX） |
+| **上报路径** | **先进 iot-server 内置 MQTT** 解码 → **EventBus** → ES/MySQL/规则/级联等；**设备 PUBLISH 不经 Pulsar 第一跳** |
+| **Pulsar 角色** | 平台有 Pulsar；与设备主链路 **解耦**。**级联**等场景走 Pulsar；40 万压测协助 **Pulsar 调优**（W6 复盘补参数） |
+| 设备规模 / 压测 | 参与 **40 万级**压测（**协助**）；动过 **级联链路** + **Pulsar 调优**，非方案 owner |
 | K8s | 单例集群；iot-web **3 副本** + MetalLB VIP |
-| 我负责 | **iot-server** 侧 ______（W4 模块故事填：改过哪段链路/配置） |
+| **我负责** | 日常改 **iot-server**（接入/EventBus/级联相关 Java）；具体类名与改动 **W4 模块故事** 定稿 |
 
 ---
 
@@ -127,7 +130,7 @@ API / 规则引擎
 
 | 文档曾写 | 现网梳理 |
 |----------|----------|
-| 上报走 **Pulsar** | 设备主链路走 **EventBus + ES/MySQL**；若其它 Java 服务用 Pulsar，单独说明，**不混入设备 MQTT 链路** |
+| 上报走 **Pulsar** | 设备主链路：**内置 MQTT → EventBus**；Pulsar 用于 **级联** 等场景，压测协助 **Pulsar 调优** |
 | EMQX 独立 Broker | 现网 **iot-server 内嵌 MqttServer**，nginx 只做透传 |
 
 ---

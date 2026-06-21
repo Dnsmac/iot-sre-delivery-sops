@@ -1,0 +1,74 @@
+[
+  {
+    "title": "资深Java开发工程师（物联网平台）",
+    "company": "某IoT ISV",
+    "salary_text": "22-28k",
+    "url": "https://www.liepin.com/job/example1",
+    "source": "liepin",
+    "search_id": "iot_java_isv",
+    "direction": "IoT平台Java·深圳ISV",
+    "scraped_at": "2026-05-30T00:00:00+00:00",
+    "raw_tags": "Spring 物联网 统招本科",
+    "flags": {}
+  },
+  {
+    "title": "Java高级工程师（设备对接）",
+    "company": "比亚迪汽车工业有限公司",
+    "salary_text": "20-30k",
+    "url": "https://www.liepin.com/job/example2",
+    "source": "liepin",
+    "search_id": "byd_java_iot",
+    "direction": "比亚迪·Java物联网(平台向)",
+    "scraped_at": "2026-05-30T00:00:00+00:00",
+    "raw_tags": "K8s 物联网 一类本科",
+    "flags": {}
+  },
+  {
+    "title": "Java后端（工业软件/MES）",
+    "company": "某工业软件公司",
+    "salary_text": "18-26k",
+    "url": "https://www.liepin.com/job/example3",
+    "source": "liepin",
+    "search_id": "industrial_java",
+    "direction": "工业软件·Java后端",
+    "scraped_at": "2026-05-30T00:00:00+00:00",
+    "raw_tags": "MySQL 制造业",
+    "flags": {}
+  },
+  {
+    "title": "物联网技术交付工程师",
+    "company": "某外包公司",
+    "salary_text": "15-22k",
+    "url": "https://www.liepin.com/job/example4",
+    "source": "liepin",
+    "search_id": "delivery_iot",
+    "direction": "技术交付·物联网",
+    "scraped_at": "2026-05-30T00:00:00+00:00",
+    "raw_tags": "外包 驻场 35岁以下",
+    "flags": {}
+  },
+  {
+    "title": "高级IoT开发（嵌入式PLC）",
+    "company": "比亚迪",
+    "salary_text": "20-30k",
+    "url": "https://www.liepin.com/job/example5",
+    "source": "liepin",
+    "search_id": "byd_java_iot",
+    "direction": "比亚迪·Java物联网(平台向)",
+    "scraped_at": "2026-05-30T00:00:00+00:00",
+    "raw_tags": "嵌入式 PLC C语言",
+    "flags": {}
+  },
+  {
+    "title": "车联网Java开发",
+    "company": "某车联网公司",
+    "salary_text": "22-32k",
+    "url": "https://www.liepin.com/job/example6",
+    "source": "liepin",
+    "search_id": "chelian_java",
+    "direction": "车联网·Java",
+    "scraped_at": "2026-05-30T00:00:00+00:00",
+    "raw_tags": "Spring Cloud",
+    "flags": {}
+  }
+]

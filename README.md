@@ -13,18 +13,24 @@
 | **[`05-Interview-Prep/学习路径与面试串讲.md`](05-Interview-Prep/学习路径与面试串讲.md)** | **今天/明天学什么 · 面试怎么串（主路径）** |
 | **[`02-EMQX-IoT-Tuning/W1_全景信心手册.md`](02-EMQX-IoT-Tuning/W1_全景信心手册.md)** | **W1 日课** |
 | [`05-Interview-Prep/JD雷达/`](05-Interview-Prep/JD雷达/) | 猎聘高频词 · W1～W6 并行 |
+| [`05-Interview-Prep/行业雷达/`](05-Interview-Prep/行业雷达/) | **特办** · 跑脚本 + **读 L1 ≤5min**（[`tools/industry-radar/`](../tools/industry-radar/)） |
 | [`05-Interview-Prep/stories/电商-高并发模块.md`](05-Interview-Prep/stories/电商-高并发模块.md) | 11 年 Java 信用 · W7 定稿 |
 | [`01-K8s-Troubleshooting/W1_每日学习手册.md`](01-K8s-Troubleshooting/W1_每日学习手册.md) | **W4** 才用 |
 | [`docs/每日复习与串联指南.md`](docs/每日复习与串联指南.md) | 复习：7 问 / 90 秒 IoT 串讲 |
+| [`docs/文档真相源.md`](docs/文档真相源.md) | **现网口径唯一真相**（冲突时优先） |
+| [`docs/现网仓库只读约束.md`](docs/现网仓库只读约束.md) | **`D:\gerrit\iot-server` 只读 · 证据只写本仓** |
 | [`PLAN.md`](PLAN.md) | v3 总览（外链 mqtt/pulsar 仓） |
-| [`PROGRESS_LOG.md`](PROGRESS_LOG.md) | 每日进度 |
+| [`docs/每日协作约定.md`](docs/每日协作约定.md) | **问「今天干什么」→ P0口述→P1主任务** |
+| [`PROGRESS_LOG.md`](PROGRESS_LOG.md) | 进度 · **§当前快照**（Agent 先读） |
 | [`02-EMQX-IoT-Tuning/`](02-EMQX-IoT-Tuning/) | W1～W3、W6 压测参与 |
 | [`01-K8s-Troubleshooting/`](01-K8s-Troubleshooting/) | W4～W5 |
 | [`03-Observability/`](03-Observability/) | W6 监控 |
 | [`04-Middleware-Linux/`](04-Middleware-Linux/) | W3/W6 Pulsar |
 | [`05-Interview-Prep/`](05-Interview-Prep/) | W7～W10 |
 
-**外链学习仓**（原理深度）：`D:\demo\mqtt` · `D:\demo\pulsar`（见 PLAN §外链）
+**外链学习仓**（原理深度）：`D:\demo\mqtt` · `D:\demo\pulsar` · `D:\demo\kafka`（见 PLAN §外链）
+
+**现网源码（只读）**：`D:\gerrit\iot-server` — 禁止修改；读代码 → 写本仓证据。见 [`docs/现网仓库只读约束.md`](docs/现网仓库只读约束.md)
 
 ---
 

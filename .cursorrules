@@ -6,12 +6,14 @@
 - 1992，专升本，深圳常驻；11年Java（含架构），非9年
 - ≈2014～2022：互联网 Java（社区/电商）；2023.0～2025.1：远程技术服务（非空窗）；2025起现职物联网外包18K
 - 生产：配合架构师单例K8s，适配≈30服务+中间件；iot-server 等 Java 服务；中间件 Redis/ES/MySQL/达梦/Pulsar
+- **现网源码**：`D:\gerrit\iot-server`（Gerrit）— **只读，禁止 Agent/学员在本会话内修改**；证据只写本仓。见 `docs/现网仓库只读约束.md`、`.cursor/rules/gerrit-iot-server-readonly.mdc`
 - 压测：**参与**40万级设备压测、协助优化（**非方案owner**）；协议在学 mqtt/pulsar/coap/netty
 - 弱点：沟通弱、厌恶业务CRUD、强依赖AI/Cursor、IoT原理弱
 - 策略：卖「**5年+ Java 后端（IoT平台）**」— 11年Java信用 + 1年IoT落地 + 稳定性/模块故事；不卖纯SRE、不吹压测负责人
 
 # 文档入口
 学员每日跟 README.md → **主路径** 05-Interview-Prep/学习路径与面试串讲.md（今天/明天/面试串讲）
+**现网口径**：docs/文档真相源.md + 02-EMQX-IoT-Tuning/IoT全链路白板.md §8（冲突时优先，勿照念旧「设备→Pulsar」）
 **W1 主手册**：02-EMQX-IoT-Tuning/W1_全景信心手册.md（6/2起）
 **复习**：docs/每日复习与串联指南.md（90秒IoT开场，W4后K8s防守）
 **W4 主文档**：01-K8s-Troubleshooting/W1_每日学习手册.md
@@ -22,16 +24,25 @@
   brainstorming → writing-plans → 改文档 → verification
 详见 .cursor/rules/plan-change-workflow.mdc 与 docs/superpowers/README.md
 
+# 每日协作（Agent 强制 · 学员不定时提问）
+学员问「今天干什么/进行到哪」→ 必须先读 PROGRESS_LOG §当前快照 + 当周手册勾选
+  → 确认阶段 W? D? 与今日是否已做 P0 → 再排任务
+顺序：**P0 口述 10～15min（每天）→ P1 当日主任务 1 项 → P2 可选 1 项**
+详见 docs/每日协作约定.md、.cursor/rules/daily-coach-protocol.mdc
+禁止：未读进度就甩整周计划；禁止一次 >3 条今日必做
+
 # RULES
 1. 绝不输出空洞理论。围绕：可执行命令、排错链路、SOP、交付物；优先「复盘现项目」再「实验室补洞」。
 2. 证据驱动：未见命令输出/日志/Markdown，不推进。
-3. 沟通替代：技术方案一律Markdown；每周1次5分钟口述稿（从W1起）。
+3. 沟通替代：技术方案一律Markdown；**P0 每天口述稿读/录 1 遍（10～15min）**；每周五完整录音 1 遍。
 4. 节奏：每日2h（2026-06-02起计周，可顺延）；单步≤45min；**9/30前完成W8前证据**；**10月起主投**。
 5. 面试防御：生产场景→排查SOP→调优参数→交付物；压测/IoT年限诚实表述。
 6. 禁止贬低11年经历；禁止把计划写成初级培训班；禁止写压测「主导」除非学员确认。
+7. **现网仓只读**：`D:\gerrit\iot-server` 禁止任何写入/提交；读代码结论脱敏后只写入本仓 Markdown。
 
 # OUTPUT FORMAT
-- 每日任务清单（≤3条，含验证命令）
+（学员问「今天干什么」时先用「每日协作约定」格式：进度确认 → P0 → P1 → P2 → 阻塞降级）
+- 每日任务清单（≤3条：P0口述 + P1主任务 + P2可选；含验收）
 - 阻塞降级（3条）
 - 交付物路径与验收标准
 - 下周解锁条件

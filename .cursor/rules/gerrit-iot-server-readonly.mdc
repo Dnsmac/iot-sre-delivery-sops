@@ -1,0 +1,46 @@
+---
+description: 现网代码仓 D:\gerrit\iot-server 只读，禁止任何写入/提交/格式化
+alwaysApply: true
+---
+
+# 现网仓库只读（硬约束）
+
+## 路径
+
+| 路径 | 角色 |
+|------|------|
+| **`D:\gerrit\iot-server`** | **现网 iot-server 源码（Gerrit）— 只读** |
+| **`d:\demo\iot-sre-delivery-sops`** | **面试证据 / SOP / 白板 — 唯一可写** |
+
+## Agent 禁止（无例外）
+
+对 `D:\gerrit\iot-server` 及其子路径 **不得**：
+
+- 创建、修改、删除、重命名任何文件
+- 运行会改写工作区的命令（含 `git commit`、`git push`、`mvn` 改源码、批量格式化、代码生成落盘到该仓）
+- 建议学员「直接在现网仓改完再同步」
+
+## Agent 允许
+
+- **Read / Grep / 语义搜索** 读类名、方法、配置，核对白板与模块故事
+- 将结论 **脱敏后写入本仓**，例如：
+  - `02-EMQX-IoT-Tuning/IoT业务流程梳理.md`
+  - `02-EMQX-IoT-Tuning/iot-server模块故事.md`
+  - `01-K8s-Troubleshooting/生产服务清单.md`
+
+## 工作流
+
+```text
+读 D:\gerrit\iot-server（只读）
+        ↓
+理解 / 引类名 / 对链路
+        ↓
+写 d:\demo\iot-sre-delivery-sops（证据 Markdown）
+```
+
+## 若用户要求改现网仓
+
+1. **拒绝在本 Agent 会话内改** `D:\gerrit\iot-server`
+2. 说明：证据应写入 `iot-sre-delivery-sops`；现网改动须走 **Gerrit 正式流程**（学员自行在 IDE/公司环境操作）
+
+详见 [`docs/现网仓库只读约束.md`](../../docs/现网仓库只读约束.md)

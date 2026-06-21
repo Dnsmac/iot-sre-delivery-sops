@@ -1,0 +1,75 @@
+# 复制为 config.yaml 后修改（config.yaml 已 gitignore）
+
+profile:
+  birth_year: 1992
+  education: 专升本
+  years_java: 11
+  years_iot: 1
+  target_city: 深圳
+  target_salary_k: "23-28"
+  main_track: IoT平台Java25K  # 10月主轨，方向雷达不替代
+
+browser:
+  user_data_dir: .browser-profile
+  headless: false
+  slow_mo_ms: 100
+  page_timeout_ms: 30000
+
+rules:
+  age_35: ["35岁以下", "35周岁", "不超过35", "35岁以内", "30岁以下"]
+  zhuanke_risk: ["统招本科", "全日制本科", "一类本科", "985", "211", "全日制硕"]
+  outsource_hint: ["外包", "人力", "驻场", "外派"]
+  embedded_hint: ["嵌入式", "PLC", "C语言", "单片机", "RTOS"]
+
+# 每个 search → 一个方向候选；程序合并打分后输出 Top3
+searches:
+  - id: iot_java_isv
+    direction: IoT平台Java·深圳ISV
+    liepin:
+      keyword: "资深 Java 物联网"
+      pages: 1
+    notes: 主轨相关，观察岗量与学历线
+
+  - id: byd_java_iot
+    direction: 比亚迪·Java物联网(平台向)
+    liepin:
+      keyword: "比亚迪 Java 物联网"
+      pages: 1
+    filter_out:
+      title_contains: ["嵌入式", "PLC", "C++"]
+    notes: 锚点雇主；L2 拆平台向 vs 嵌入式
+
+  - id: industrial_java
+    direction: 工业软件·Java后端
+    liepin:
+      keyword: "工业软件 Java"
+      pages: 1
+
+  - id: delivery_iot
+    direction: 技术交付·物联网
+    liepin:
+      keyword: "物联网 技术交付"
+      pages: 1
+
+  - id: chelian_java
+    direction: 车联网·Java
+    liepin:
+      keyword: "车联网 Java"
+      pages: 1
+
+liepin:
+  base_url: "https://www.liepin.com"
+  search_path: "/zhaopin/"
+  # 列表页选择器（站点改版时需改 config）
+  selectors:
+    job_card: ".job-list-box >> .job-card-pc, [class*='job-card']"
+    title: ".job-title, [class*='job-title']"
+    salary: ".job-salary, [class*='salary']"
+    company: ".company-name, [class*='company-name']"
+    tags: ".labels-tag, [class*='label']"
+
+output:
+  repo_root: "../.."  # 相对 tools/industry-radar → iot-sre-delivery-sops 根
+  l1_dir: "05-Interview-Prep/行业雷达/方向"
+  l2_dir: "05-Interview-Prep/行业雷达/详情"
+  raw_dir: "out/raw"
