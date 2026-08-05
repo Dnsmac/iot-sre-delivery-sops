@@ -22,6 +22,7 @@
 | [`PLAN.md`](PLAN.md) | v3 总览（外链 mqtt/pulsar 仓） |
 | [`docs/每日协作约定.md`](docs/每日协作约定.md) | **问「今天干什么」→ P0口述→P1主任务** |
 | [`PROGRESS_LOG.md`](PROGRESS_LOG.md) | 进度 · **§当前快照**（Agent 先读） |
+| **[`skills/`](skills/)** | **BSP `/bsp` Skills** · BUG 修复编排（同事安装用） |
 | [`02-EMQX-IoT-Tuning/`](02-EMQX-IoT-Tuning/) | W1～W3、W6 压测参与 |
 | [`01-K8s-Troubleshooting/`](01-K8s-Troubleshooting/) | W4～W5 |
 | [`03-Observability/`](03-Observability/) | W6 监控 |

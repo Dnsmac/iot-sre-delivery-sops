@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Java开发工程师（物联网/设备对接）",
+    "company": "比亚迪汽车工业有限公司",
+    "salary_text": "20-30k",
+    "search_id": "byd_java_iot",
+    "direction": "比亚迪·Java物联网(平台向)",
+    "raw_tags": "公开渠道摘要·需 inbox 补充"
+  },
+  {
+    "title": "资深Java后端（智慧工业/制造信息化）",
+    "company": "深圳制造业ISV",
+    "salary_text": "22-28k",
+    "search_id": "industrial_java",
+    "direction": "工业软件·Java后端",
+    "raw_tags": "公开渠道摘要"
+  },
+  {
+    "title": "物联网平台Java开发",
+    "company": "深圳IoT公司",
+    "salary_text": "23-30k",
+    "search_id": "iot_java_isv",
+    "direction": "IoT平台Java·深圳ISV",
+    "raw_tags": "公开渠道摘要"
+  }
+]

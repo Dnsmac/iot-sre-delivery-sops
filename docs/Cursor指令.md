@@ -44,6 +44,23 @@ P1主任务：__（手册 D?）
 
 （W6 压测：`【W6作业提交】` + `40万压测参与复盘.md`）
 
+## BSP 修 BUG（`/bsp` · 现网/业务仓）
+
+> Skills 分发包：[`skills/README.md`](../skills/README.md) · 一键安装：`skills/install.ps1`
+
+```text
+/bsp
+
+我的需求：
+BUG 37xxx，（截图/现象）
+验收：…
+```
+
+→ **交付包** → 回复 **`批准修复`** → Agent 编码 + 写 `docs/`  
+零确认：L0 同条加 **`直接修，不用再确认`**
+
+详见 [`skills/QUICKSTART.md`](../skills/QUICKSTART.md)
+
 ## 阻塞
 
 ```text

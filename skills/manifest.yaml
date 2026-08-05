@@ -1,0 +1,64 @@
+name: iot-bsp-buc-skills
+version: "2026-07-03"
+description: IoT 大仓 BUG 修复编排 — /bs /bsp /buc + Code Review 闭环
+maintainer: iot-sre-delivery-sops
+
+# 命令快捷键 → commands/*.md
+shortcuts:
+  bs: "Superpowers 头脑风暴（仅流程，不写码）"
+  bsp: "BUG 分析 → 批准 → 编码 → 落盘"
+  buc: "BSP + 自动 Code Review + 有问题回到 BSP"
+  code-review: "标准只读 Review（BUC Phase B 默认）"
+  coder: "五维深度 Review（按需加深）"
+
+# Skill 包（Agent 须 Read 全文）
+skills:
+  - id: bsp-orchestrator
+    path: bsp-orchestrator/SKILL.md
+    command: commands/bsp.md
+    role: "唯一 BUG 修复编排入口"
+  - id: buc-orchestrator
+    path: buc-orchestrator/SKILL.md
+    command: commands/buc.md
+    role: "BSP + Review 闭环"
+    depends_on: [bsp-orchestrator, code-review]
+  - id: code-review
+    path: code-review/SKILL.md
+    command: commands/code-review.md
+    role: "标准只读 Review"
+  - id: coder
+    path: coder/SKILL.md
+    command: commands/coder.md
+    role: "五维深度 Review"
+  - id: bsp-large-system
+    path: bsp-large-system/SKILL.md
+    role: "已废弃，重定向到 bsp-orchestrator"
+
+commands:
+  - commands/bs.md
+  - commands/bsp.md
+  - commands/buc.md
+  - commands/code-review.md
+  - commands/coder.md
+
+templates:
+  - templates/BUG排查专项模板.md
+  - templates/hotfix-readme-template.md
+
+install_targets:
+  cursor_user:
+    skills: "~/.cursor/skills/<id>/SKILL.md"
+    commands: "~/.cursor/commands/<name>.md"
+  cursor_project:
+    skills: ".cursor/skills/<id>/SKILL.md"
+    commands: ".cursor/commands/<name>.md"
+  codex_workbuddy:
+    note: |
+      1. 执行 install.ps1 或 install.sh（用户级或 -ProjectRoot）
+      2. 合并 for-agents/AGENTS.snippet.md 到仓库 AGENTS.md
+      3. 无 /bsp 快捷键时，开场白 Read SKILL.md 全文
+
+requires:
+  - Cursor 0.4x+（Skills + Custom Commands）或兼容 Agent IDE
+  - 可选 Superpowers 插件（/bs 头脑风暴；无插件时 /bsp /buc 仍生效）
+  - 业务仓库建议有 docs/ 问题台账（如 iot-server）

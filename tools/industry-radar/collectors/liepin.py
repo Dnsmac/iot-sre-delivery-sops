@@ -128,18 +128,12 @@ def collect_liepin(config: dict) -> list[JobItem]:
 
 
 def save_raw(jobs: list[JobItem], raw_dir: Path, week_id: str) -> Path:
-    raw_dir.mkdir(parents=True, exist_ok=True)
-    path = raw_dir / f"{week_id}-liepin.json"
-    path.write_text(
-        json.dumps([j.to_dict() for j in jobs], ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
-    return path
+    from collectors.store import save_jobs
+
+    return save_jobs(jobs, raw_dir, week_id)
 
 
 def load_raw(raw_dir: Path, week_id: str) -> list[JobItem]:
-    path = raw_dir / f"{week_id}-liepin.json"
-    if not path.exists():
-        return []
-    data = json.loads(path.read_text(encoding="utf-8"))
-    return [JobItem(**{**item, "flags": item.get("flags", {})}) for item in data]
+    from collectors.store import load_jobs
+
+    return load_jobs(raw_dir, week_id)

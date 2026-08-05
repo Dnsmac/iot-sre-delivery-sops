@@ -32,7 +32,7 @@ v2 把 **9/1 才当真**、**压测当 owner 旗舰**，和事实（协助压测
 | 项 | 说明 |
 |----|------|
 | **目的** | 每周 **值得考虑的方向 Top3**（35+/专升本/比亚迪等） |
-| **节奏** | 跑 `tools/industry-radar/run.py` + **读 L1 ≤5min**（不计入 2h） |
+| **节奏** | 粘贴 JD → [`tools/industry-radar/inbox/`](tools/industry-radar/inbox/) → `py -3 run.py --week YYYY-W__` → **读 L1 ≤5min**（**公司网零登录**；猎聘仅在家 `--liepin`） |
 | **主轨** | **不变** — 10 月前仍主投 IoT 25K |
 | **交付** | [`行业雷达/方向/YYYY-W__.md`](05-Interview-Prep/行业雷达/方向/) · 深挖见 [`详情/`](05-Interview-Prep/行业雷达/详情/) |
 

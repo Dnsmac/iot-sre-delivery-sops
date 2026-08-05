@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
-"""职业方向雷达 — 采集 + 生成 L1/L2。
+"""职业方向雷达 — 零登录默认：inbox 粘贴 + 公开页。
 
-用法:
-  pip install -r requirements.txt
-  playwright install chromium
-  copy config.example.yaml config.yaml
+公司网络（不能登录猎聘）:
+  py -3 run.py --week 2026-W22
 
-  python run.py --login liepin          # 首次登录
-  python run.py --week 2026-W22         # 采集 + 生成
-  python run.py --week 2026-W22 --demo  # 样本数据（无需登录）
-  python run.py --week 2026-W22 --render-only
+在家可选猎聘:
+  py -3 run.py --login liepin
+  py -3 run.py --week 2026-W22 --liepin
 """
 from __future__ import annotations
 
@@ -26,7 +23,11 @@ ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from collectors.liepin import collect_liepin, load_raw, login_liepin, save_raw
+from collectors.inbox import collect_inbox
+from collectors.liepin import collect_liepin, login_liepin
+from collectors.public import collect_public
+from collectors.store import load_jobs, save_jobs
+from engine.match import assign_search
 from engine.models import JobItem
 from engine.render import diff_line, write_outputs
 from engine.score import build_reject_lines, flag_job, score_directions
@@ -81,24 +82,68 @@ def prev_week_top(l1_dir: Path, week_id: str) -> list[str] | None:
     return names or None
 
 
-def run_pipeline(cfg: dict, week_id: str, demo: bool, render_only: bool) -> None:
+def collect_offline(cfg: dict, week_id: str, use_liepin: bool) -> tuple[list[JobItem], str]:
+    collect_cfg = cfg.get("collect", {})
+    jobs: list[JobItem] = []
+    parts: list[str] = []
+
+    if collect_cfg.get("inbox", True):
+        inbox_jobs = collect_inbox(cfg, week_id)
+        jobs.extend(inbox_jobs)
+        parts.append(f"inbox({len(inbox_jobs)})")
+
+    if collect_cfg.get("public", True):
+        pub_jobs = collect_public(cfg)
+        jobs.extend(pub_jobs)
+        parts.append(f"公开页({len(pub_jobs)})")
+
+    if use_liepin or collect_cfg.get("liepin"):
+        lp_jobs = collect_liepin(cfg)
+        jobs.extend(lp_jobs)
+        parts.append(f"猎聘({len(lp_jobs)})")
+
+    if not parts:
+        parts.append("无")
+    label = " + ".join(parts) + " · **未登录**" if not (use_liepin or collect_cfg.get("liepin")) else " + ".join(parts)
+    return jobs, label
+
+
+def run_pipeline(
+    cfg: dict,
+    week_id: str,
+    demo: bool,
+    render_only: bool,
+    use_liepin: bool,
+    inbox_only: bool,
+) -> None:
     rules = cfg.get("rules", {})
     searches = cfg.get("searches", [])
     out = cfg["output"]
     repo = repo_root_from_config(cfg)
     raw_dir = ROOT / out.get("raw_dir", "out/raw")
     l1_dir = repo / out["l1_dir"]
+    data_source = ""
 
     if render_only:
-        jobs = load_raw(raw_dir, week_id)
+        jobs = load_jobs(raw_dir, week_id)
+        data_source = "raw 重渲染"
     elif demo:
         jobs = load_demo_jobs()
-        save_raw(jobs, raw_dir, week_id)
+        data_source = "demo 样本"
+        save_jobs(jobs, raw_dir, week_id)
+    elif inbox_only:
+        jobs = collect_inbox(cfg, week_id)
+        data_source = f"仅 inbox({len(jobs)}) · 未登录"
+        save_jobs(jobs, raw_dir, week_id)
     else:
-        jobs = collect_liepin(cfg)
-        save_raw(jobs, raw_dir, week_id)
+        jobs, data_source = collect_offline(cfg, week_id, use_liepin)
+        save_jobs(jobs, raw_dir, week_id)
+
+    if not jobs:
+        print("[warn] 无岗位样本。请编辑 inbox/YYYY-W__.txt 粘贴 JD，或 py -3 run.py --demo")
 
     for i, j in enumerate(jobs):
+        jobs[i] = assign_search(j, searches)
         jobs[i] = flag_job(j, rules)
 
     scores = score_directions(jobs, searches)
@@ -134,6 +179,7 @@ def run_pipeline(cfg: dict, week_id: str, demo: bool, render_only: bool) -> None
         profile=cfg.get("profile", {}),
         demo=demo,
         cfg_output=out,
+        data_source=data_source,
     )
     print(f"L1 → {l1_path}")
     print(f"L2 → {l2_dir}")
@@ -141,12 +187,14 @@ def run_pipeline(cfg: dict, week_id: str, demo: bool, render_only: bool) -> None
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="职业方向雷达")
+    parser = argparse.ArgumentParser(description="职业方向雷达（默认零登录）")
     parser.add_argument("--config", default="config.yaml")
     parser.add_argument("--week", default=None, help="ISO 周，如 2026-W22")
-    parser.add_argument("--login", choices=["liepin"], help="首次登录猎聘")
-    parser.add_argument("--demo", action="store_true", help="使用 fixtures 样本")
-    parser.add_argument("--render-only", action="store_true", help="仅从 raw 重新渲染")
+    parser.add_argument("--login", choices=["liepin"], help="在家网络：登录猎聘")
+    parser.add_argument("--liepin", action="store_true", help="采集时包含猎聘（需已登录）")
+    parser.add_argument("--inbox-only", action="store_true", help="仅读 inbox，不抓公开页")
+    parser.add_argument("--demo", action="store_true", help="fixtures 样本")
+    parser.add_argument("--render-only", action="store_true", help="从 raw 重渲染")
     args = parser.parse_args()
 
     cfg_path = ROOT / args.config
@@ -157,7 +205,14 @@ def main() -> None:
         login_liepin(cfg)
         return
 
-    run_pipeline(cfg, week_id, demo=args.demo, render_only=args.render_only)
+    run_pipeline(
+        cfg,
+        week_id,
+        demo=args.demo,
+        render_only=args.render_only,
+        use_liepin=args.liepin,
+        inbox_only=args.inbox_only,
+    )
 
 
 if __name__ == "__main__":

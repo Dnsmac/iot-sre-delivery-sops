@@ -1,4 +1,5 @@
-# 复制为 config.yaml 后修改（config.yaml 已 gitignore）
+# 默认采集：inbox + 公开页（**零登录**，适合公司网络）
+# 猎聘仅在家网络可选：run.py --week ... --liepin
 
 profile:
   birth_year: 1992
@@ -21,10 +22,29 @@ rules:
   outsource_hint: ["外包", "人力", "驻场", "外派"]
   embedded_hint: ["嵌入式", "PLC", "C语言", "单片机", "RTOS"]
 
-# 每个 search → 一个方向候选；程序合并打分后输出 Top3
+collect:
+  inbox: true          # 读 inbox/*.txt（推荐：粘贴 JD）
+  public: true         # 抓公开 URL；失败用 fixtures
+  liepin: false        # 需登录，公司网默认关
+
+inbox:
+  dir: inbox
+
+public:
+  enabled: true
+  timeout_sec: 12
+  sources:
+    - id: byd_web
+      name: 比亚迪招聘官网
+      url: "https://job.byd.com/"
+      search_id: byd_java_iot
+      direction: 比亚迪·Java物联网(平台向)
+
+# 每个 search → 一个方向；match_keywords 用于 inbox/公开页自动归类
 searches:
   - id: iot_java_isv
     direction: IoT平台Java·深圳ISV
+    match_keywords: ["物联网", "IoT", "ISV", "平台"]
     liepin:
       keyword: "资深 Java 物联网"
       pages: 1
@@ -32,6 +52,7 @@ searches:
 
   - id: byd_java_iot
     direction: 比亚迪·Java物联网(平台向)
+    match_keywords: ["比亚迪", "BYD", "设备对接"]
     liepin:
       keyword: "比亚迪 Java 物联网"
       pages: 1
@@ -41,18 +62,21 @@ searches:
 
   - id: industrial_java
     direction: 工业软件·Java后端
+    match_keywords: ["工业软件", "MES", "制造信息化"]
     liepin:
       keyword: "工业软件 Java"
       pages: 1
 
   - id: delivery_iot
     direction: 技术交付·物联网
+    match_keywords: ["技术交付", "交付工程师", "驻场"]
     liepin:
       keyword: "物联网 技术交付"
       pages: 1
 
   - id: chelian_java
     direction: 车联网·Java
+    match_keywords: ["车联网", "车载", "车机"]
     liepin:
       keyword: "车联网 Java"
       pages: 1

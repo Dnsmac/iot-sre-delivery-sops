@@ -1,55 +1,37 @@
-# 行业雷达（特办 · 副轨 · 5min 主阅读）
+# 行业雷达（特办 · 5min · **零登录**）
 
-> **定位**：每周更新 **值得考虑的方向 Top3**（深圳 · 35+/专升本 · 含比亚迪等锚点）。  
-> **主轨不变**：10 月前仍 **IoT 25K 证据**；本特办 **不计入** 每日 2h。
+> **公司网络不能登录猎聘** → 用 **inbox 粘贴 JD** + 程序出 L1。  
+> 主轨 IoT 证据 **不变**。
 
 ---
 
-## 三层（默认只看 L1）
+## 三层
 
 | 层 | 路径 | 时间 |
 |----|------|------|
-| **L1 必看** | [`方向/YYYY-W__.md`](方向/) | **≤5min** |
-| L2 可选 | [`详情/YYYY-W__/`](详情/) | 想深挖再开 |
-| L3 raw | `tools/industry-radar/out/raw/` | 一般不看 |
+| **L1 必看** | [`方向/YYYY-W__.md`](方向/) | ≤5min |
+| L2 可选 | [`详情/YYYY-W__/`](详情/) | 深挖 |
+| inbox 输入 | [`../../tools/industry-radar/inbox/`](../../tools/industry-radar/inbox/) | 粘贴 JD |
 
 ---
 
-## 每周怎么做
-
-### 1. 跑程序（~3min 机器时间）
+## 每周（公司网）
 
 ```powershell
+# 1. 编辑 tools/industry-radar/inbox/2026-W22.txt（粘贴 3～8 条 JD）
+# 2. 运行
 cd D:\demo\iot-sre-delivery-sops\tools\industry-radar
-python run.py --week 2026-W22          # 真实采集（需 --login liepin）
-# 或
-python run.py --demo --week 2026-W22   # 样本数据试跑
+py -3 run.py --week 2026-W22
+# 3. 只读 方向/2026-W22.md
 ```
 
-详见 [`tools/industry-radar/README.md`](../../tools/industry-radar/README.md)。
+格式：[`tools/industry-radar/inbox/README.md`](../../tools/industry-radar/inbox/README.md)
 
-### 2. 你只读 L1
-
-打开 [`方向/`](方向/) 当周文件 → 看 **① Top3 表格 + ② 别碰 2 条 + ③ 变化 + ④ 勾 1 个**。
-
-### 3. 收工
-
-`PROGRESS_LOG` §快照勾「本周方向雷达」；或发 **【行业雷达收工】**。
+**在家** 才可选：`py -3 run.py --week ... --liepin`（需先 `--login liepin`）。
 
 ---
 
-## 旧手册（降级）
+## 旧文件
 
-- [`参考源清单.md`](参考源清单.md) — 程序已内置来源，**手工扫 JD 仅作采集失败备用**
-- [`简报/_模板.md`](简报/_模板.md) — 由 **L1 替代**，可不填
-- [`行业评分表.md`](行业评分表.md) — 季度手动校准；程序用规则打分
-
----
-
-## 与 JD雷达 / 画像
-
-| 目录 | 区别 |
-|------|------|
-| [`JD雷达/`](../JD雷达/) | **技术概念**（物模型/CoAP） |
-| **本目录** | **行业/赛道/锚点雇主** 值不值得占脑子 |
-| [`个人画像.md`](../个人画像.md) | 画像输入已写入 `tools/.../config.yaml` |
+- [`简报/_模板.md`](简报/_模板.md) — 已由 **L1** 替代
+- [`参考源清单.md`](参考源清单.md) — 手工备用；主路径是 **inbox**

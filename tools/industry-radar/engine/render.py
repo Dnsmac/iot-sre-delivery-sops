@@ -26,10 +26,15 @@ def render_l1(
     generated_at: str,
     l2_rel: str,
     demo: bool,
+    data_source: str = "",
 ) -> str:
     warn = "（demo 样本数据）" if demo else ""
     lines = [
         f"# {week_id} 值得考虑（≤5min · {generated_at[:10]}）{warn}",
+    ]
+    if data_source:
+        lines.append(f"> 数据来源：{data_source}")
+    lines += [
         "",
         "## ① 本周只看这 3 条",
         "| # | 方向 | 为啥值得看（1句） | 35+/专升本 | 动作 |",
@@ -91,7 +96,7 @@ def render_l2_detail(week_id: str, rank: int, d: DirectionScore, profile: dict) 
         lines.append("- **BYD**：优先 **Java+IoT 平台/设备对接**；带嵌入式/PLC 主责的岗默认低优先")
     lines += ["", "## 样本 JD Top 5", ""]
     if not d.sample_jobs:
-        lines.append("（本周无样本，请检查采集或 `--login liepin`）")
+        lines.append("（本周无样本，请编辑 inbox/YYYY-W__.txt 粘贴 JD）")
     else:
         for j in d.sample_jobs:
             flags = []
@@ -132,6 +137,7 @@ def write_outputs(
     profile: dict,
     demo: bool,
     cfg_output: dict,
+    data_source: str = "",
 ) -> tuple[Path, Path]:
     l1_dir = repo_root / cfg_output["l1_dir"]
     l2_week = repo_root / cfg_output["l2_dir"] / week_id
@@ -142,7 +148,7 @@ def write_outputs(
     l2_rel = f"../详情/{week_id}/README.md"
     l1_path = l1_dir / f"{week_id}.md"
     l1_path.write_text(
-        render_l1(week_id, top3, reject2, diff_line, prev_top, generated_at, l2_rel, demo),
+        render_l1(week_id, top3, reject2, diff_line, prev_top, generated_at, l2_rel, demo, data_source),
         encoding="utf-8",
     )
 
