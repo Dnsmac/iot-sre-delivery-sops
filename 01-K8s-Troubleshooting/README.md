@@ -22,6 +22,7 @@
 | `生产服务清单.md` | D7 前补全 15 行 |
 | `生产服务-K8s映射表.md` | D7 填满 9 行 |
 | `故障复盘_01.md` | D7 写 1 则真实坑 |
+| **`cases/kylin-offline-k8s-v1.26/`** | **实战案例**：麒麟离线 K8s 交付踩坑 + SOP（2026-08） |
 | `notes/D2_MetalLB.md` | D2 原理 + 现网记录 |
 | `interview/MetalLB_面试题清单.md` | 面试题（自测打勾） |
 | `interview/answers/MetalLB_答案.md` | 答案（忘词查阅） |
