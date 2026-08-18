@@ -41,7 +41,7 @@ v2 把 **9/1 才当真**、**压测当 owner 旗舰**，和事实（协助压测
 | 周 | 日期 | 阶段 | 主目录 |
 |----|------|------|--------|
 | **W1** | 06-02～06-08 | **IoT 全景信心**（链路骨架 + JD雷达，**不写**模块故事定稿） | `02` + `05` |
-| **W2** | 06-09～06-15 | 全链路 + MQTT + 连接治理 | `02` + 外链 mqtt |
+| **W2** | 06-09～06-15 | 全链路 + MQTT + 连接治理 | `02` + `middleware/mqtt` |
 | **W3** | 06-16～06-22 | IoT 稳定性排查 | `02` + `04` |
 | W4 | 06-23～06-29 | K8s 现网 + **iot-server 模块故事素材** | `01` + `02` |
 | W5 | 06-30～07-06 | K8s 排错 + **模块故事定稿** | `01` + `02` |
@@ -56,17 +56,19 @@ v2 把 **9/1 才当真**、**压测当 owner 旗舰**，和事实（协助压测
 
 ---
 
-## 外链学习仓（原理深度，本仓只绑现网）
+## 中间件原理学习（`middleware/`，本仓只绑现网）
 
-| 仓 | 路径 | 本计划用法 |
-|----|------|------------|
-| MQTT | `D:\demo\mqtt` | W1：A2；W2：A4～A7、P6/P7；EMQX 对照见 A11/C7 |
-| Pulsar | `D:\demo\pulsar` | W3/W6：P4 backlog、C10 runbook、附录 B（Kafka 对照） |
-| **Kafka** | `D:\demo\kafka` | JD 写 Kafka：附录 B + A1/A5 + P4 lag；与 Pulsar 互链 |
+> 索引：[`middleware/README.md`](middleware/README.md)
+
+| 中间件 | 路径 | 本计划用法 |
+|--------|------|------------|
+| MQTT | [`middleware/mqtt`](middleware/mqtt/README.md) | W1：A2；W2：A4～A7、P6/P7；EMQX 对照见 A11/C7 |
+| Pulsar | [`middleware/pulsar`](middleware/pulsar/README.md) | W3/W6：P4 backlog、C10 runbook、附录 B（Kafka 对照） |
+| **Kafka** | [`middleware/kafka`](middleware/kafka/README.md) | JD 写 Kafka：附录 B + A1/A5 + P4 lag；与 Pulsar 互链 |
 | IoT 平台全景 | `D:\demo\iot\IoT-Technical-Guide` | W1～W7：见 `INDEX-学习排期.md`；物模型/影子/JD 雷达 |
 | **现网 iot-server 源码** | **`D:\gerrit\iot-server`** | **只读**；核对类名/链路 → 写入本仓 `02/`、`05/`。**禁止改现网仓** |
 
-本仓交付 **叙事 + 数字 + SOP**；协议细节 **读外链，不在此重复造大纲**。现网 Java 代码 **只读对照**，见 [`docs/现网仓库只读约束.md`](docs/现网仓库只读约束.md)。
+本仓交付 **叙事 + 数字 + SOP**（`02/`、`04/`）；协议细节 **读 `middleware/`，不在此重复造大纲**。现网 Java 代码 **只读对照**，见 [`docs/现网仓库只读约束.md`](docs/现网仓库只读约束.md)。
 
 ---
 
@@ -77,7 +79,7 @@ v2 把 **9/1 才当真**、**压测当 owner 旗舰**，和事实（协助压测
 | **11 年 Java 代表作**（电商/社区） | ✅ 有，未写 | 1 则模块故事（方案→改动→结果） | W1 草稿 / **W7 定稿** |
 | **iot-server 模块 ownership** | ⚠️ 做过说不清 | 1 则 Java 模块故事 | **W4～W5**（W1 只建链路自信） |
 | 设备→平台 **90 秒全链路** | ⚠️ | 白板 + 口述 | W2 |
-| MQTT 原理（Connect/QoS/会话/休眠） | ⚠️ 在学 mqtt 仓 | 协议卡片 + 绑 iot-web | W2 |
+| MQTT 原理（Connect/QoS/会话/休眠） | ⚠️ 在学 [`middleware/mqtt`](middleware/mqtt/README.md) | 协议卡片 + 绑 iot-web | W2 |
 | 连接打满 / 限流 / 降级 | ⚠️ | 治理链路 1 篇 | W2 |
 | 离线风暴 / Pulsar 积压排查 | ✅ 接触过 | IoT 稳定性 SOP | W3 |
 | Pulsar 在 IoT 链路中的位置 | ✅ 现网 | 积压排查 1 章 | W3/W6 |
@@ -116,13 +118,13 @@ v2 把 **9/1 才当真**、**压测当 owner 旗舰**，和事实（协助压测
 
 路径：`05-Interview-Prep/JD雷达/`（每篇 ≤2 页：**定义 + 现网有没有 + 面试 30 秒**）
 
-| # | 文件 | 外链参考 |
-|---|------|----------|
+| # | 文件 | 原理参考（`middleware/`） |
+|---|------|--------------------------|
 | 1 | `01-物模型与设备状态.md` | — |
 | 2 | `02-设备影子与生命周期.md` | mqtt A2/A4 |
 | 3 | `03-OTA与固件.md` | mqtt P1/C10 提及 |
 | 4 | `04-时序存储对照.md` | — |
-| 5 | `05-CoAP与多协议.md` | mqtt 附录 B |
+| 5 | `05-CoAP与多协议.md` | mqtt 附录 B；CoAP 仍见 `D:\demo\coap` |
 | 6 | `06-规则引擎与流式对照.md` | mqtt C7、pulsar 附录 A Q42 |
 | 7 | `07-Netty与接入层.md` | — |
 
@@ -161,7 +163,7 @@ v2 把 **9/1 才当真**、**压测当 owner 旗舰**，和事实（协助压测
 | 维度 | 内容 |
 |------|------|
 | **学什么** | 1883→内嵌 MQTT→**EventBus**→MySQL/Redis/ES；级联→Pulsar；Connect/QoS/会话/休眠 |
-| **怎么做** | 读 mqtt 仓 A4～A7；Wireshark 或日志 1 次；连接打满→限流→降级 |
+| **怎么做** | 读 [`middleware/mqtt`](middleware/mqtt/docs/学习路径.md) A4～A7；Wireshark 或日志 1 次；连接打满→限流→降级 |
 | **交什么** | `IoT全链路白板.md`、`连接治理链路.md`、`协议卡片_MQTT.md`、`EMQX生态对照.md` |
 | **简历** | bullet：连接治理 + 全链路 |
 

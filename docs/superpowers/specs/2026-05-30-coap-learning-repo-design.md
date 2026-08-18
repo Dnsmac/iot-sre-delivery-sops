@@ -7,7 +7,7 @@
 
 ## 1. Goal
 
-新建外链仓 **`D:\demo\coap`**，补齐猎聘/智联 **「MQTT + CoAP」** JD 防御；结构对齐 **`D:\demo\kafka`**（面试 Part A 为主），**不**在 Phase A 做 Docker/Java 实验。
+新建外链仓 **`D:\demo\coap`**，补齐猎聘/智联 **「MQTT + CoAP」** JD 防御；结构对齐 **`middleware/kafka`**（面试 Part A 为主），**不**在 Phase A 做 Docker/Java 实验。
 
 主仓 `iot-sre-delivery-sops` 只负责：**外链表 + JD雷达/05 + 1 句现网口径**，不重复造 CoAP 大纲。
 
@@ -118,7 +118,7 @@ D:\demo\coap\
 | `05-Interview-Prep/JD雷达/05-CoAP与多协议.md` | **Create** 三行模板 + 链 coap A1/B/C |
 | `docs/文档真相源.md` | **Modify** 外链列表加 coap（可选 1 行） |
 | `05-Interview-Prep/个人画像.md` | **Modify** 协议在学：`mqtt/coap/pulsar` 路径补全 |
-| `D:\demo\mqtt/docs/附录/B-protocol-comparison.md` | **Modify** 文末加 coap 仓链接 |
+| `middleware/mqtt/docs/附录/B-protocol-comparison.md` | **Modify** 文末加 coap 仓链接 |
 | **`D:\demo\coap/**` | **Create** 全文 Phase A 骨架 |
 
 **不改**：W1 周历顺序、设备主链路白板、`.cursorrules` 大改。

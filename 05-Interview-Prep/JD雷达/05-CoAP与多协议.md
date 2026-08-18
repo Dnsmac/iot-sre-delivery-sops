@@ -18,5 +18,5 @@ CoAP 是受限设备常用的请求/响应协议（可 UDP/TCP）；物联网平
 
 ## 补课（可选）
 
-- 外链：`D:\demo\coap` / `D:\demo\mqtt`（若有）
+- 原理：`D:\demo\coap`（若有）/ [`middleware/mqtt`](../../middleware/mqtt/README.md)
 - 证据：[`GIIC-15万压测参与复盘.md`](../../02-EMQX-IoT-Tuning/GIIC-15万压测参与复盘.md)

@@ -1,0 +1,2 @@
+# 开发环境匿名已开；生产请关闭 allow_anonymous 并用：
+# mosquitto_passwd -c mosquitto.passwd devuser

@@ -15,7 +15,7 @@
 | **W1 手册进度** | D1 [x] · D2 [x]（JD 01）· D3 [x]（JD 02）· … · D7 [ ] |
 | **W1 §9 周验收** | [ ] 未过（JD雷达 **7/7 三行已填**；缺 90 秒录音勾选） |
 | **本周方向雷达** | [ ] 未做 · L1：[`方向/2026-W22.md`](05-Interview-Prep/行业雷达/方向/2026-W22.md)（demo 已生成，待你读+勾） |
-| **最后更新** | 2026-08-13（归档：麒麟离线 K8s 交付案例 → `01-K8s-Troubleshooting/cases/kylin-offline-k8s-v1.26/`） |
+| **最后更新** | 2026-08-17（归档：kh-iot-server operatorCache OOM → `02-EMQX-IoT-Tuning/cases/kh-iot-server-operatorCache-OOM-2026-08-17/`） |
 
 > 收工发 **【今日收工】** 或自己改上表。见 [`docs/每日协作约定.md`](docs/每日协作约定.md)。
 
@@ -38,6 +38,7 @@
 | 2026-07-23 | 第二阶段 | **压测复盘细化 + 全链路白板 GIIC 线 + JD雷达 7 篇三行** | ~1h | 复盘 §3/§8、白板 §2.2/§8、`JD雷达/01～07`、口述稿同步 | 录音仍待勾；线 B 待挖 |
 | 2026-07-23 | 第二阶段 | **补 `docs/ops` 全栈运维**（Nginx/sysctl/MySQL） | ~0.3h | `GIIC-全栈运维优化要点.md`；复盘/白板/口述/JD07/真相源挂链 | — |
 | 2026-08-13 | 交付归档 | **麒麟离线 K8s v1.26 交付踩坑入库** | ~1h | `cases/kylin-offline-k8s-v1.26/`（SOP×6+清单+复盘）；挂链 01/04 README、故障复盘_01 | 源码仍在 `87\work` |
+| 2026-08-17 | 稳定性 | **kh-iot-server 堆 OOM / operatorCache 排查闭环** | ~4h | `02-EMQX-IoT-Tuning/cases/kh-iot-server-operatorCache-OOM-2026-08-17/`（复盘+SOP×2）；业务仓 `docs/device/ExtendDeviceClusterConfiguration-operatorCache-OOM分析.md` | MAT 证实 5050 Operator；P0 补丁待合入 |
 
 ## 周验收（v3）
 

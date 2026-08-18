@@ -16,4 +16,4 @@
 
 **复习建议**：每周挑 2 篇朗读 30 秒；优先 **05、07、01**（和你简历最贴）。
 
-**外链**：CoAP/规则引擎 → `D:\demo\mqtt` / `D:\demo\coap`；Flink 对照 → `D:\demo\pulsar` 附录（若有）
+**原理参考**：CoAP/规则引擎 → [`middleware/mqtt`](../../middleware/mqtt/README.md) / `D:\demo\coap`；Flink 对照 → [`middleware/pulsar`](../../middleware/pulsar/docs/appendices/) 附录（若有）

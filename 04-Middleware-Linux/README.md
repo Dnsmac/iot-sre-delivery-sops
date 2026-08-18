@@ -1,5 +1,8 @@
 # W3 / W6：中间件（IoT 场景 · Pulsar 优先）
 
+> **原理补课**：[`../middleware/`](../middleware/README.md)（mqtt · pulsar · kafka）  
+> **本目录交付**：现网叙事 + 排障 SOP（L1 证据）
+
 | 周 | 交付 |
 |----|------|
 | W3 | `IoT稳定性排查SOP.md`（可与 02 目录联交） |

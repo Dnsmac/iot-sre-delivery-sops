@@ -1,0 +1,8 @@
+spring:
+  pulsar:
+    client:
+      service-url: pulsar://localhost:6650
+app:
+  pulsar:
+    tenant: dev
+    namespace: test

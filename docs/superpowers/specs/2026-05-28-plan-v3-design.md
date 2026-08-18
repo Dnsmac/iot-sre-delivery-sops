@@ -70,10 +70,12 @@
 
 ## 外链仓
 
+> **2026-08 更新**：mqtt / pulsar / kafka 已迁入本仓 `middleware/`。
+
 | 仓 | 用途 |
 |----|------|
-| `D:\demo\mqtt` | W2：A4～A7、P6/P7；C7 规则引擎 |
-| `D:\demo\pulsar` | W3/W6：P4、C10、附录 B |
+| `middleware/mqtt` | W2：A4～A7、P6/P7；C7 规则引擎 |
+| `middleware/pulsar` | W3/W6：P4、C10、附录 B |
 
 ## 投递
 
