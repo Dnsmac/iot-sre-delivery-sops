@@ -16,11 +16,11 @@
 
 ## 结果
 
-脚本迭代至 v1.0.14；中间件可 deployed；踩坑沉淀为本仓 `cases/kylin-offline-k8s-v1.26/`。
+脚本迭代至 **v1.0.22**；X86 中间件可 deployed；ARM64 合机验证 Redis 64KB 页 / Pulsar 内存 / SSH 静默失败；踩坑沉淀为本仓 `cases/kylin-offline-k8s-v1.26/`。
 
 ## 简历 bullet（草稿）
 
-- 主导/参与麒麟离线 Kubernetes 交付：分包物料校验、Harbor 导入验收口径修正、Calico Sandbox 与 Pulsar JWT 排障，沉淀可复用 SOP，支撑重装一次验收。
+- 主导/参与麒麟 V10 x86/ARM64 离线 Kubernetes 交付：分包物料校验、Harbor 导入验收口径修正、Calico Sandbox / Pulsar JWT / ARM 页大小与内存对齐排障，沉淀可复用 SOP 与 v1.0.22 脚本，支撑重装一次验收。
 
 ## 追问准备
 

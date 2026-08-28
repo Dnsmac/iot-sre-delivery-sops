@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Java开发简历 - 骆峰（高并发交付价值版）</title>
+<style>
+  :root {
+    --ink: #1f2937;
+    --muted: #6b7280;
+    --line: #d8dee7;
+    --accent: #0f3d2e;
+    --soft: #f2f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    font-size: 10.2pt;
+    line-height: 1.42;
+    background: #fff;
+  }
+  .page { width: 190mm; margin: 8mm auto; padding: 0; }
+  .header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2.5pt solid var(--accent); padding-bottom: 4mm; }
+  h1 { margin: 0; font-size: 22pt; letter-spacing: 3pt; }
+  .identity { margin-top: 1.5mm; color: var(--muted); }
+  .contact { text-align: right; color: var(--muted); white-space: nowrap; }
+  .contact strong { color: var(--ink); }
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    margin: 4.5mm 0 2.2mm;
+    font-size: 12.5pt;
+    color: var(--accent);
+    page-break-after: avoid;
+  }
+  h2::after { content: ""; flex: 1; height: .7pt; background: var(--line); }
+  .block { page-break-inside: avoid; }
+  .role-row { display: flex; justify-content: space-between; gap: 5mm; font-weight: 700; }
+  .subrow { color: var(--muted); font-size: 9.2pt; margin-top: .6mm; }
+  ul { margin: 1.5mm 0 0; padding-left: 4.2mm; }
+  li { margin: .7mm 0; }
+  li::marker { color: var(--accent); }
+  .summary {
+    background: var(--soft);
+    border-left: 2.5pt solid var(--accent);
+    padding: 2.5mm 3.5mm;
+    margin: 4mm 0 0;
+  }
+  .compact li { margin: .45mm 0; }
+  .project + .project { margin-top: 3.8mm; }
+  .tech { margin-top: 1.2mm; font-size: 9.2pt; }
+  .tech b { color: var(--accent); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 8mm; }
+  .hint { color: var(--muted); font-size: 8.5pt; margin-top: 1mm; }
+  @page { size: A4; margin: 10mm 11mm; }
+  @media print {
+    body { width: auto; }
+    .page { width: auto; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="header">
+    <div>
+      <h1>骆峰</h1>
+      <div class="identity">资深 Java 后端（IoT 平台） · 11 年经验</div>
+    </div>
+    <div class="contact">
+      <div><strong>电话：</strong>18025483470</div>
+      <div><strong>邮箱：</strong>375311552@qq.com</div>
+    </div>
+  </header>
+
+  <section class="summary block">
+    <b>核心价值：</b>能把高并发业务瓶颈落成可验证方案，也能把国产化离线交付落成可重复验收流程。擅长用缓存/异步/隔离/幂等守住核心链路；近一年在 IoT 平台完成设备上下行治理，并交付麒麟 x86/ARM64 完全离线 K8s 底座与 IoT+运维子系统一键部署。
+    <div class="hint">说明：量化指标位预留空括号，后续可自行补入实测数字，勿虚构。</div>
+  </section>
+
+  <section>
+    <h2>专业技能</h2>
+    <ul>
+      <li><b>高并发治理：</b>热点缓存、分布式锁、线程池隔离、MQ 削峰、幂等/重试/补偿、限流降级；能把库存/余额/设备消息等竞争点拆成可观测、可回滚的链路。</li>
+      <li><b>Java / JVM：</b>集合与并发、JMM、GC 与常见线上排查；能定位阻塞、堆外/堆内压力与线程池配置问题。</li>
+      <li><b>微服务：</b>Spring Boot / Spring Cloud Alibaba（Nacos、Gateway、OpenFeign、Sentinel、Seata）；熟悉最终一致性与分布式事务取舍。</li>
+      <li><b>数据与消息：</b>MySQL 索引/锁/慢 SQL；Redis 集群与一致性；RocketMQ/Kafka/Pulsar 可靠投递、重复消费与堆积治理。</li>
+      <li><b>云原生交付：</b>Kubernetes、Harbor、Helm、ConfigMap/Secret、StatefulSet/HPA/Ingress；麒麟 V10 SP3 x86/ARM64 完全离线装簇与中间件交付。</li>
+      <li><b>工程化：</b>Jenkins/Maven/Git；JMeter/SkyWalking/ELK；交付脚本幂等、镜像预检、配置单点化与现场排障 SOP。</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>工作经历</h2>
+    <ul class="compact">
+      <li>2025.01 - 至今：中软国际（深开鸿） · Java 高级开发（IoT 平台）</li>
+      <li>2021.03 - 2024.09：深圳市一家技术科技有限公司 · 研发主管 / Java 组长</li>
+      <li>2018.07 - 2020.09：深圳微脉科技有限公司 · Java 高级开发</li>
+      <li>2015.07 - 2018.06：人人都是产品经理社区 · Java 开发</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>项目经验</h2>
+
+    <article class="project">
+      <div class="role-row"><span>IoT 数字化 Meta 平台 · Java 高级开发</span><span>2025.01 - 至今</span></div>
+      <div class="subrow">智慧城市 / 产业数字化 IoT 平台；覆盖设备接入、物模型、规则告警、北向服务与国产化交付</div>
+      <div class="tech"><b>技术栈：</b>Spring Cloud Alibaba、Nacos、Gateway、MySQL/达梦、Redis、RocketMQ/Kafka/Pulsar、MQTT、gRPC、Kubernetes、Harbor、Helm、Mimir、Loki、Grafana</div>
+      <ul>
+        <li><b>高并发上下行：</b>针对高频上报与并发控制指令，用异步/批量消费、线程池隔离、热点配置缓存与分布式锁，降低对业务库与核心服务的冲击；配合压测与调用链定位慢接口与阻塞点（参与 40 万级设备压测协助优化，非方案 owner）。</li>
+        <li><b>消息可靠性：</b>对状态上报、规则触发、告警链路补齐幂等、重试、死信与补偿，治理重复消息与网络抖动导致的状态异常，保证关键动作「可重入、可对账」。</li>
+        <li><b>稳定性排查：</b>处理过线上堆压力类问题（如大缓存结构占用），形成「指标 → dump → 根因 → 防复发」口径，避免只靠扩容掩盖问题。</li>
+        <li><b>麒麟离线底座（x86/ARM64）：</b>主导/参与 V10 SP3 + K8s v1.26.4 完全离线交付（B00～B09 分包）。解决 Harbor 导入验收误报、Calico Sandbox 坏网、Pulsar JWT/pending、控制面勿乱重启 kubelet；ARM64 合机解决 Redis 64KB 页（改 7.2.5）、Pulsar Proxy 内存对齐、SSH 静默失败，脚本迭代至 v1.0.22。</li>
+        <li><b>BSC 业务+运维一键交付：</b>将约 26 处死 IP 收敛到两个 settings.env；统一 images.txt + 部署前 Harbor 预检；Ingress catch-all 解决无域名访问；补齐 request/limit、HPA、Job 幂等与端口最小化，使实施从「改几十个 YAML」变为「改环境文件 + 两个脚本」。</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <div class="role-row"><span>ERP 进销存云平台 · 研发主管 / Java 组长</span><span>2021.03 - 2024.09</span></div>
+      <div class="subrow">虚拟商品进销存与供应商服务；服务 300+ 客户、100+ 公司使用</div>
+      <div class="tech"><b>技术栈：</b>Spring Cloud Alibaba、Nacos、Gateway、Sentinel、Seata、RocketMQ/Kafka、MySQL、Redis、SkyWalking、ELK、Jenkins</div>
+      <ul>
+        <li><b>竞争热点：</b>订单/充值/库存/账户链路引入 Redis 热点缓存与分布式锁，配合唯一约束与状态机，防止重复下单、重复回调与超卖类问题。</li>
+        <li><b>削峰解耦：</b>下单、供应商请求、通知、对账异步化；用可靠消息 + 消费幂等 + 堆积治理，把第三方慢响应挡在主链路外，高峰期接口更稳。</li>
+        <li><b>慢链路治理：</b>压测 + 慢 SQL + 全链路分析，优化索引、深分页、事务范围与批量写入；对供应商调用设超时/重试/熔断/降级与并发上限。</li>
+        <li><b>工程组织：</b>拆分客户端/供应商/后台/H5/推送服务；搭建注册配置、网关、链路与日志体系，沉淀评审与故障复盘规范，降低多人协作变更风险。</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <div class="role-row"><span>威脉社交 APP · 研发主管 / Java 组长</span><span>2018.07 - 2020.09</span></div>
+      <div class="subrow">数字名片与品牌数字化服务（在线名片、个人征信、简历等）</div>
+      <div class="tech"><b>技术栈：</b>Spring Cloud / Dubbo、Nacos、Seata、Canal、MySQL、Redis、ELK、Jenkins</div>
+      <ul>
+        <li>负责核心表结构与接口协议；用 Redis 缓存名片与关系热点，Canal + MQ 做同步与异步通知，关键流程补幂等，支撑高频读与第三方对接上线。</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="block">
+    <h2>教育经历</h2>
+    <div class="two-col">
+      <div>2022.09 - 2025.06 · 广州软件学院 · 软件技术 本科</div>
+      <div>2012.09 - 2015.06 · 广州康大职业技术学院 · 软件技术 大专</div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>自我评价</h2>
+    <ul class="compact">
+      <li>习惯用「问题规模 → 方案取舍 → 验收口径」讲技术，不堆职责清单；重视幂等、隔离、监控与防复发。</li>
+      <li>既能做业务侧高并发模块，也能把离线交付做成可重复流程；现场排障能落到脚本与 SOP。</li>
+      <li>求职方向：资深 Java 后端（IoT 平台），目标深圳稳定技术岗；压测与年限表述诚实、可背调。</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

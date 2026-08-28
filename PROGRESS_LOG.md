@@ -15,7 +15,7 @@
 | **W1 手册进度** | D1 [x] · D2 [x]（JD 01）· D3 [x]（JD 02）· … · D7 [ ] |
 | **W1 §9 周验收** | [ ] 未过（JD雷达 **7/7 三行已填**；缺 90 秒录音勾选） |
 | **本周方向雷达** | [ ] 未做 · L1：[`方向/2026-W22.md`](05-Interview-Prep/行业雷达/方向/2026-W22.md)（demo 已生成，待你读+勾） |
-| **最后更新** | 2026-08-17（归档：kh-iot-server operatorCache OOM → `02-EMQX-IoT-Tuning/cases/kh-iot-server-operatorCache-OOM-2026-08-17/`） |
+| **最后更新** | 2026-08-28（压测/性能会话入库：OpenAPI·ES NFS·Redis/Camellia·水位；简历压测性能版） |
 
 > 收工发 **【今日收工】** 或自己改上表。见 [`docs/每日协作约定.md`](docs/每日协作约定.md)。
 
@@ -39,6 +39,8 @@
 | 2026-07-23 | 第二阶段 | **补 `docs/ops` 全栈运维**（Nginx/sysctl/MySQL） | ~0.3h | `GIIC-全栈运维优化要点.md`；复盘/白板/口述/JD07/真相源挂链 | — |
 | 2026-08-13 | 交付归档 | **麒麟离线 K8s v1.26 交付踩坑入库** | ~1h | `cases/kylin-offline-k8s-v1.26/`（SOP×6+清单+复盘）；挂链 01/04 README、故障复盘_01 | 源码仍在 `87\work` |
 | 2026-08-17 | 稳定性 | **kh-iot-server 堆 OOM / operatorCache 排查闭环** | ~4h | `02-EMQX-IoT-Tuning/cases/kh-iot-server-operatorCache-OOM-2026-08-17/`（复盘+SOP×2）；业务仓 `docs/device/ExtendDeviceClusterConfiguration-operatorCache-OOM分析.md` | MAT 证实 5050 Operator；P0 补丁待合入 |
+| 2026-08-28 | 交付归档 | **BSC 业务交付入库 + 麒麟 v1.0.22 同步 + 简历价值版** | ~1h | `cases/bsc-iot-meta-k8s-delivery/`、`stories/国产化K8s业务交付-BSC.md`；麒麟 README/复盘/踩坑→v1.0.22；`Java开发简历-骆峰-2026-08-28-高并发交付价值版.html` | 原 PDF/HTML 未覆盖；量化数字待自补 |
+| 2026-08-28 | 压测归档 | **7 会话性能/压测证据入库 + 简历压测性能版** | ~1h | `cases/README-压测性能案例索引.md` + OpenAPI/ES/MQTT水位/Camellia 案例；`stories/压测与性能优化证据.md`；`Java开发简历-骆峰-2026-08-28-压测性能版.*` | 不编造优化后 TPS；复测数字可后补 |
 
 ## 周验收（v3）
 

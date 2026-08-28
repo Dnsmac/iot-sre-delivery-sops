@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Java开发简历 - 骆峰（压测性能版）</title>
+<style>
+  :root {
+    --ink: #1f2937;
+    --muted: #6b7280;
+    --line: #d8dee7;
+    --accent: #0f3d2e;
+    --soft: #f2f7f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    font-size: 9.9pt;
+    line-height: 1.38;
+    background: #fff;
+  }
+  .page { width: 190mm; margin: 7mm auto; padding: 0; }
+  .header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2.5pt solid var(--accent); padding-bottom: 3.5mm; }
+  h1 { margin: 0; font-size: 21pt; letter-spacing: 3pt; }
+  .identity { margin-top: 1.2mm; color: var(--muted); }
+  .contact { text-align: right; color: var(--muted); white-space: nowrap; }
+  .contact strong { color: var(--ink); }
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    margin: 3.8mm 0 1.8mm;
+    font-size: 12pt;
+    color: var(--accent);
+    page-break-after: avoid;
+  }
+  h2::after { content: ""; flex: 1; height: .7pt; background: var(--line); }
+  .block { page-break-inside: avoid; }
+  .role-row { display: flex; justify-content: space-between; gap: 5mm; font-weight: 700; }
+  .subrow { color: var(--muted); font-size: 8.9pt; margin-top: .5mm; }
+  ul { margin: 1.2mm 0 0; padding-left: 4mm; }
+  li { margin: .55mm 0; }
+  li::marker { color: var(--accent); }
+  .summary {
+    background: var(--soft);
+    border-left: 2.5pt solid var(--accent);
+    padding: 2.2mm 3.2mm;
+    margin: 3.5mm 0 0;
+  }
+  .compact li { margin: .35mm 0; }
+  .project + .project { margin-top: 3.2mm; }
+  .tech { margin-top: 1mm; font-size: 8.9pt; }
+  .tech b { color: var(--accent); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 8mm; }
+  .hint { color: var(--muted); font-size: 8.2pt; margin-top: .8mm; }
+  @page { size: A4; margin: 9mm 10mm; }
+  @media print {
+    body { width: auto; }
+    .page { width: auto; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="header">
+    <div>
+      <h1>骆峰</h1>
+      <div class="identity">资深 Java 后端（IoT 平台） · 11 年经验</div>
+    </div>
+    <div class="contact">
+      <div><strong>电话：</strong>18025483470</div>
+      <div><strong>邮箱：</strong>375311552@qq.com</div>
+    </div>
+  </header>
+
+  <section class="summary block">
+    <b>核心价值：</b>能把压测里的「假瓶颈」拆清楚——分清是等设备、本地缓存、存储 IO、代理连接池还是堆常驻对象；近一年参与 GIIC 15 万长稳、超级设备 OpenAPI 接口压测优化、operatorCache OOM 的 MAT 定位，并完成麒麟离线 K8s 与 IoT+运维一键交付。
+    <div class="hint">压测角色：参与优化与验收闭环，非全平台方案唯一 owner；未复测数字不写虚假达标率。</div>
+  </section>
+
+  <section>
+    <h2>专业技能</h2>
+    <ul>
+      <li><b>压测与性能：</b>JMeter 分接口压测；用 RT/TPS/命中率区分「缓存命中 vs 真下发」；熟悉异步批写、L1/Caffeine、single-flight、削峰与背压。</li>
+      <li><b>JVM / 线上诊断：</b>jstat/jcmd/jstack、MAT Dominator/OQL；能把堆占用追到具体缓存结构（如无界 Map + 大物模型）。</li>
+      <li><b>高并发治理：</b>热点缓存、分布式锁、线程池隔离、MQ 削峰、幂等/重试/补偿、限流降级。</li>
+      <li><b>数据与消息：</b>MySQL 慢 SQL/连接池；Redis Cluster / 代理链路超时；ES bulk/refresh/副本写放大；Pulsar/Kafka 可靠投递与堆积。</li>
+      <li><b>云原生交付：</b>K8s/Harbor/Helm；麒麟 V10 x86/ARM64 完全离线装簇；入口 Nginx/sysctl 与中间件联动调优。</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>工作经历</h2>
+    <ul class="compact">
+      <li>2025.01 - 至今：中软国际（深开鸿） · Java 高级开发（IoT 平台）</li>
+      <li>2021.03 - 2024.09：深圳市一家技术科技有限公司 · 研发主管 / Java 组长</li>
+      <li>2018.07 - 2020.09：深圳微脉科技有限公司 · Java 高级开发</li>
+      <li>2015.07 - 2018.06：人人都是产品经理社区 · Java 开发</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>项目经验</h2>
+
+    <article class="project">
+      <div class="role-row"><span>IoT 数字化 Meta 平台 · Java 高级开发</span><span>2025.01 - 至今</span></div>
+      <div class="subrow">设备接入 / 物模型 / OpenAPI / 规则告警 / 国产化交付；压测与稳定性证据可背调到案例目录</div>
+      <div class="tech"><b>技术栈：</b>Spring Cloud Alibaba、Nacos、MySQL/达梦、Redis/Camellia、ES、Pulsar、MQTT、gRPC、K8s、Harbor、JMeter、MAT</div>
+      <ul>
+        <li><b>GIIC 15 万长稳（参与）：</b>协议/网关侧连接模型、L1 热缓存、Token Redis 权威与异步批写等多轮改造；协助入口 Nginx/sysctl 与 MySQL 生产档对齐；同规模长稳跑满 4×24h（≥72h 验收节点）。</li>
+        <li><b>OpenAPI 五接口压测：</b>拓扑类实测约 46～78 TPS、E2E 读写/invoke 约 13～20 TPS（目标 100）。拆清「缓存 TTL 过短 + miss 重查询」与「重复解析大物模型 + 等设备回包」两类瓶颈；落地物模型节点本地缓存 + single-flight（hotfix_36630），拓扑缓存独立调 TTL。</li>
+        <li><b>堆 OOM 定位：</b>jstat/jcmd + MAT 证实 operatorCache 无界缓存 5050 个 DeviceOperator，单台物模型 retained 约 3～15MB，Dominator ~5.7G/8G；给出 Caffeine 上限/过期与注销 invalidate 方案，避免只靠加内存。</li>
+        <li><b>ES 写入链路：</b>压测期主机资源未打满仍写入堵死——定位 ES data 在 NFS、write 线程等 IO；iot 侧 elasticsearch-buffer 高峰约 155GB、dead 膨胀；建议压测期关副本/加大 refresh，长期换本地盘，并指出 bulk 部分失败整批重试会加重压力。</li>
+        <li><b>Redis 压测超时：</b>Cluster 健康仍出现命令超时——拆出 camellia 上游窄路与连接池假连接问题；压测环境倾向直连 Cluster 或对齐池生命周期，避免误缩业务连接池。</li>
+        <li><b>国产化交付：</b>麒麟 x86/ARM64 离线 K8s（v1.0.22）+ BSC IoT/运维 settings.env 一键部署（死 IP 收敛、镜像预检、资源/HPA）。</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <div class="role-row"><span>ERP 进销存云平台 · 研发主管 / Java 组长</span><span>2021.03 - 2024.09</span></div>
+      <div class="subrow">虚拟商品进销存；300+ 客户、100+ 公司使用</div>
+      <div class="tech"><b>技术栈：</b>Spring Cloud Alibaba、Nacos、Gateway、Sentinel、RocketMQ/Kafka、MySQL、Redis、SkyWalking、ELK</div>
+      <ul>
+        <li><b>竞争热点：</b>订单/库存/账户链路用 Redis 缓存 + 分布式锁 + 幂等/状态机，防重复提交与超卖。</li>
+        <li><b>削峰与慢链路：</b>MQ 异步化解耦第三方；压测 + 慢 SQL + 链路分析优化索引/事务/批量写入；超时熔断降级守高峰稳定性。</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <div class="role-row"><span>威脉社交 APP · 研发主管 / Java 组长</span><span>2018.07 - 2020.09</span></div>
+      <div class="subrow">数字名片与品牌数字化服务</div>
+      <ul>
+        <li>核心表与接口；Redis 热点缓存；Canal + MQ 同步通知与幂等，支撑高频读与第三方对接。</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="block">
+    <h2>教育经历</h2>
+    <div class="two-col">
+      <div>2022.09 - 2025.06 · 广州软件学院 · 软件技术 本科</div>
+      <div>2012.09 - 2015.06 · 广州康大职业技术学院 · 软件技术 大专</div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>自我评价</h2>
+    <ul class="compact">
+      <li>面试能讲「规模 → 瓶颈分层 → 改动 → 验收」；压测参与边界诚实，不把协助写成全责。</li>
+      <li>既会改热路径缓存/异步，也会用 MAT/现场指标证明根因，避免只加机器。</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

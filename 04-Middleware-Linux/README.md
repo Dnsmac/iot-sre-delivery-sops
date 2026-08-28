@@ -14,7 +14,7 @@
 
 ## 关联实战案例（交付复盘）
 
-麒麟离线集群上 Redis / Pulsar 安装坑（JWT Secret、Helm pending、Sandbox）：
+麒麟离线集群上 Redis / Pulsar 安装坑（JWT Secret、Helm pending、Sandbox、ARM64 64KB 页 / Proxy OOM）：
 
 → [`../01-K8s-Troubleshooting/cases/kylin-offline-k8s-v1.26/`](../01-K8s-Troubleshooting/cases/kylin-offline-k8s-v1.26/)
 
@@ -22,3 +22,4 @@
 |-----|------|
 | `SOP-Redis-Sandbox坏网.md` | Redis 重启 / Calico Sandbox |
 | `SOP-Pulsar-JWT-Secret.md` | Pulsar asymmetric-key + pending-install |
+| 踩坑清单 #19～#22 | ARM64：Redis 7.2.5（64KB 页）、Pulsar 内存对齐、SSH 静默失败 |

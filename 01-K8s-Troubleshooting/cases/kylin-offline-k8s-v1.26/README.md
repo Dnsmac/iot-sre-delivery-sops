@@ -3,17 +3,17 @@
 > **类型**：现场交付 / 实验室复盘证据  
 > **时间**：2026-08  
 > **环境**：192.168.27.105～110（NFS+Spray / Harbor / 4×K8s）  
-> **交付源码仓**（可执行脚本与物料）：`C:\Users\kaihong\Desktop\87\work`（VERSION **1.0.16**）  
-> **本目录**：只沉淀 **SOP + 踩坑 + 面试口径**，不复制 GB 级离线包。
+> **交付源码仓**（可执行脚本与物料）：`C:\Users\kaihong\Desktop\87\work`（VERSION **1.0.22**）  
+> **本目录**：只沉淀 **SOP + 踩坑 + 面试口径**，不复制 GB 级离线包。  
+> **架构线**：X86 六机（105～110）+ ARM64 合机验证（149/152/153，页大小 64KB）。
 
 ---
 
 ## 拓扑（一句话）
 
 ```text
-109 NFS + Kuboard-Spray:8080
-110 Harbor:80
-105～108 K8s（105 控面装中间件 Redis/Pulsar）
+X86：109 NFS+Spray:8080 / 110 Harbor:80 / 105～108 K8s（105 控面装 Redis/Pulsar）
+ARM 合机：149 Harbor+NFS+Spray / 152+153 K8s（验证 Redis 7.2.5、Pulsar 内存与私钥 SSH）
 ```
 
 完全离线：B00～B09 分包；装簇用 Spray；中间件 Helm。
@@ -33,6 +33,7 @@
 | [`SOP-Spray-SSH私钥.md`](SOP-Spray-SSH私钥.md) | 实验室 vs 现场客户私钥 |
 | [`SOP-Pulsar-6443-pending.md`](SOP-Pulsar-6443-pending.md) | 中间件 restart kubelet → 6443 refused / pending |
 | [`SOP-物料校验与B08截断.md`](SOP-物料校验与B08截断.md) | rar 损坏、CHECKSUMS CRLF、/tmp 满 |
+| 源仓 `87/work/docs/11-ARM64合机验证踩坑-*.md` | ARM64：Redis 64KB 页、Pulsar OOM、SSH 静默失败 |
 
 ---
 

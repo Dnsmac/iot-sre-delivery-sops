@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Java开发简历 - 骆峰</title>
+<style>
+  :root {
+    --ink: #1f2937;
+    --muted: #6b7280;
+    --line: #d8dee7;
+    --accent: #14532d;
+    --soft: #f3f7f5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    background: #fff;
+  }
+  .page { width: 190mm; margin: 10mm auto; padding: 0; }
+  .header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2.5pt solid var(--accent); padding-bottom: 5mm; }
+  h1 { margin: 0; font-size: 24pt; letter-spacing: 4pt; }
+  .identity { margin-top: 2mm; color: var(--muted); }
+  .contact { text-align: right; color: var(--muted); white-space: nowrap; }
+  .contact strong { color: var(--ink); }
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    margin: 6mm 0 3mm;
+    font-size: 13pt;
+    color: var(--accent);
+    page-break-after: avoid;
+  }
+  h2::after { content: ""; flex: 1; height: .7pt; background: var(--line); }
+  .block { page-break-inside: avoid; }
+  .role-row { display: flex; justify-content: space-between; gap: 5mm; font-weight: 700; }
+  .subrow { color: var(--muted); font-size: 9.5pt; margin-top: .8mm; }
+  ul { margin: 2mm 0 0; padding-left: 4.5mm; }
+  li { margin: 1mm 0; }
+  li::marker { color: var(--accent); }
+  .summary {
+    background: var(--soft);
+    border-left: 2.5pt solid var(--accent);
+    padding: 3mm 4mm;
+    margin: 5mm 0;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 2mm; margin-top: 2mm; }
+  .tag {
+    border: .5pt solid #b9c7c0;
+    border-radius: 2mm;
+    background: #fff;
+    color: #384f44;
+    padding: .4mm 2mm;
+    font-size: 8.5pt;
+  }
+  .compact li { margin: .6mm 0; }
+  .muted { color: var(--muted); }
+  .project + .project { margin-top: 5mm; }
+  .tech { margin-top: 1.5mm; font-size: 9.5pt; }
+  .tech b { color: var(--accent); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm 8mm; }
+  @page { size: A4; margin: 11mm 12mm; }
+  @media print {
+    body { width: auto; }
+    .page { width: auto; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="header">
+    <div>
+      <h1>骆峰</h1>
+      <div class="identity">Java 高级开发 · 9 年经验</div>
+    </div>
+    <div class="contact">
+      <div><strong>电话：</strong>18025483470</div>
+      <div><strong>邮箱：</strong>375311552@qq.com</div>
+    </div>
+  </header>
+
+  <section class="summary block">
+    <b>核心优势：</b>长期负责 Java 微服务研发与线上性能优化，熟悉高并发场景下的缓存、异步、消息、幂等、限流、慢 SQL 和 JVM 问题治理；近两年深入 IoT 平台研发，并完成麒麟 ARM64 + Kubernetes 环境的完全离线交付与运维子系统部署，具备从业务功能、接口性能到基础设施交付的闭环落地能力。
+  </section>
+
+  <section>
+    <h2>专业技能</h2>
+    <ul>
+      <li>Java 基础扎实，熟悉集合、反射、泛型、设计模式和面向对象设计；深入理解 JVM 内存结构、类加载、JMM、GC 算法与常见收集器，具备线上 JVM 参数调优和问题排查经验。</li>
+      <li>熟悉 Java 并发编程，理解线程池、锁机制、AQS、CAS、ThreadLocal 和 JUC 常用组件；能结合业务隔离线程池、控制并发度、减少锁竞争并治理异步链路风险。</li>
+      <li>熟练使用 Spring Boot、Spring Cloud、Spring Cloud Alibaba，具备 Nacos、Gateway、Sentinel、OpenFeign、Seata 等组件的微服务设计与线上使用经验。</li>
+      <li>具备高并发系统优化经验：使用 Redis 缓存热点数据、分布式锁和原子操作处理竞争；通过 RocketMQ/Kafka 削峰、异步化和解耦；设计幂等、重试、补偿、降级、限流与隔离策略，保障核心链路稳定。</li>
+      <li>熟悉 MySQL 事务、索引、锁、MVCC 和执行计划，具备慢 SQL 定位、SQL/索引优化、分页优化和批量写入优化经验；熟悉 Redis 高可用、缓存穿透、击穿、雪崩与数据一致性处理。</li>
+      <li>熟悉 RocketMQ、Kafka 的消息可靠投递、重复消费、顺序消费、堆积治理和消费幂等方案，能按场景选择同步/异步/批量消费策略。</li>
+      <li>熟悉 Kubernetes、Docker、Harbor、Helm、ConfigMap/Secret、StatefulSet、Deployment、DaemonSet、Ingress、HPA 等云原生部署能力，有麒麟 V10 SP3 x86/ARM64 环境完全离线交付经验。</li>
+      <li>熟悉 Jenkins、Git、Maven、JMeter、SkyWalking、ELK；能完成接口压测、调用链分析、日志检索、性能瓶颈定位和发布流程治理。</li>
+      <li>了解分布式事务和最终一致性方案，包括本地消息表、可靠消息、TCC、Saga、最大努力通知等；能结合业务成本选择合适实现。</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>工作经历</h2>
+    <ul class="compact">
+      <li>2025.01 - 至今：中软国际（深开鸿） · Java 高级开发</li>
+      <li>2021.03 - 2024.09：深圳市一家技术科技有限公司 · 研发主管 / Java 组长</li>
+      <li>2018.07 - 2020.09：深圳微脉科技有限公司 · Java 高级开发</li>
+      <li>2015.07 - 2018.06：人人都是产品经理社区 · Java 开发</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>项目经验</h2>
+
+    <article class="project">
+      <div class="role-row"><span>IoT 数字化 Meta 平台 · Java 高级开发</span><span>2025.01 - 至今</span></div>
+      <div class="subrow">面向智慧城市与产业数字化转型的 IoT 平台，覆盖康养、港口、楼宇等场景</div>
+      <div class="tech"><b>技术栈：</b>Spring Cloud Alibaba、Nacos、Gateway、MySQL、Redis、RocketMQ/Kafka、MQTT、gRPC、Kubernetes、Docker、Harbor、Helm、Mimir、Loki、Grafana</div>
+      <ul>
+        <li>参与平台“南向接入 + 物模型驱动 + 北向服务”架构建设，负责设备物模型、MQTT/gRPC 接入、规则引擎、告警调度和设备服务模块开发，支撑多源异构设备的统一接入与能力标准化。</li>
+        <li>优化设备上下行链路：结合异步处理、批量消费、线程池隔离、缓存热点配置和分布式锁，减少高频设备消息和并发控制指令对业务库与核心服务的冲击；配合 JMeter 和调用链工具定位慢接口与线程阻塞点。</li>
+        <li>完善消息可靠性处理，针对设备状态上报、规则触发和告警链路设计幂等、重试、死信处理和补偿机制，降低重复消费、网络抖动和服务重启导致的数据异常。</li>
+        <li>主导/参与麒麟 V10 SP3 + Kubernetes v1.26.4 ARM64 完全离线交付方案，将系统拆分为基础 RPM、Docker、Harbor、Kubespray、NFS、镜像和中间件等分包，输出环境校验、一键安装、镜像导入、健康检查和故障排查文档。</li>
+        <li>交付 Redis、Camellia、MinIO、Pulsar 等中间件离线部署，解决 ARM64 页大小兼容、containerd 私有仓库、NodelocalDNS、NFS provisioner、SSH 免密、组件依赖顺序和安装幂等等现场问题。</li>
+        <li>建设运维子系统离线部署流程，覆盖 MySQL Operator/InnoDBCluster、Mimir、Loki、Grafana、Categraf、alert-service、dfr 等组件；通过 settings.env 单点配置和 deploy-all 一键部署，收敛镜像地址、凭据、业务地址和组件依赖。</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <div class="role-row"><span>ERP 进销存云平台 · 研发主管 / Java 组长</span><span>2021.03 - 2024.09</span></div>
+      <div class="subrow">虚拟商品进销存与供应商服务体系，服务 300+ 客户，100+ 公司使用</div>
+      <div class="tech"><b>技术栈：</b>Spring Cloud Alibaba、Nacos、Gateway、Sentinel、Seata、RocketMQ/Kafka、MySQL、Redis、SkyWalking、ELK、Nginx、Keepalived、Jenkins</div>
+      <ul>
+        <li>负责核心团队管理、技术选型、基础框架搭建、数据库设计评审和关键模块交付；将客户端 API、供应商 API、后台管理、H5 API 和平台推送拆分为独立服务，提升迭代效率和系统可维护性。</li>
+        <li>优化订单、充值、库存和账户等高并发链路：引入 Redis 缓存商品、配额、价格等热点数据；使用分布式锁保护供应商库存扣减、订单创建和账号余额变更；通过接口幂等、唯一约束和状态机防止重复提交与重复回调。</li>
+        <li>使用 RocketMQ/Kafka 将下单、供应商请求、通知、对账等流程异步化，设计可靠消息、消费重试、幂等消费、顺序控制和堆积处理，削峰填谷并降低第三方响应慢对主链路的影响。</li>
+        <li>对慢接口进行压测和全链路分析，结合慢 SQL 日志优化索引、查询条件、深分页、事务范围和批量写入；对第三方供应商调用设置超时、重试、熔断、降级和并发上限，提升高峰期接口稳定性。</li>
+        <li>搭建 Nacos + Gateway + SkyWalking + ELK 的服务治理与可观测体系，规范日志、链路标记、异常告警和发布回滚流程，提升线上问题定位效率。</li>
+        <li>参与系统架构评审、代码审核和线上故障复盘，沉淀接口设计、分布式事务、缓存一致性、消息幂等和数据库变更规范，降低多人协作下的变更风险。</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <div class="role-row"><span>威脉社交 APP · 研发主管 / Java 组长</span><span>2018.07 - 2020.09</span></div>
+      <div class="subrow">以数字名片为核心的社交与品牌数字化服务，涵盖在线名片、个人征信、简历等服务</div>
+      <div class="tech"><b>技术栈：</b>Spring Cloud Alibaba、Dubbo、Nacos、Seata、Canal、ELK、MySQL、Redis、MyBatis、Nginx、Vue、Jenkins</div>
+      <ul>
+        <li>参与需求评审、技术选型、核心表结构设计和接口协议设计，负责客户端 API、后台服务、平台推送和报警推送等模块开发。</li>
+        <li>基于 Nacos、Gateway、SkyWalking 完成微服务注册发现、路由治理和调用链追踪；使用 Redis 缓存名片、用户关系和访问统计数据，减少热点查询压力。</li>
+        <li>使用 Canal 和 MQ 处理数据同步与异步通知，完善关键流程的幂等控制；参与第三方系统对接、接口文档沉淀、联调和上线保障。</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="block">
+    <h2>教育经历</h2>
+    <div class="two-col">
+      <div>2022.09 - 2025.06 · 广州软件学院 · 软件技术 本科</div>
+      <div>2012.09 - 2015.06 · 广州康大职业技术学院 · 软件技术 大专</div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>自我评价</h2>
+    <ul class="compact">
+      <li>具备从需求拆解、架构设计、核心开发、性能优化到线上交付的完整经验，能站在业务稳定性与可维护性角度做技术取舍。</li>
+      <li>熟悉高并发系统的常见瓶颈和治理方式，重视幂等、限流、降级、监控、容量评估和故障复盘，不追求孤立技术方案。</li>
+      <li>沟通协作顺畅，能快速理解业务目标并转化为可落地方案；对新环境和新技术适应能力强，能独立承担关键模块和现场交付任务。</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

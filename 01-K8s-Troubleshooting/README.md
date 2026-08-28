@@ -22,7 +22,9 @@
 | `生产服务清单.md` | D7 前补全 15 行 |
 | `生产服务-K8s映射表.md` | D7 填满 9 行 |
 | `故障复盘_01.md` | D7 写 1 则真实坑 |
-| **`cases/kylin-offline-k8s-v1.26/`** | **实战案例**：麒麟离线 K8s 交付踩坑 + SOP（2026-08） |
+| **`cases/kylin-offline-k8s-v1.26/`** | **实战案例**：麒麟离线 K8s 交付踩坑 + SOP（2026-08，v1.0.22 / ARM64） |
+| **`cases/bsc-iot-meta-k8s-delivery/`** | **实战案例**：BSC IoT + 运维子系统离线交付（settings.env / 镜像预检 / 一键部署） |
+| **`cases/metak8s-nodelocaldns-force-tcp-2026-06/`** | **实战案例**：10 万 k8s 压测 · NodeLocal `force_tcp` + IPVS DNS 偶发超时 |
 | `notes/D2_MetalLB.md` | D2 原理 + 现网记录 |
 | `interview/MetalLB_面试题清单.md` | 面试题（自测打勾） |
 | `interview/answers/MetalLB_答案.md` | 答案（忘词查阅） |
