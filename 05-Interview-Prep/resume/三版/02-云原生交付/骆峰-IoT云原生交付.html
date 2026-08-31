@@ -1,0 +1,158 @@
+<!--
+  定位：B 类次攻 — IoT 平台交付 / 云原生 / 技术交付（避免「大厂核心 SRE」口径）
+  红线：压测仅「协助/参与」，未写主导/负责人；无空窗；监控按「使用者/部署者」而非「自研监控平台」表述。
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>骆峰 · IoT 云原生 / 交付</title>
+<style>
+  :root { --ink: #1c2b36; --muted: #5a6b78; --line: #d8e0e6; --accent: #0d4a3a; --accent-light: #e8f3ef; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { color: var(--ink); font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif; font-size: 9.9pt; line-height: 1.5; background: #fff; }
+  .page { width: 190mm; margin: 0 auto; padding: 9mm 0 7mm; }
+  .header { display: grid; grid-template-columns: 1fr auto; gap: 6mm; align-items: end; padding-bottom: 3.4mm; border-bottom: 1.5pt solid var(--accent); }
+  .header h1 { font-size: 25pt; font-weight: 700; letter-spacing: 5pt; color: var(--accent); line-height: 1.1; }
+  .header .role { margin-top: 1.4mm; font-size: 10.2pt; color: var(--muted); font-weight: 500; }
+  .contact { text-align: right; font-size: 9.1pt; color: var(--muted); line-height: 1.6; }
+  .contact span { color: var(--ink); font-weight: 600; }
+  .summary { margin-top: 3.4mm; padding: 2.8mm 3.6mm; background: var(--accent-light); border-radius: 1.2mm; font-size: 9.5pt; color: #2a3f4f; }
+  .summary b { color: var(--accent); }
+  section { margin-top: 4.2mm; }
+  h2 { font-size: 10.9pt; font-weight: 700; color: var(--accent); letter-spacing: .8pt; padding-bottom: 1.2mm; margin-bottom: 1.8mm; border-bottom: .6pt solid var(--line); page-break-after: avoid; }
+  .tags { display: flex; flex-wrap: wrap; gap: 1.2mm; margin-bottom: 1.8mm; }
+  .tag { font-size: 8pt; padding: .5mm 1.9mm; border-radius: 1mm; background: #f4f7f9; color: #3d5160; border: .4pt solid #cdd8df; }
+  .tag.primary { background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 600; }
+  .skill-list { list-style: none; padding: 0; }
+  .skill-list li { position: relative; padding-left: 3.1mm; margin: .8mm 0; font-size: 9.3pt; }
+  .skill-list li::before { content: ""; position: absolute; left: 0; top: .52em; width: 1.2mm; height: 1.2mm; background: var(--accent); border-radius: 50%; }
+  .skill-list b { color: var(--accent); }
+  .timeline { list-style: none; padding: 0; }
+  .timeline li { display: grid; grid-template-columns: 27mm 1fr; gap: 2.4mm; padding: 1.1mm 0; border-bottom: .4pt solid #eef2f5; font-size: 9.3pt; }
+  .timeline li:last-child { border-bottom: none; }
+  .timeline .date { color: var(--muted); font-size: 8.8pt; white-space: nowrap; }
+  .timeline .job b { color: var(--ink); }
+  .timeline .job .note { color: var(--muted); font-weight: 400; font-size: 8.7pt; }
+  .project { margin-top: 3.2mm; page-break-inside: avoid; }
+  .project-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+  .project-head .name { font-size: 10.2pt; font-weight: 700; color: var(--ink); }
+  .project-head .period { font-size: 8.8pt; color: var(--muted); white-space: nowrap; }
+  .project-meta { margin-top: .6mm; font-size: 8.5pt; color: var(--muted); }
+  .project-tech { margin-top: .8mm; font-size: 8.3pt; color: #6b7c89; }
+  .project-tech b { color: var(--accent); font-weight: 600; }
+  .project ul { margin-top: 1.1mm; padding-left: 3.8mm; }
+  .project li { margin: .75mm 0; font-size: 9.3pt; }
+  .project li::marker { color: var(--accent); }
+  .project li b { color: #0a3d30; }
+  .edu { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5mm 8mm; font-size: 9.3pt; }
+  @page { size: A4; margin: 8mm 10mm; }
+  @media print { .page { width: auto; padding: 0; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div>
+      <h1>骆峰</h1>
+      <div class="role">IoT 平台交付 / 云原生 · K8s 与国产化 · 性能容量与稳定性</div>
+    </div>
+    <div class="contact">
+      意向　深圳 · IoT 平台交付 / 云原生 / 技术交付<br>
+      电话　<span>18025483470</span><br>
+      邮箱　<span>375311552@qq.com</span>
+    </div>
+  </div>
+
+  <div class="summary">
+    <b>11 年 Java 后端</b>，近年在<b>深开鸿 IoT Meta 平台</b>专注<b>云原生落地与国产化交付</b>：K8s 单集群 30+ 服务、<b>麒麟 V10 完全离线</b>（X86+ARM64）、HPA/Ingress/可观测部署；支撑 <b>15 万长连接连续长稳 96h</b>、10/20 万级设备压测（参与/协助）并定位存储与中间件瓶颈；OOM 5.7G/8G 堆定位。此前任研发主管，建 Nginx+Keepalived 高可用、SkyWalking/ELK 可观测与告警体系。
+  </div>
+
+  <section>
+    <h2>核心技能</h2>
+    <div class="tags">
+      <span class="tag primary">Kubernetes</span><span class="tag primary">云原生 / 交付</span><span class="tag">麒麟信创</span><span class="tag">Docker</span><span class="tag">HPA / Ingress</span><span class="tag">Prometheus / Grafana / Loki</span><span class="tag">MQTT / CoAP-TCP</span><span class="tag">Pulsar</span><span class="tag">Redis</span><span class="tag">Elasticsearch</span><span class="tag">MySQL / 达梦</span><span class="tag">Harbor</span><span class="tag">JMeter</span><span class="tag">JVM / MAT</span><span class="tag">SkyWalking</span>
+    </div>
+    <ul class="skill-list">
+      <li><b>云原生与交付</b>：K8s 单集群 30+ 服务；完全离线镜像闭包（Harbor）；麒麟 V10 + X86/ARM64 混合架构适配；HPA / Ingress / 资源配额；多现场复用与验收</li>
+      <li><b>可观测与稳定性</b>：Prometheus / Grafana / Loki、SkyWalking、ELK 日志体系；告警规则、故障复盘、容量评估；JVM/ES/Redis/MySQL 线上排障</li>
+      <li><b>压测与容量</b>：长连接与高 QPS 压测验收；JMeter 脚本 + SkyWalking 定位 RT/P99/TPS；背压、连接池/线程池调优；存储与中间件瓶颈定位</li>
+      <li><b>底座技术</b>：Java / Spring Cloud Alibaba，MQTT/CoAP-TCP、物模型、规则引擎、OpenAPI；Pulsar/Redis/ES/MySQL/达梦；Docker/容器化</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>工作经历</h2>
+    <ul class="timeline">
+      <li><div class="date">2025.01 — 至今</div><div class="job"><b>深开鸿</b> · Java 高级开发（IoT Meta 平台）<span class="note">— K8s 交付 · 压测与容量 · 稳定性 · 信创国产化</span></div></li>
+      <li><div class="date">2021.03 — 2024.09</div><div class="job"><b>深圳市一家技术科技有限公司</b> · 研发主管 / Java 组长<span class="note">— 高可用架构 · 可观测 · SkyWalking / ELK</span></div></li>
+      <li><div class="date">2018.07 — 2020.09</div><div class="job"><b>深圳微脉科技有限公司</b> · Java 高级开发 / 组长<span class="note">— 微服务 · 多级缓存 · 推送/告警</span></div></li>
+      <li><div class="date">2015.07 — 2018.06</div><div class="job"><b>人人都是产品经理社区</b> · Java 开发<span class="note">— App/后台 · Solr 搜索 · 微服务化</span></div></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>项目经历</h2>
+
+    <div class="project">
+      <div class="project-head"><div class="name">IoT 数字化 Meta 平台（深开鸿）</div><div class="period">2025.01 — 至今</div></div>
+      <div class="project-meta">智慧城市 / 产业数字化 · K8s 单集群 30+ Java 服务 · 麒麟 V10 完全离线 · X86+ARM64 混合节点</div>
+      <div class="project-tech"><b>技术栈</b>：K8s · Docker · Harbor · 麒麟 V10 · MQTT/CoAP-TCP · Pulsar · Redis · ES · MySQL/达梦 · Prometheus/Grafana/Loki</div>
+      <ul>
+        <li>麒麟 V10 完全离线 K8s（v1.26，X86+ARM64）交付：Harbor/Redis/Pulsar/minio 镜像闭包，处理 ARM64 64KB 页、Pulsar JWT、containerd 私库等现场问题；IoT 与可观测子系统一键部署（26 处死 IP 收敛 settings.env、镜像预检、HPA、Ingress catch-all），多现场复用验收。</li>
+        <li>10 万级设备压测（k8s · 参与）— 存储/写入链路：主机资源未打满但 ES write 线程排队，定位 data 盘 NFS 写等 IO；iot-server elasticsearch-buffer 每 pod 约 30G、合计约 155GB 积压，属性历史落后实时态 2～3 小时；协助热索引 replicas=0、refresh 调优。</li>
+        <li>压测期中间件连接层：排查 Camellia Redis 代理连接池超时（上游窄路/假连接）、MySQL R2dbc 连接获取超时与 Pod 共置内存争抢，分层给出直连 Cluster、池参数与反亲和建议。</li>
+        <li>GIIC CoAP-TCP 压测，负责网关连接模型与协议热路径：连接级队列隔离（per-connection）、进程内 L1 热点缓存、Token 迁 Redis、异步批量落库；协同 Nginx/内核参数与 MySQL 生产档，15 万在线连续长稳 96h（4×24h），由数千即失败、14 万卡点推到达标。</li>
+        <li>20 万级设备压测（docker · 协助）：协助定位级联消息、Pulsar 消费与 ES 写入瓶颈；调热索引 refresh/副本、应用写入缓冲与存储 IO。</li>
+        <li>线上 OOM 排查：MAT 定位约 5050 台设备物模型无界缓存占 5.7G/8G 堆（Dominator 约 5.66GiB、占堆 78%），改 Caffeine 上限/过期/注销失效；参与 ES 慢写、Redis 代理超时等分层排障。</li>
+        <li>维护 MQTT 与 CoAP-TCP 接入网关；排查连接风暴与堆内存水位拒连（MQTT eventloop 触发 System.gc 误判案例），配合连接上限、水位阈值与 Pod 扩容恢复稳定。</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head"><div class="name">ERP 虚拟商品进销存云平台</div><div class="period">2021.03 — 2024.09</div></div>
+      <div class="project-meta">研发主管 · 6～8 人 · 权益卡/话费/加油卡/游戏充值 · 300+ 商户、100+ 企业在用 · 日峰值 3000 万+ / 日均成功 500 万+</div>
+      <div class="project-tech"><b>技术栈</b>：Spring Cloud Alibaba · Gateway · Sentinel · Seata · RocketMQ/Kafka · MySQL · Redis · SkyWalking · ELK · Nginx · Keepalived</div>
+      <ul>
+        <li>负责技术选型、架构评审与团队组建（6～8 人）；带队将单体拆成 5 微服务，Gateway 统一鉴权 + Nacos 治理，发布从周级提到日级。</li>
+        <li>搭建 Nginx + Keepalived 入口高可用、SkyWalking 链路与 ELK 日志体系；规范异常告警与故障复盘，支撑 300+ 商户对外 API 稳定接入。</li>
+        <li>虚拟商品订单/充值/库存/账户核心链：Redis 缓存 + 分布式锁，接口幂等 + 唯一约束 + 状态机；大促零超卖、零重复扣款/回调，可用性 99.9%+。</li>
+        <li>对接多家供应商 API，统一回调、签名与对账协议；下单/通知/日终对账走 RocketMQ/Kafka，消费幂等、死信重试、堆积监控，隔离第三方慢响应。</li>
+        <li>JMeter 压测 + SkyWalking 查 P99 与慢 SQL（索引/深分页/批量写）；Seata AT + 本地消息表；Sentinel 熔断、超时重试与并发上限。</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head"><div class="name">威脉数字名片社交 APP</div><div class="period">2018.07 — 2020.09</div></div>
+      <div class="project-meta">Java 组长 · 数字名片 / 个人征信 / 简历 · 客户端 + 后台 + 推送/告警</div>
+      <div class="project-tech"><b>技术栈</b>：Spring Cloud · Dubbo · Nacos · Seata · Canal · Redis · MySQL · ELK · Jenkins</div>
+      <ul>
+        <li>参与需求评审与技术选型，负责名片/关系/访问统计领域建模、核心表设计与 REST API；推进微服务拆分与全链路追踪（Nacos + Gateway + SkyWalking）。</li>
+        <li>名片详情、关系链、访问榜等高频读走 Redis 多级缓存 + TTL/主动失效，活动推广峰值期 DB 热点查询明显下降。</li>
+        <li>Canal 订阅 binlog，经 MQ 异步同步下游并触发 App 推送；消费端幂等去重；参与 Seata 分布式事务与第三方接口联调。</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head"><div class="name">人人都是产品经理社区</div><div class="period">2015.07 — 2018.06</div></div>
+      <div class="project-meta">App 后端 + 运营后台 · Solr 搜索 · 微服务化</div>
+      <div class="project-tech"><b>技术栈</b>：Spring Boot · Dubbo · MySQL · Redis · Solr · Nginx</div>
+      <ul>
+        <li>负责人人 App 与运营后台 API；Redis 缓存热点帖与频道列表，支撑首页/频道读高峰。</li>
+        <li>从零搭建 Solr 搜索子系统，负责索引构建、检索接口与日常维护。</li>
+        <li>参与老单体向 Spring Boot + Dubbo 微服务化重构，负责部分模块拆分与接口迁移。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>教育经历</h2>
+    <div class="edu">
+      <div>2022.09 — 2025.06　<b>广州软件学院</b> · 软件技术 · 本科</div>
+      <div>2012.09 — 2015.06　<b>广州康大职业技术学院</b> · 软件技术 · 大专</div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
