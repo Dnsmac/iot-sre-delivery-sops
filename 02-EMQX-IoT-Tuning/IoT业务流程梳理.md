@@ -208,5 +208,5 @@ flowchart TB
 ## 9. 待补（W4 模块故事 / 清单）
 
 - [ ] 我改过的具体类/配置/链路（脱敏）— 已知方向：**iot-server**、**级联**、压测 **Pulsar 调优**
-- [x] Pulsar 与设备主链路：**设备 PUBLISH 不经 Pulsar**；**级联**等场景用 Pulsar（压测协助调优）
+- [ ] Pulsar 与设备主链路：**设备 PUBLISH 不经 Pulsar**；**级联**等场景用 Pulsar（压测协助调优）
 - [ ] Nacos / MinIO / 达梦 在本链路中的挂载点（若在其它服务）

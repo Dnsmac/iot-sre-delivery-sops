@@ -117,6 +117,8 @@ API / 规则引擎
 
 ## §6 EventBus 典型 topic（脱敏模式）
 
+> 原理与三种订阅方式、集群 broker、vs Pulsar：[`EventBus-原理与现网用法.md`](EventBus-原理与现网用法.md)
+
 | Topic 模式 | 含义 |
 |------------|------|
 | `/device/{productId}/{deviceId}/reportProperty` | 属性上报 |
