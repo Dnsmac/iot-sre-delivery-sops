@@ -22,4 +22,12 @@
 |-----|------|
 | `SOP-Redis-Sandbox坏网.md` | Redis 重启 / Calico Sandbox |
 | `SOP-Pulsar-JWT-Secret.md` | Pulsar asymmetric-key + pending-install |
-| 踩坑清单 #19～#22 | ARM64：Redis 7.2.5（64KB 页）、Pulsar 内存对齐、SSH 静默失败 |
+| 踩坑清单 #19～#29 | ARM64 + Lab 线：Redis 7.2.5（64KB 页）、Pulsar 内存对齐、SSH 静默失败、nodelocaldns、containerd+Harbor |
+
+---
+
+## 信创数据库适配
+
+MySQL → 达梦 DM8 全量迁移（自研规则转换器 + 自校验，含 30s 口径与追问预判）：
+
+→ [`MySQL转达梦DM8-信创适配.md`](MySQL转达梦DM8-信创适配.md)

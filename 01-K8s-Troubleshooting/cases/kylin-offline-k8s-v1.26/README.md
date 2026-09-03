@@ -33,7 +33,10 @@ ARM 合机：149 Harbor+NFS+Spray / 152+153 K8s（验证 Redis 7.2.5、Pulsar �
 | [`SOP-Spray-SSH私钥.md`](SOP-Spray-SSH私钥.md) | 实验室 vs 现场客户私钥 |
 | [`SOP-Pulsar-6443-pending.md`](SOP-Pulsar-6443-pending.md) | 中间件 restart kubelet → 6443 refused / pending |
 | [`SOP-物料校验与B08截断.md`](SOP-物料校验与B08截断.md) | rar 损坏、CHECKSUMS CRLF、/tmp 满 |
+| [`SOP-nodelocaldns-DNS环路.md`](SOP-nodelocaldns-DNS环路.md) | iptables 漏放集群网段 / resolv.conf 自指环路（Lab 线） |
+| [`SOP-containerd-Harbor-HTTP.md`](SOP-containerd-Harbor-HTTP.md) | 443 refused、config_path 与 mirrors 互斥（Lab 线） |
 | 源仓 `87/work/docs/11-ARM64合机验证踩坑-*.md` | ARM64：Redis 64KB 页、Pulsar OOM、SSH 静默失败 |
+| 源目录 `delopy/k8s国产化/` | Lab 装簇一次成功清单 / node-prep / Spray 机搭建（runbooks 只留源仓） |
 
 ---
 
