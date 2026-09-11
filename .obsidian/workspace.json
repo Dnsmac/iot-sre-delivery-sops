@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "7b11334cc16c42fe",
+        "id": "87fd578a29027c32",
         "type": "tabs",
         "children": [
           {
-            "id": "a9ce669202cd61ec",
+            "id": "6816b286267d8ac6",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,93 +20,8 @@
               "icon": "lucide-file",
               "title": "冲刺日历-2026-09-02"
             }
-          },
-          {
-            "id": "f1b29d867d5a978f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05-Interview-Prep/黑话补齐-21天计划与JD逐条翻译.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "黑话补齐-21天计划与JD逐条翻译"
-            }
-          },
-          {
-            "id": "a3ec135580d49ced",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02-EMQX-IoT-Tuning/IoT全链路白板.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "IoT全链路白板"
-            }
-          },
-          {
-            "id": "f4ff443147083f29",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05-Interview-Prep/行业雷达/方向/2026-W22.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2026-W22"
-            }
-          },
-          {
-            "id": "ce10fe1bf7c429cb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05-Interview-Prep/JD雷达/04-时序存储对照.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "04-时序存储对照"
-            }
-          },
-          {
-            "id": "381416593a340d2d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05-Interview-Prep/面试连环深追脚本.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "面试连环深追脚本"
-            }
-          },
-          {
-            "id": "dbe94f6853a298b4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05-Interview-Prep/数字与边界-唯一索引.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "数字与边界-唯一索引"
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -184,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02-EMQX-IoT-Tuning/IoT全链路白板.md",
+                "file": "05-Interview-Prep/面试连环深追脚本.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -246,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "02-EMQX-IoT-Tuning/IoT全链路白板.md",
+                "file": "05-Interview-Prep/冲刺日历-2026-09-02.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -273,36 +188,43 @@
       "bases:新建数据库": false
     }
   },
-  "active": "479336341c8a37c4",
+  "active": "6816b286267d8ac6",
   "lastOpenFiles": [
+    "templates/house/上沙龙秋村11层以上楼栋-官方实测.csv",
+    "templates/house/上下沙民房楼栋清单-按村巷排序.csv",
+    "templates/house/上下沙11层以上楼栋-含楼栋长电话-按村巷排序.csv",
+    "templates/house/~$上沙龙秋村11层以上楼栋-官方实测.csv",
+    "templates/house/原始数据/上下沙楼栋全量.jsonl",
+    "templates/house/原始数据",
+    "templates/house/深圳城中村带娃租房决策表.html",
+    "templates/house/上下沙民房楼栋清单-按村巷排序.html",
+    "templates/house/上下沙11层以上楼栋-含楼栋长电话-按村巷排序.html",
+    "templates/house/scan_sx.py",
+    "templates/house/scan.log",
+    "templates/house/README.md",
+    "05-Interview-Prep/JD雷达/01-物模型与设备状态.md",
+    "05-Interview-Prep/冲刺日历-2026-09-02.md",
+    "05-Interview-Prep/口述稿/W5-模块.md",
+    "05-Interview-Prep/面试连环深追脚本.md",
+    "05-Interview-Prep/选型深挖-为什么这么设计.md",
+    "05-Interview-Prep/口述稿/W1-全链路.md",
+    "05-Interview-Prep/口述稿/W3-稳定性.md",
+    "05-Interview-Prep/JVM硬核-L4口播稿.md",
+    "05-Interview-Prep/数字与边界-唯一索引.md",
+    "05-Interview-Prep/JD雷达/07-Netty与接入层.md",
+    "04-Middleware-Linux/Pulsar-ARM64-glibc镜像自打包指南-2026-09.md",
+    "04-Middleware-Linux/Pulsar-Bookie-ARM64-SIGSEGV排查-2026-09.md",
+    "02-EMQX-IoT-Tuning/IoT全链路白板.md",
     "05-Interview-Prep/黑话补齐-21天计划与JD逐条翻译.md",
     "05-Interview-Prep/行业雷达/方向/2026-W22.md",
     "05-Interview-Prep/知识库/JD14/README.md",
     "05-Interview-Prep/知识库/JD14/03-开放API与下发序列图.md",
     "05-Interview-Prep/知识库/JD14/02-公云IoT对照.md",
     "05-Interview-Prep/知识库/JD14/01-多租户与区域部署.md",
-    "05-Interview-Prep/JD雷达/01-物模型与设备状态.md",
     "05-Interview-Prep/JD雷达/02-设备影子与生命周期.md",
     "05-Interview-Prep/JD雷达/03-OTA与固件.md",
     "05-Interview-Prep/JD雷达/04-时序存储对照.md",
     "05-Interview-Prep/JD雷达/05-CoAP与多协议.md",
-    "05-Interview-Prep/JD雷达/06-规则引擎与流式对照.md",
-    "05-Interview-Prep/JD雷达/07-Netty与接入层.md",
-    "05-Interview-Prep/JD雷达/README.md",
-    "05-Interview-Prep/冲刺日历-2026-09-02.md",
-    "05-Interview-Prep/面试连环深追脚本.md",
-    "05-Interview-Prep/数字与边界-唯一索引.md",
-    "05-Interview-Prep/带节奏-钩子反抛话术卡.md",
-    "05-Interview-Prep/冲刺日历-深审计-2026-09-03.md",
-    "02-EMQX-IoT-Tuning/EventBus-原理与现网用法.md",
-    "02-EMQX-IoT-Tuning/IoT全链路白板.md",
-    "02-EMQX-IoT-Tuning/IoT业务流程梳理.md",
-    "02-EMQX-IoT-Tuning/GIIC压测-规划方法论与交接Playbook.md",
-    "docs/每日协作约定.md",
-    "05-Interview-Prep/口述稿/W1-全链路.md",
-    "05-Interview-Prep/场景题-容量预估L4-GIIC15W标准用例.md",
-    "05-Interview-Prep/知识库/JD14",
-    "05-Interview-Prep/知识库",
-    "未命名.base"
+    "05-Interview-Prep/JD雷达/06-规则引擎与流式对照.md"
   ]
 }

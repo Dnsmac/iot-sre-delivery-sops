@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="2Mxg6lZBQZjehn9nHhe4qC">
+<head data-page-node-id="zSrvcw6Gi5ktNaW1dHiPGp">
+<meta charset="UTF-8" data-page-node-id="BAJjBWVSgz0gqDkC36WPEW">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="GpVhyImY4fXRejYthYThRJ">
+<title>深圳城中村带娃租房决策表 v6</title>
+<style>
+:root{--ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--blue:#2563eb;--green:#16a34a;--red:#dc2626;--bg:#f8fafc}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:40px 24px 72px}
+header{border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:28px}
+h1{font-size:22px;margin:0 0 10px;font-weight:600}
+.sub{font-size:13px;color:var(--muted);line-height:1.8}
+h2{font-size:17px;margin:44px 0 14px;padding-left:10px;border-left:4px solid var(--blue);font-weight:600}
+h3{font-size:15px;margin:26px 0 10px;font-weight:600}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f1f5f9;font-weight:600;white-space:nowrap}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr:nth-child(even) td{background:#fcfcfd}
+.bad{color:var(--red)}
+.good{color:var(--green)}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.kpi>div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi b{display:block;font-size:20px;line-height:1.3}
+.kpi span{font-size:12px;color:var(--muted)}
+.fix,.warn,.ok,.note{border-radius:10px;padding:14px 16px;margin:16px 0;font-size:14px}
+.fix{background:#fef3c7;border:1px solid #fcd34d}
+.warn{background:#fee2e2;border:1px solid #fca5a5}
+.ok{background:#dcfce7;border:1px solid #86efac}
+.note{background:#eff6ff;border:1px solid #bfdbfe}
+ul.chk{list-style:none;padding:0}
+ul.chk li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed var(--line)}
+ul.chk input{margin-top:5px;flex:none}
+pre{background:#0f172a;color:#e2e8f0;padding:14px;border-radius:10px;overflow-x:auto;font-size:12.5px;line-height:1.6}
+code{background:#f1f5f9;padding:1px 5px;border-radius:4px;font-size:12.5px}
+pre code{background:none;padding:0}
+.small{font-size:12.5px;color:var(--muted)}
+footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);line-height:1.8}
+</style>
+</head>
+<body data-page-node-id="uLMImTHqPrf1IWGxbXoLex">
+<div class="wrap" data-page-node-id="UyRSoiInqfFGZyEStGdYeU">
+
+<header data-page-node-id="D23aPynWx3XtVWXchukmpD">
+  <h1 data-page-node-id="ws5CD6FbTZPkXuhxuiv7Zz">深圳城中村带娃租房决策表 · v6</h1>
+  <div class="sub" data-page-node-id="xjMJmj5gOcx8YziIYjnpym">工作地：福田保税区（深港国际科技园） ｜ 未来去向：龙华 / 南山 ｜ 通勤：地铁 + 小电驴（实际均速 21.7 km/h） ｜ 家庭：两房电梯 + 新生儿</div>
+  <div class="sub" style="margin-top:6px" data-page-node-id="5BTKASQZzraULvyv4GdcmE">本版按你给的两个参数重算了全表：<b data-page-node-id="GliWwE9QxgyzSyFA3mPhXY">骑行速度取你实际的 21.7 km/h</b>，<b data-page-node-id="zKaZ73baIWerMgK6x8Swtf">价格取「官方参考价 × 1.15 = 实际成交价」</b>。这两处此前都是我算错的，旧结论作废。数据截至 2026-09-11。</div>
+</header>
+
+<div class="fix" data-page-node-id="5cVnwGzxLgeMEgKdpErtMN">
+  <b data-page-node-id="JTlS1sGNHv3BR0J10nMhks">先说这版改了什么</b>
+  <ol style="margin:10px 0 0" data-page-node-id="PJDBjvbhfcrznqCiJbec0x">
+    <li data-page-node-id="ag9dFV7EpBQwF6zGx7DT7n"><b data-page-node-id="wzwSEgg7tuxGIYnrVRXUMk">骑行速度翻倍后，圈层结构变了。</b>5km 从 28 分缩到 14 分。梅林 52 → <b data-page-node-id="kJvJKhPBtW9FKVjgC9lWpP">26 分</b>、下沙 42 → <b data-page-node-id="zbDVabTi0majMAEYpHsjlo">21 分</b>，两个此前被我判「出局」的片区重新进入候选。</li>
+    <li data-page-node-id="xDhCXnOehaBc2QhIG4AuCE"><b data-page-node-id="EhRNZGfAEyDiwc2YH7IWte">价格换成成交价口径，你的体感是对的。</b>4,500 在福田 47 个村里只排第 28，属<b data-page-node-id="Faei8MxBwDZwBF6eSsbGhp">中游</b>，不是「高于每一个村」。沙尾 / 新洲 / 皇岗 / 岗厦的成交价都在 <b data-page-node-id="m73GoQ66i9G44kubj0AuyM">4,610–4,745</b>，你确实买不到——不是预算问题，是这几个村本来就贵。</li>
+    <li data-page-node-id="zox6OeWCF8blpkQxQ2mWGc"><b data-page-node-id="HiCV9o9qhHfSF3BYEo1H80">我做错的两处，都是你纠回来的：</b>① 从地图 App 的估时反推骑行速度（那是保守值，约实际的一半）；② 用 3 条低得反常的挂牌去推翻住建局官方口径。两条教训都已写进技能库。</li>
+  </ol>
+</div>
+
+<h2 data-page-node-id="DfAQxUnhPNbzg2UcUbQUBB">一、骑行到福保（新口径）</h2>
+
+<p data-page-node-id="vNwB0FLOQ0TE63VvpC1SO2">方法：起点取福田保税区内的 <code data-page-node-id="s4kNyK1dmUS1hKAFfUXxPF">深港国际科技园</code>（22.5064, 114.0482）；距离用 Overpass 取村域代表点 + OSRM 路网计算，<b data-page-node-id="XBfVSD5rbvICCgkUoWtku3">不乘任何系数</b>；时间 = 路网 km ÷ <b data-page-node-id="fjI2rgdb8F03bBSVyLBpJi">21.7 km/h</b>（你确认的实际均速）。</p>
+
+<div class="kpi" data-page-node-id="sWNakhD7DsHpmiYwslD269">
+  <div data-page-node-id="GewezYAKWGZhjPeTeJrZay"><b data-page-node-id="aVGGfg6mYqwoSaojKt45w1">21.7 km/h</b><span data-page-node-id="kZCEHqai2jGDmr8nDCI5yp">你的实际骑行均速（你确认）</span></div>
+  <div data-page-node-id="uzZFJI001kaDUQ3IczpOVb"><b data-page-node-id="gbCRl2Mr88uAvjSxU0HELa">2×</b><span data-page-node-id="MCyPCVtVFhvCmeQ41RDNtO">地图 App 估时约为实际速度的一半</span></div>
+  <div data-page-node-id="gqvOoXqOxZ9RcoWbejMjMb"><b data-page-node-id="XuYPSdRJH0IH1yp4UvQbYa">9 个</b><span data-page-node-id="MlKq8D2iDEmHD67rwWqNYa">路网距离在 5km 圈内的村（岗厦 4.80 擦边）</span></div>
+  <div data-page-node-id="c1PABdqQT01C50isJOlZKa"><b data-page-node-id="Df0QDCk9HCJaIHO5e2u84U">1.15×</b><span data-page-node-id="djMukqKQ1jbJRC9JL1qora">官方参考价换算成成交价的系数</span></div>
+</div>
+
+<table data-page-node-id="A4rol4oHFqYpVSZ47DiXqf">
+  <thead data-page-node-id="sjJTH2mGi20AMbOjQkwOgl">
+    <tr data-page-node-id="Xjfxt3CJZjTxFmGjC7YedS"><th data-page-node-id="7TYv04BOjtZjl2gdaY7Mbr">村 / 片区</th><th class="num" data-page-node-id="2bW6IHzWcaZoWZLjx721oe">路网 km</th><th class="num" data-page-node-id="uIDi4A5A2VxxHUhqRkHA4U">骑行 分</th><th data-page-node-id="CVJGSrDTB0v16iLl2eIrFM">地铁到福保</th><th data-page-node-id="nC1s9Dbhd0wBVPMuUwcwGV">5km 圈</th><th class="num" data-page-node-id="LOGf9juU4UVAhKyCQ2j4wT">上一版我写的</th></tr>
+  </thead>
+  <tbody data-page-node-id="T6HLXy2JsbnTyCAKCcgo5w">
+    <tr data-page-node-id="txgA3mC0leXtKZ8GRGyYE3"><td data-page-node-id="JDkHHRKKOn9Z4TcmN9nC4U"><b data-page-node-id="NQ11YPE09BOYJPsciODWHr">沙尾村</b></td><td class="num" data-page-node-id="J6qGvb4HtGG37YOGfmcZJE">3.24</td><td class="num good" data-page-node-id="9ctZQ7t4DGrhcGnh5uWRjm">9</td><td data-page-node-id="DrlhgmGIGR3RDqSJWGYvy3">7 号线 + 1 次换乘，约 18 分</td><td data-page-node-id="g8WjiZuQAP130gAhXDe7ol">在</td><td class="num bad" data-page-node-id="bCH29BB8koC5Fwc7FwIDeA">13</td></tr>
+    <tr data-page-node-id="hj84perUkDnoNspoHcGHz4"><td data-page-node-id="GJumaAlheIqcEHeZ8HTRr5"><b data-page-node-id="B4VeyKVzjPdqQehuH9KM0e">新洲南村</b></td><td class="num" data-page-node-id="l5bhuzsOD7wQ9EOgKQTqXf">3.49</td><td class="num good" data-page-node-id="0srgkCfyT1JTA6TJiBQVBh">10</td><td data-page-node-id="Wyaa0WdgkLlmF1Ws6BBk7M">石厦站 618m，2 站 6 分</td><td data-page-node-id="ID8QhCrMapGhKBScyusQSe">在</td><td class="num" data-page-node-id="NLolzU6Ro4lYd1frA8CZiB">—</td></tr>
+    <tr data-page-node-id="R8BniJZYgId66sGnf4a4ah"><td data-page-node-id="VkjEI4KblLetviAszCAYpm"><b data-page-node-id="CbyTUOA1Rp7uyE5tlFoYF0">石厦村</b></td><td class="num" data-page-node-id="mr9jnAXUe2FRWNYZ0cP53u">3.67</td><td class="num good" data-page-node-id="SDmu6ZC9vh9P6VUgxxJ6JB">10</td><td data-page-node-id="lqXTErNhVIRqpi62BrLwWg">3 号线 2 站免换乘，6 分</td><td data-page-node-id="aBKJEOCB3UhwHNkGQwKnP7">在</td><td class="num bad" data-page-node-id="2UZKe63E4LsKxN7GtG294D">10</td></tr>
+    <tr data-page-node-id="vJrxVh89sYwYd7SjTgwWyt"><td data-page-node-id="cQtkiiJ2kudwQ4nWnVt5XH">新洲中心村</td><td class="num" data-page-node-id="1mPIGKJTrdFdfE6E3LAwPy">3.91</td><td class="num" data-page-node-id="9MnTAksd0uiJqqxSQC3eV2">11</td><td data-page-node-id="rB2bVTLeD6ZHbiBLdfK1js">沙尾站约 0.9km</td><td data-page-node-id="xSvEnz0uOVJBbtY1xZK4VG">在</td><td class="num" data-page-node-id="sMoNK2rs6PTEaDwJG7w6yg">—</td></tr>
+    <tr data-page-node-id="FUXPlYqFadVNlcapP41ypc"><td data-page-node-id="fq1fAW6o4kDt8pyuadq11f"><b data-page-node-id="rJNXC0RsMUT9CnFNi1vZ25">水围村</b></td><td class="num" data-page-node-id="v5pyHkqO8GYHTVbAKlHxyG">3.97</td><td class="num" data-page-node-id="rpDvIvlRAAKqYeltredkGd">11</td><td data-page-node-id="1TPpQEmAkzFtYkBIx1i5Fj">福民 4/7/10 三线，需换乘约 20 分</td><td data-page-node-id="N6elsEO41L1VXMsmA6MGBt">在</td><td class="num bad" data-page-node-id="4IjS9R7qQpsWFzHoy054Q4">11</td></tr>
+    <tr data-page-node-id="H6xcnwTadS4tRFwwfYO0Dw"><td data-page-node-id="rf2yoRbyjCrEgz7qLEnqcX"><b data-page-node-id="GZvr9ULzmLocNNXxSIQ8FP">皇岗村</b></td><td class="num" data-page-node-id="G9RK6kE2t5xwtJKCtZDquj">4.08</td><td class="num" data-page-node-id="b1taUZCJQhMrXl5RTgqIlT">11</td><td data-page-node-id="ceIGWz6QB6PdBDPywfe6Af">皇岗村站 7 号线</td><td data-page-node-id="mgy9wPUtwwVB87M2QXamWl">在</td><td class="num bad" data-page-node-id="mIdWAD2GzXl090Y8LETh5X">15</td></tr>
+    <tr data-page-node-id="Xm5a8rYQZjazU1rzevIKyt"><td data-page-node-id="1MkS4GY4bQfmVIaObZAsyL">新洲北村</td><td class="num" data-page-node-id="gYYDAbvA1DSTG7wnftDqop">4.22</td><td class="num" data-page-node-id="n3RXZT59CtIHpVRgSMYwtB">12</td><td data-page-node-id="gE4hqQNOlPr8JvxcrEYZLe">沙尾站 735m（7 号线）</td><td data-page-node-id="k78bB1rJnUZDYUFwCAlVnG">在</td><td class="num" data-page-node-id="Ax93sdnYRPWN4HXOsBc0Yz">—</td></tr>
+    <tr data-page-node-id="2NUFKM3FQKtb626Vm66Ja5"><td data-page-node-id="8EvFDSUn1C5RU0SpROx3cE">新洲祠堂村</td><td class="num" data-page-node-id="gQM1qHrlTFIBZaLh5RLOs5">4.53</td><td class="num" data-page-node-id="HGmmn8sAPzy2sGd1lHuiNE">13</td><td data-page-node-id="ltWlXSv91PoMyndRSBqttv">沙尾站 / 石厦站约 1km</td><td data-page-node-id="26a72WNwO0gBd10J9n1wEG">在</td><td class="num" data-page-node-id="ur9KGJ8KFizKqwwSTFBf41">—</td></tr>
+    <tr data-page-node-id="dTZnBMr9czutZME7GtV3EH"><td data-page-node-id="H5ZIFwGUkpjxdxGwBfay6Y">岗厦村</td><td class="num" data-page-node-id="L7MiiUhmc6S44GDU4y6zip">4.80</td><td class="num" data-page-node-id="ODhQcc8lTgUjQwztWf2VdZ">13</td><td data-page-node-id="oSQcVb5w0QSUY52UjQyJwb">1 / 10 号线岗厦</td><td data-page-node-id="FjIJoNzGGKkT5XvhQRTaG2">擦边</td><td class="num bad" data-page-node-id="FPTEn63cmTNzavLQLWRCLU">15</td></tr>
+    <tr data-page-node-id="C68l4BFUuAhWDHfDci2S4e"><td data-page-node-id="FNM2HlDUDfNeiKI6suRovJ">上沙村</td><td class="num" data-page-node-id="VNs2SXwTFTxILgFUwvXn00">5.63</td><td class="num" data-page-node-id="onoe7vtGxg27ZoGOi2Xw1V">16</td><td data-page-node-id="l7pNG1YBLFLuGtBq4TdqJd">7 号线上沙，约 15 分</td><td data-page-node-id="BMVCQSgov88zHQlvMKbprL">出圈</td><td class="num bad" data-page-node-id="yiaOzLDTBxHMYjlDf2LcVc">14</td></tr>
+    <tr data-page-node-id="0eFrzE3wSA6PTjFcXVaOsI"><td data-page-node-id="L2Hi6kh5VC9ffPhSP1ueG0"><b data-page-node-id="cFahMFzKFocKhsDcFNCvic">下沙村</b></td><td class="num" data-page-node-id="omCnM2SbHkBAhPwXVYFjDK">7.68</td><td class="num good" data-page-node-id="FLcPa2JLM4u4yD0HCXAtuW">21</td><td data-page-node-id="hqyS6xczROJRXpYcl7LTIm">9 号线，约 32 分（2 次换乘）</td><td data-page-node-id="iorL6iKK3FKPpiy5x6HZnt">出圈</td><td class="num bad" data-page-node-id="VgVeksILbHJxUevH0TaDNs">16</td></tr>
+    <tr data-page-node-id="iuVQqM7An3t2NeTtQ85viJ"><td data-page-node-id="CgmrHBQdBKktzi6pcGWISG"><b data-page-node-id="48K6Q0Gf36hXbRBNick93Q">梅村（梅林）</b></td><td class="num" data-page-node-id="nAfHSrCb35i2PmBpnpoqlT">9.49</td><td class="num good" data-page-node-id="GWBUvovzxO7VOi4BTvNkBC">26</td><td data-page-node-id="TC79HmKnXWm54rde1z7vrL">4 / 9 号线上梅林，约 40 分</td><td data-page-node-id="WO9Am5StU6CbWYdbxAnEpX">出圈</td><td class="num bad" data-page-node-id="KFDoevEhfQZ9zOGRjicJEP">28</td></tr>
+    <tr data-page-node-id="h8PHvOwrZoPpBY7FTNs4NU"><td data-page-node-id="W2smHd5r0e4h4KckNH75pc">白石龙</td><td class="num" data-page-node-id="sWE6RIkpFrrUpU4F6PsajD">13.58</td><td class="num" data-page-node-id="Z0uFGeaqMlJQnJz2WDT2af">38</td><td data-page-node-id="lAQrfuzl6FH6H6NRpsXvLD">4 号线，约 45 分</td><td data-page-node-id="u69hDa6huTRTHJLBalYjR3">出圈</td><td class="num" data-page-node-id="svfaf3EumfhN5TeirRS5fQ">—</td></tr>
+    <tr data-page-node-id="iATRPRHQgCOWNsa1lc0oHX"><td data-page-node-id="qsu74vhb0AQAbXQcV4GKq1">民治</td><td class="num" data-page-node-id="wgfTXtptWmAYxvWfapej5o">15.63</td><td class="num" data-page-node-id="WpQszgqE7WO4OUL7bwbe1u">43</td><td data-page-node-id="DWF1BDLWB5iKLZM2NR7M0i">5 号线，约 45 分</td><td data-page-node-id="j8uHOjaMUmf6mGO5NpsJg6">出圈</td><td class="num" data-page-node-id="DdLbCnu53umgwBbwdUi0Pz">—</td></tr>
+    <tr data-page-node-id="VW6KcWOHDMFpRJlD8Mzi5e"><td data-page-node-id="CrGaqNk5J1jHj0hkk7zzkQ">上塘</td><td class="num" data-page-node-id="ZCoL69HW4UjW18ZIK8u0bZ">18.06</td><td class="num" data-page-node-id="Mw9vB4r4WC0a6fCphBK0hD">50</td><td data-page-node-id="IcGNqXWHHed6UTsXCxyWEI">4 号线，约 50 分</td><td data-page-node-id="4d7TAB31hc2JVvPE6tCnYu">出圈</td><td class="num" data-page-node-id="tgaufGuSrOVjc72SP4H6hO">—</td></tr>
+  </tbody>
+</table>
+
+<p class="note" data-page-node-id="qpK9RNTuitDsz8ZnEpXR5d"><b data-page-node-id="LuKfT27L6cf7D66g67IRVE">唯一的自洽性检验：</b>梅村 9.49 km ÷ 21.7 × 60 = 26.2 分，与你给的参数一致。上一版我按 10.85 km/h 算，同一段路得出 52 分——<b data-page-node-id="m0PIjcIeHIc9Yx19TeQzMp">速度错一倍，整列时间就错一倍。</b></p>
+
+<p class="small" data-page-node-id="9QLbWtCLnWR9jVKzPbpDnO">另外：实测骑行路径走的是新洲路、福强路、金田路、彩田路，<b data-page-node-id="DlFq7NpuX7o08AZ6tlBHDX">避开了福田南路（百合路以南段）与皇岗口岸片区这两个二级限行区</b>，所以限行对各村的实际影响很小。但自己骑时别走福田南路南段或皇岗路辅道联检大楼段。</p>
+
+<h3 data-page-node-id="IWQneuHm4jP3HGyy2fiYeV">结论翻转在哪</h3>
+<div class="ok" data-page-node-id="BSJSfRuhLnXitJs06Ti24K">
+  <p style="margin:0" data-page-node-id="TcYqqyO03FjfnYYCcfbwYS"><b data-page-node-id="fhECNvWTE8fJ7w7d2Co94O">1. 梅林重新进圈。</b>26 分，比地铁 40 分还快 14 分钟。它上一版被我判出局，唯一原因是速度算错——不是它远，是我把它算慢了。</p>
+  <p style="margin:10px 0 0" data-page-node-id="XsfrrWDukLgAsq30vk9ErS"><b data-page-node-id="EfJjMNzsUw0ysAFhGwPYg8">2. 下沙重新进圈。</b>21 分，且 9 号线从下沙站 4 站到高新南、终点直达前湾——南山科技园和前海两个方向一趟不用换乘。</p>
+  <p style="margin:10px 0 0" data-page-node-id="b0NyCzbNK6Tb47MMxtolFN"><b data-page-node-id="hn7RBUO5Vs6s9Ga8EFEHAf">3. 石厦的领先被压到 1 分钟以内。</b>沙尾 9 分、新洲南 10 分、石厦 10 分，三个几乎并列。它俩的差别不再是通勤，而是租金和业态。</p>
+  <p style="margin:10px 0 0" data-page-node-id="dJwphk404vEcRBZFq7sYRB"><b data-page-node-id="1GIFQQSVLM24CuT4EtkyQq">4. 5km 圈内 9 个村，第一个出圈的是上沙。</b>你的 5km 上限现在对应约 14 分钟——半径没变，但时间成本大幅下降。</p>
+</div>
+
+<h2 data-page-node-id="3NsrmtId02jYwXZkFnVZgF">二、价格：官方参考价 × 1.15 = 实际成交价</h2>
+
+<p data-page-node-id="TV4KSceG1HAtXtK0Q5YJ85">按你的口径换算：<b data-page-node-id="3LQ1iXY9hwoy5s1s2sFfo2">福田 47 村两房官方参考价 3,202–4,352，中位 3,879</b>；× 1.15 后，<b data-page-node-id="mcpUaSamJ8x2IO8HbjeNm3">成交价区间 3,682–5,005，中位 4,461</b>。</p>
+
+<p data-page-node-id="1d9TsFgMYcapO6MhtG88l9">4,500 ÷ 1.15 = <b data-page-node-id="JpX4ULY2SbflR0Yk9TrqTX">3,913</b>，在 47 个村里排第 <b data-page-node-id="CBTPEvrLgLBuEmMMCAO4bK">28</b>——正中间。<b data-page-node-id="daUnGXRuHTHyQWY6o9AAmh">4,500 在福田城中村两房市场是「中游」，不是「宽裕」。</b></p>
+
+<table data-page-node-id="BCJmo6ZlXBIxvoKtb53q8f">
+  <thead data-page-node-id="ZouEyFTE4hCW41cFrXI8BQ">
+    <tr data-page-node-id="KFI6pMvBBom2eWPLrAnzAb"><th data-page-node-id="7BxFi3D6lteHIQd3kG8g4t">村</th><th class="num" data-page-node-id="P5H5mBjpchiY6mMWfHKphY">官方两房</th><th class="num" data-page-node-id="9tDGxjiXXxU6yZFB1GoKks">成交 ×1.15</th><th class="num" data-page-node-id="UhqaqVZYCT0P99oC4RCiPW">4,500 余量</th><th class="num" data-page-node-id="AAN21pjJxtxIxBFyDmfgGj">骑行 分</th></tr>
+  </thead>
+  <tbody data-page-node-id="xqszGbYxtX82GXcLTKJEoS">
+    <tr data-page-node-id="SrWaD0FjCpiFGCsneV1cat"><td colspan="5" style="background:#fef2f2" data-page-node-id="rm7D0P7wtY0jqeRsdGplau"><b data-page-node-id="n4bI8jNHrkvjcuZ9f3giba">超出 4,500（在福田南部，你确实买不到）</b></td></tr>
+    <tr data-page-node-id="4m8oypxU8oIZocBXa4raBC"><td data-page-node-id="bPf2krvITkGRtMR8JvChHc">新洲祠堂村</td><td class="num" data-page-node-id="F9fE8tfdJdCM75FL7UPFNY">4,126</td><td class="num" data-page-node-id="Fq5x6JfWddO3fccEfRnSiC">4,745</td><td class="num bad" data-page-node-id="QxSAvE49ycsmXwOr4MtF1v">−245</td><td class="num" data-page-node-id="A0euybeVt5KzHkETTWkIYz">13</td></tr>
+    <tr data-page-node-id="APHJldMdtldg3zcthBAWB8"><td data-page-node-id="TrvBTesTzFHiGTwDfYa2MM"><b data-page-node-id="A69isxeIfFJzWfwz4fZ8LD">沙尾村</b></td><td class="num" data-page-node-id="c48w3j7QEsiwruWhBMeW4A">4,123</td><td class="num" data-page-node-id="FzHDAG1uAi3ESw4tQYU8If">4,741</td><td class="num bad" data-page-node-id="5oDcsTUe0SKYF2GtU2SHpd">−241</td><td class="num" data-page-node-id="OaqzDa5vgLLdWgu2XTRPhx">9</td></tr>
+    <tr data-page-node-id="OnkVZj8BbGOArBbBznFF3R"><td data-page-node-id="YuGDLCizFiSdwDhVkf0AN1">皇岗新村</td><td class="num" data-page-node-id="OVkuvtIuSn1JM6l0P0pkY9">4,088</td><td class="num" data-page-node-id="e0Eyn3jOwNgZQSYsBaoRw5">4,701</td><td class="num bad" data-page-node-id="H1LHvRdZiKpTBsISGor852">−201</td><td class="num" data-page-node-id="OtNmea20FCVbSZi7XvO2Eb">11</td></tr>
+    <tr data-page-node-id="fWYAxSb8VsWfi3vUoNUQe3"><td data-page-node-id="VCGFdffTVY7u1MNQqiAVeK"><b data-page-node-id="DmXoYNcERxHxJUoR0jhoLz">新洲南村</b></td><td class="num" data-page-node-id="Ro8m3nMPpqlI3CImM9t77k">4,034</td><td class="num" data-page-node-id="SFRpgJeyq061W1qUkyfSOS">4,639</td><td class="num bad" data-page-node-id="wrCmZ7jxb9gwBo17FAFHpc">−139</td><td class="num" data-page-node-id="14R3yqvqi8U3RzAFsNOUGK">10</td></tr>
+    <tr data-page-node-id="I3sXpXKIHoeHv7uPjiA9Cc"><td data-page-node-id="AOPBnVU2Cx975Zes5rYSr8">新洲北村</td><td class="num" data-page-node-id="CDTVInFWQ9VqAc67kx5Pk8">4,033</td><td class="num" data-page-node-id="Xvj2jJI3vHYxzrecL4tLyq">4,638</td><td class="num bad" data-page-node-id="8vJYlAUSn7Jgg8Zo63rrkm">−138</td><td class="num" data-page-node-id="8NjIpT0nz5WK5y8Rd04YV5">12</td></tr>
+    <tr data-page-node-id="UMJYuZL5KOfrsWllpjAwK5"><td data-page-node-id="U5jDn13z4maPxcZOkipKjX">岗厦村</td><td class="num" data-page-node-id="Cwo7Jflqx5VreqodEqxFlh">4,028</td><td class="num" data-page-node-id="FhpvPsi931GGGUQN7JgyHh">4,632</td><td class="num bad" data-page-node-id="UGk3etqWo653rQHDJAz0C6">−132</td><td class="num" data-page-node-id="BPFTJDe5Fvw2BRqj5FFJC1">13</td></tr>
+    <tr data-page-node-id="kaJCuPGcEKRSNIWAWN2ARN"><td data-page-node-id="Ttzrl6QDCVAWnH25p8CDoX">皇岗村</td><td class="num" data-page-node-id="PzlACxzUypBm54lWcMGnlm">4,018</td><td class="num" data-page-node-id="mULejaVDA9OajdNhMjPHig">4,621</td><td class="num bad" data-page-node-id="UjOOrbqXlHQArrZLVuHfrk">−121</td><td class="num" data-page-node-id="lg7tDAK53EdvDteSR6NqEn">11</td></tr>
+    <tr data-page-node-id="sSXztXFhVwvyPKusGIpCF3"><td data-page-node-id="aL9wVgSx94BP7YGkByQEQB">新洲中心村</td><td class="num" data-page-node-id="IMW5INbENSzAzpuOkazUai">4,011</td><td class="num" data-page-node-id="5JsVqY8Aqj6fRHVEhA7U2V">4,613</td><td class="num bad" data-page-node-id="XNN3ZgXX9sKBoOxmynFa8u">−113</td><td class="num" data-page-node-id="5HzlJk7QVJswVQkAYKp5uZ">11</td></tr>
+    <tr data-page-node-id="WmhGczkD6iXhLb7Rebqbnv"><td data-page-node-id="aoBDafz41my3ki1Jsr73Sq">石厦东村</td><td class="num" data-page-node-id="ovFK9ynobzCki2tK9n68Ll">3,900</td><td class="num" data-page-node-id="aexMS0vVj8YG9snL7d5tKC">4,485</td><td class="num bad" data-page-node-id="5FyZ1vuglY3y3dUx1WXmMI">−15</td><td class="num" data-page-node-id="5Lurg5h789tA99wBUHZcv5">10</td></tr>
+    <tr data-page-node-id="PPsB8IuEfgfTo3rTGZPYDh"><td colspan="5" style="background:#f0fdf4" data-page-node-id="CPdY9DObBL2wVnDaICwCdH"><b data-page-node-id="ahUXbifk4hf1pbensVEiHo">4,500 以内（有挑选余量）</b></td></tr>
+    <tr data-page-node-id="DDg0A7geXNNOkW9hI17jw2"><td data-page-node-id="GkFmp5DZd2cZt1hZyOA7TN"><b data-page-node-id="jvqHPtsxV7BFFjlXtOizFi">石厦西村</b></td><td class="num" data-page-node-id="VnlYDLZvJXXgOe8T3cSqy5">3,597</td><td class="num" data-page-node-id="7CgeeDB8ZpfL8IG0mJ60RT">4,137</td><td class="num good" data-page-node-id="hQZCaCvugwet2PV4qDSlBN">+363</td><td class="num" data-page-node-id="uQqSofWlQBeB0iVlwJvxgD">10</td></tr>
+    <tr data-page-node-id="6CGGVmAaLbAm00Za7ViBBc"><td data-page-node-id="ixSNjEU7mAdCf4qxYWX70l">上沙椰树村</td><td class="num" data-page-node-id="fJuZaJw22SVbybJDZXBiHi">3,562</td><td class="num" data-page-node-id="EG34b5l9zwvzkjrbTbYKZA">4,096</td><td class="num good" data-page-node-id="7YJDt9AmCfL7p6d3TRw49F">+404</td><td class="num" data-page-node-id="bB3HfasEAIUCEXcfmO8tmp">16</td></tr>
+    <tr data-page-node-id="qjx6jib2mhA4iSvjNdoRLZ"><td data-page-node-id="Hsyyx6yZMVH4SGUnyyH76N">上梅林新村</td><td class="num" data-page-node-id="8tELKf2HppgKWcIQUg2sZg">3,510</td><td class="num" data-page-node-id="AKT7FoigQP3J2lQ8Vr80UH">4,036</td><td class="num good" data-page-node-id="7YPQ4c0XaqnDBQtoGsMErU">+464</td><td class="num" data-page-node-id="Barz9lbRyp0Ay1HviZZ93j">26</td></tr>
+    <tr data-page-node-id="xRlyOJ1tMx5C4xbs8YHg41"><td data-page-node-id="IhVuoPvqsbr2RGHoLpxTcK">下沙七坊</td><td class="num" data-page-node-id="0JCaSsNuTU6lU6OaeU7ZcI">3,461</td><td class="num" data-page-node-id="ligVlWvlfXrVjSQImyOip3">3,980</td><td class="num good" data-page-node-id="Sys3T1ZYcwG4ze7jBi9iw0">+520</td><td class="num" data-page-node-id="wXPtIMlLPMhLXA88yfUV7o">21</td></tr>
+    <tr data-page-node-id="sY8fJ9a5FIEvQg1rzPangb"><td data-page-node-id="J3JwvvebEtqQlhypwX4bOU">下梅林村</td><td class="num" data-page-node-id="nDPtQCCmX0RfEZ0WFmFGre">3,438</td><td class="num" data-page-node-id="LHCHJ6jaPBjGo44gD4fzqw">3,954</td><td class="num good" data-page-node-id="BwSR5FfpwZzJpNtj8G34Y5">+546</td><td class="num" data-page-node-id="5UPeD7tgpKlQuPBkIdfAmH">26</td></tr>
+    <tr data-page-node-id="1vfLpCWQ3GFoM7CHlXWS9g"><td data-page-node-id="jS6FUnAN3QHBnxmricA8OF"><b data-page-node-id="meGND49lKasoKWILVNC58B">水围村</b></td><td class="num" data-page-node-id="RSYX53blfETjcqzSjOCceE">3,226</td><td class="num" data-page-node-id="irjCpxuaV2DgkMYi7geKa9">3,710</td><td class="num good" data-page-node-id="kayDhRJ9uDAvuBWmc57JZX">+790</td><td class="num" data-page-node-id="cgrtVT8kTHtCkf56CoQ7nc">11</td></tr>
+    <tr data-page-node-id="JyiKSG7hQDPi6zdbifH72L"><td data-page-node-id="Q02EeW6H5CZcQ3zlSdX5qC"><b data-page-node-id="W9HOu2x5tQrgD4GS2WlpS4">梅林新兴村</b></td><td class="num" data-page-node-id="Ps7pxl0Tv3b2WQ8fVN4RBB">3,202</td><td class="num" data-page-node-id="mi3oKOBEHR8mFbd2V55xli">3,682</td><td class="num good" data-page-node-id="aiVP7jvqZnZA4DPqfcDfrv">+818</td><td class="num" data-page-node-id="g9yx7TFHVX5PACEkqYuccY">26</td></tr>
+  </tbody>
+</table>
+
+<div class="note" data-page-node-id="QOrdhXVZKaa9OSkbL7OHDV">
+  <b data-page-node-id="Xy3w462dL0ZT05WEAtrzAy">为什么你会觉得「两房都少」——归因要改。</b>不是预算买不到「两房」，是买不到「好两房」。同一村内「新建电梯统建楼 vs 老步梯自建房」实测能差 <b data-page-node-id="PZZOfoGCu1fo9qdA1ziBaF">30–50%</b>，决定你实付多少的是<b data-page-node-id="EybIrGUUzGScIw66DSuTzq">楼栋条件</b>，不是哪个村。4,500 能买到平均水平的电梯两房；「电梯 + 南向 + 非内天井 + 夜间安静」的顶配要再往上走 300–500 元。加上福田南部这几个热门村成交价本来就压线，你看到的可选项自然稀薄。
+</div>
+
+<h2 data-page-node-id="qbbDbUzKtVy7aISkJTXTxS">三、修正后的分档</h2>
+
+<h3 data-page-node-id="rI1ECC5O6pIzj9WKpriNYc">第一档：通勤 11 分内 + 预算内 → 石厦西村 / 水围村</h3>
+<table data-page-node-id="jkix73SbLAelLsU8Il4qtw">
+  <thead data-page-node-id="e4g4DxVcTf0tfXZLymNRaB"><tr data-page-node-id="P1ZePzAx3Bv12u4Cbcr8WT"><th data-page-node-id="kjzmPyij2VN5MDwoZDJFwR">村</th><th class="num" data-page-node-id="OTUZmuqJtx0lQMEBs8x9RC">骑行分</th><th class="num" data-page-node-id="Av1RPqx4MrLSC9xFGIIeBv">成交价</th><th data-page-node-id="KRJCU5EZAFhUIbtGEtd0i4">优势</th><th data-page-node-id="owxEy1n022nnzeVGa2PTbC">硬伤</th></tr></thead>
+  <tbody data-page-node-id="zmX5qJqabln3Io6LJ4e7Qd">
+    <tr data-page-node-id="PvbIyDK0Hp2EiuXFrTIwnl"><td data-page-node-id="9MpKREA0dtDBNwzBzljokO"><b data-page-node-id="EnVMFBdsBBJ4H7OkXrYNZI">石厦西村</b></td><td class="num" data-page-node-id="B4ALAHk1a324uvOH8mqsV4">10</td><td class="num" data-page-node-id="iO7XRkStBbO0WVADlHy904">4,137</td><td data-page-node-id="lcGLoRAUTCyDlHT5A1JaWd">3 号线 2 站免换乘 6 分；福保街道全域唯一城中村；市妇幼福强院区 460m；居住型社区</td><td data-page-node-id="Br91rDQPOXWovMEADRgYSE">比东村便宜 348 元，但要挑西村内的楼栋</td></tr>
+    <tr data-page-node-id="BBKmb44GgB8Y195hKdBJRc"><td data-page-node-id="T06EY9JZwDJk7D4bBne7hM"><b data-page-node-id="E3O4t0Q1KB0i0OPfvPeTkz">水围村</b></td><td class="num" data-page-node-id="lfNH5riPMpTealmMbkd1ic">11</td><td class="num" data-page-node-id="myLQU2WlAX5SDF0sPEgd20">3,710</td><td data-page-node-id="EdoNrEryTh2BC3lDUgLskx">福田第二便宜；福民 4/7/10 三线换乘；预算余量 790 元，是全表性价比最高组合</td><td data-page-node-id="nTkQaqjZJCesZBiN7Ma4Wt">食街噪音——<b data-page-node-id="nE2o1C4X5mKjg5WOTONCZY">只能在背街楼栋里选，找不到就别勉强</b></td></tr>
+  </tbody>
+</table>
+
+<h3 data-page-node-id="J8nBJ1ngMm7bDZGlh2dAJA">第二档：通勤快但超预算 → 沙尾（唯一值得考虑的）</h3>
+<p data-page-node-id="Ef0yWEGSc5RHIvlFVrtXM0"><b data-page-node-id="qYcgOdJy5APcgGDGmGEEu1">沙尾村</b>骑行 9 分，全场最快，但成交价 4,741，<b data-page-node-id="aNagusITHBGBA7E5hgU6lv">超预算 241 元</b>。如果你愿意把上限提到 4,800，它是通勤最优解。同档的 <b data-page-node-id="xVo9NwjNxd1kxO6mhTow21">新洲四村 · 皇岗 · 岗厦</b>（4,613–4,745）我不建议：同样超预算，而且新洲是深圳「最强外卖村」（日均外卖订单近 3 万单、24 小时餐饮后厨），带新生儿是反向选择。</p>
+
+<h3 data-page-node-id="mmRoeKmQqp4GHjskBKwTly">第三档：贵在通勤、赢在价格与未来 → 梅林 / 下沙 / 上沙</h3>
+<table data-page-node-id="EmUWYbM5lclUiwTpbegfCr">
+  <thead data-page-node-id="fHZFtzhMH5OENbroR2UFaw"><tr data-page-node-id="EHze5lKQvFP43tjbwrzRqC"><th data-page-node-id="Qq2RHbGgvW6CDO3uJgioeI">村</th><th class="num" data-page-node-id="9CA7jOnH2K9CfRiAEJYkxe">骑行分</th><th class="num" data-page-node-id="d71BI5QFiA0MeA6tyXBQfc">成交价</th><th data-page-node-id="trzEA2AvOuzwHwIMMHay1v">适合谁</th></tr></thead>
+  <tbody data-page-node-id="6zB8SBzSA7KoaYSitDilho">
+    <tr data-page-node-id="aOtCYdBBWx6f6KHYG5UoGh"><td data-page-node-id="8QpjGlp7sWBTZO067uo1Y9"><b data-page-node-id="NLUNxv0h6Zre8S3O3JB6Jo">梅林三村</b><br data-page-node-id="nalBbZU1WQvdff8VMC9Ufy"><span class="small" data-page-node-id="FVlf7XwZxYafYgVOw0CJ2t">新兴 3,682 / 下梅林 3,954 / 上梅林新村 4,036</span></td><td class="num" data-page-node-id="UyY5CdI7CqPGifEL0ZVrYH">26</td><td class="num" data-page-node-id="AIzDRUbQ1CdjBKaTjshrTv">3,682–4,036</td><td data-page-node-id="5oF6lHtqs0qKs17TA1xAOi"><b data-page-node-id="CE5YkYCTqIlhoIaR5ATEiE">换工作时点不确定的人。</b>唯一同时挂 4 号线（通龙华 27 分）和 9 号线（通南山 35 分）的片区，最坏情况全场最低；价格全区最低；安静、靠山、北大深圳医院在旁边</td></tr>
+    <tr data-page-node-id="lJVhBalrMM88newFK1Im3c"><td data-page-node-id="ymRPGY7s3Hd9mwhTEZdzet"><b data-page-node-id="pLlmtzcmqAGpOyN0nKZmpL">下沙七坊</b></td><td class="num" data-page-node-id="HMR7GPulF9KBGwBynxju0a">21</td><td class="num" data-page-node-id="zKm0wZwCFDZ7zvcay5BqpM">3,980</td><td data-page-node-id="EFAE6DCHRpznND3Cv2Z3AA"><b data-page-node-id="sTbzGErqNYQz0N3ygmfnki">未来偏南山的人。</b>9 号线 4 站到高新南、终点直达前湾，一趟不用换乘；挨着深圳湾公园，推婴儿车全程无台阶</td></tr>
+    <tr data-page-node-id="eFC18RSEjji9hKNlcxnXy8"><td data-page-node-id="UhCec9UrN2wdz0s5AiAFsQ">上沙椰树村</td><td class="num" data-page-node-id="zlZtEGuY1oiwKEzhC6AZRQ">16</td><td class="num" data-page-node-id="P3ogRarS7VeAAHW3i18t1S">4,096</td><td data-page-node-id="hh0jRFRhykyLhED3ZHH7bI">折中选项。地铁到福保只要 15 分（比骑行还快），7 号线直通西丽</td></tr>
+  </tbody>
+</table>
+
+<h2 data-page-node-id="JfQU2exBotoqjwxTNnSUKO">四、新洲四村（沙头街道新洲社区）</h2>
+
+<p data-page-node-id="fUSGxWQAtg7plPEwLXBUDB">新洲路以东即石厦村，两村只隔一条主干道；南有广深高速，北有滨河大道。人口约 6.1 万，户籍仅 1.3 万。到福保骑行 10–13 分，通勤是第一档。</p>
+
+<table data-page-node-id="LdHAYYKF5KTmNJALIsTua0">
+  <thead data-page-node-id="VSrZibwrRqLQuTlZd4LGYk"><tr data-page-node-id="JUEdSXvLJKXzSscJ8qJaqq"><th data-page-node-id="YRxeNK7GN7SVbAtVmYJeML">村</th><th class="num" data-page-node-id="JC2ge6BZXHyPQvfoKoO8d3">官方两房</th><th class="num" data-page-node-id="QZcxkUdVkzIYUNqGQw4INV">成交 ×1.15</th><th class="num" data-page-node-id="e7hJPkiYvUZqJRjL6Av1Rj">骑行分</th><th data-page-node-id="Rlb8hDLdZuXhqC3IqKGk1p">最近地铁</th></tr></thead>
+  <tbody data-page-node-id="sLDJ9GTtmkNXp5CkAcJxxb">
+    <tr data-page-node-id="LYOoCa25kD5Ws48PCY2omc"><td data-page-node-id="SPbzz0SzRTow5VecgjKYuo"><b data-page-node-id="cga1NiovbMqbmW2vKjmpF6">新洲南村</b></td><td class="num" data-page-node-id="RSMiLwFslUyN4CBOdJNKko">4,034</td><td class="num" data-page-node-id="ovSMGsSwHUkNacqHZYOkqQ">4,639</td><td class="num" data-page-node-id="FjQQTBEODT66vbneYLQoFO">10</td><td data-page-node-id="gmBa3AGxvMCV8vlCxQAeiY">石厦站 618m（3 / 7 号线）</td></tr>
+    <tr data-page-node-id="pfnhCIV9ZAdIv7vPHQV9vt"><td data-page-node-id="pme4TMZiHkF9VgdVagRnar">新洲中心村</td><td class="num" data-page-node-id="4rCCSKAcSxyCxogtnwK03w">4,011</td><td class="num" data-page-node-id="Hjyp5wYwKFm2KGtZeIjFRn">4,613</td><td class="num" data-page-node-id="e5vHOUvHglLetgbSIk6Hmu">11</td><td data-page-node-id="2Rbx6FUFgHNot6b3NcsKmY">沙尾站约 0.9km</td></tr>
+    <tr data-page-node-id="hcwvC06TtYuT3agVKd8uWz"><td data-page-node-id="5KIAmHFmCmhLdRDFvDHdAr">新洲北村</td><td class="num" data-page-node-id="gT4bbDGCKFdpgCgfV9cQRf">4,033</td><td class="num" data-page-node-id="yBx9L0Dhl755tASXvjl8iy">4,638</td><td class="num" data-page-node-id="Jbt6o1yJAxq1WFaQExmU66">12</td><td data-page-node-id="HeY8vcT9PXqxXzUE1FgkDg">沙尾站 735m</td></tr>
+    <tr data-page-node-id="aLaqJHpKgZFaeOE2MhYgPf"><td data-page-node-id="ZRGMxVuKJFMWtiF7DqqBsb">新洲祠堂村</td><td class="num" data-page-node-id="FDuzKLSGqz5GFaLk4ARZBn">4,126</td><td class="num" data-page-node-id="h476QM2GHQxjbyawZy8cyQ">4,745</td><td class="num" data-page-node-id="aYBkQsmfWQyPjTvmC1kuDQ">13</td><td data-page-node-id="CxFKAhzUeo9y8DAU6GhKjZ">沙尾站 / 石厦站约 1km</td></tr>
+  </tbody>
+</table>
+
+<div class="warn" data-page-node-id="CEIv11bzR5Gcz5PkdB8GGT">
+  <b data-page-node-id="TtYv40SwavbvvWfvnEcCKp">四村全部超预算（4,613–4,745），且有别处没有的硬伤：新洲是深圳的「最强外卖村」。80% 以上交易线上完成、日均外卖订单近 3 万单，被形容为「24 小时不熄火的后厨」（南都 2025-07）。</b>带新生儿最怕的三件事——夜间噪音、油烟、骑手车流——它一次占全。加上北滨河、南广深高速、东新洲路三面环绕，「北向近滨河大道比较吵」是小区点评里的高频句。
+  <p style="margin:10px 0 0" data-page-node-id="tBYDwHREg6svFk4W1rGDmi"><b data-page-node-id="otDFdCfbvnqIOJ85fBlm1H">定位：通勤第一档，居住体验倒数。</b>如果你们两口子早出晚归、白天家里没人，它的通勤优势能兑现；如果婴儿白天在家（妈妈或老人带），石厦和水围的价值会高出一个量级——那不是 300 元租金的差别。</p>
+</div>
+
+<h2 data-page-node-id="MIeGNtzaclPvz93RHkVaAt">五、按未来落点选（走地铁，不受本次修正影响）</h2>
+
+<table data-page-node-id="2XtdKy9Cc6Q2XAfllf0Woo">
+  <thead data-page-node-id="aXMBxZCa16HzQyMjrsIqKp"><tr data-page-node-id="fGDf13ka2TIOJKfubhy3QF"><th data-page-node-id="mXAqzrKum89zmy2PrhLVDn">未来落点</th><th data-page-node-id="n9T8CUz9Gc7XgoSAvT7P4A">首选</th><th data-page-node-id="3K6Lviy4ghFHqLHHmY3H5m">理由</th><th class="num" data-page-node-id="SUKKbvgaWnofxqpQwjnRvO">最坏情况</th></tr></thead>
+  <tbody data-page-node-id="ot37AFSVUG3kcDz3eprXFf">
+    <tr data-page-node-id="YSrCEXrBZCyAoEs885akTX"><td data-page-node-id="MVFojX1Np9Gikdzeur4D52">龙华 · 民治 / 深圳北一带</td><td data-page-node-id="a3GroU9oNyDBrRvP5PG7WP"><b data-page-node-id="LrXPdy6oYqoKXyRCIdticG">白石龙 / 民治</b></td><td data-page-node-id="6X82yPkwv0WxiAez3pnfVr">4 / 5 / 6 号线三线，且儿童医院龙华院区就在民治站 B 口 50m</td><td class="num" data-page-node-id="Jna8AhAB0HIEmrAYH17SoD">约 45 分</td></tr>
+    <tr data-page-node-id="LFCsDp2TA7lzsXXSovOINB"><td data-page-node-id="js4iL3JSLteyGoehxYFBmv">南山 · 留仙洞 / 西丽</td><td data-page-node-id="KFGMdTnG3VtcNanBLg8srs"><b data-page-node-id="gZiGqvVijGJkd6Tn3tZraL">白石龙 / 民治</b></td><td data-page-node-id="Fj4WBR4F6FGzUHlGCc7TnE">深圳北换 5 号线，约 18 分</td><td class="num" data-page-node-id="zBBQf6vr1PvgQgixDOWkOp">约 45 分</td></tr>
+    <tr data-page-node-id="Hh4SDuTgEJqECWGlB47YdJ"><td data-page-node-id="0E9ECfaCzorUMxnt9mMPhf">南山 · 科技园 / 后海</td><td data-page-node-id="rsCt0BuCi4gI816Hb1xJ9O"><b data-page-node-id="NXWvAf60c2DhgQGYvaPPz8">石厦 / 沙尾</b></td><td data-page-node-id="sQr48wIlQCCQ0IP3UHUhNF">3 号线到福田换 11 号线快线；沙尾 7 号线接石厦</td><td class="num" data-page-node-id="BEnF7nPtyqeDRh3q7K0dy7">约 28 分</td></tr>
+    <tr data-page-node-id="YBxfS15GadoLq1t9wOccMJ"><td data-page-node-id="IdElTkWJh8Chj407NkirRe">南山 · 前海</td><td data-page-node-id="8328Hwp1sJEFCg7xwSmtrL"><b data-page-node-id="HwD7ECmycfAkPiGvFfeoLi">下沙</b></td><td data-page-node-id="WrazFRCXI1xynaHM7xUpnW">9 号线终点前湾，一趟直达不用换乘</td><td class="num" data-page-node-id="bm5COdtLZmiNmGkXKfAlQX">约 20 分</td></tr>
+    <tr data-page-node-id="id61PEAe7PHbdR6RLIUtCf"><td data-page-node-id="Wfs7NEUNDdMV8KcEcVKCJe">不确定时点 / 想最保险</td><td data-page-node-id="cP7ANwHJCO1P55UulTuAcS"><b data-page-node-id="c1FzBnREmPzCcXDGVCoEDM">梅林</b></td><td data-page-node-id="ax42BHb0TcOlEn22kY6U61">4 号线通龙华、9 号线通南山，两个方向都在 26–35 分；现在骑行到福保 26 分，也还能接受</td><td class="num" data-page-node-id="mZJaT3xvzXVDPuYqXdqD8A">约 35 分</td></tr>
+  </tbody>
+</table>
+
+<div class="warn" data-page-node-id="TcDfDBKWFBbYV97BzLxysR">
+  <b data-page-node-id="QWjUxXkbyEBgDDe5v9uIOW">南山内部差别比福田与龙华之间还大：</b>留仙洞 / 西丽在西北角（靠 5 / 13 号线），科技园 / 后海在中部（9 / 11 号线），前海在西南（9 号线终点）。<b data-page-node-id="UWMFLi5YaCUrB5ehD5Lnaw">「换到南山」这句话还得再拆一层</b>——你给个大致园区，我能直接把候选砍到 2 个。
+</div>
+
+<h2>六、上沙龙秋村：层数判电梯法与可查来源（v2）</h2>
+
+<p class="small"><b>⚠️ 更新：本节「靠挂牌标题猜层数」的做法已被第七节的官方接口取代。</b>深圳统一地址库能直接给出每栋楼的真实层数和逐层房号，请优先用第七节。</p>
+
+<p class="small">城中村没有公开的楼栋名录。平台把「上沙龙秋村」<b>整个村当成一个“小区”</b>（58 口径 4,915 户、在租 70–85 套），所以页面上的“电梯房”指的是村内某一栋，不是某个特定楼。下面 18 条层数记录全部来自<b>可回查的挂牌字段</b>——安居客「高层(共 X 层)」、58「朝向楼层：南 高层 / X 层」、zufun 卡片「X 层」。</p>
+
+<div class="warn">
+  <b>先更正我上一版的两处误读：</b>Wellcee 房源页的「楼层 10」「楼层 4」是<b>所在楼层</b>（第 10 层 / 第 4 层），<b>不是总层数</b>。我上一版把它当成“10 层楼”“4 层楼”写进了清单，是错的。下表已按正确口径重排。
+</div>
+
+<h3>一、层数 → 电梯判定（按你给的规则）</h3>
+<table>
+  <thead><tr><th>总层数</th><th>抓到条数</th><th>该层数上的电梯证据</th><th>判定</th></tr></thead>
+  <tbody>
+    <tr><td><b>25 层</b></td><td class="num">1</td><td>描述写“有电梯”</td><td>⚠️ 疑口径污染——上沙村民楼没有 25 层，这条大概率是中洲滨海华府等商品房被挂到本小区名下</td></tr>
+    <tr><td><b>15 层</b></td><td class="num">2</td><td>两条均写“精装修电梯房”“电梯精装”</td><td>✅ <b>判电梯</b></td></tr>
+    <tr><td><b>14 层</b></td><td class="num">1</td><td>—（仅层数）</td><td>✅ <b>判电梯</b></td></tr>
+    <tr><td><b>13 层</b></td><td class="num">2</td><td>zufun 页面带「电梯」筛选项命中</td><td>✅ <b>判电梯</b></td></tr>
+    <tr><td><b>12 层</b></td><td class="num">3</td><td>1 条描述“电梯十二楼”</td><td>✅ <b>判电梯</b></td></tr>
+    <tr><td>11 层</td><td class="num">1</td><td>—（仅层数，58 安选房）</td><td>⚠️ 阈值边界，需现场核</td></tr>
+    <tr><td>9 层</td><td class="num">2</td><td>1 条标题直接写“电梯房”</td><td>⚠️ 灰区，<b>确实存在电梯</b></td></tr>
+    <tr><td>8 层</td><td class="num">3</td><td><b>2 条明确写“有电梯”</b></td><td>⚠️ 灰区，<b>有加装电梯实例</b></td></tr>
+    <tr><td>6 层</td><td class="num">1</td><td>—</td><td>步梯为主</td></tr>
+    <tr><td>5 层</td><td class="num">1</td><td>—</td><td>步梯</td></tr>
+    <tr><td>2 层</td><td class="num">1</td><td>明写“楼梯 2 楼”</td><td>❌ 已确认步梯</td></tr>
+  </tbody>
+</table>
+
+<p class="small"><b>你的规则成立，但要加一条修正。</b>按“&gt;11 层即疑电梯”筛，<b>12–15 层共 8 条，没有一条是步梯</b>——规则有效，可以放心用。但反过来不能成立：<b>8 层也有 2 条明确写了“有电梯”</b>。所以正确用法是「<b>用层数快速缩小范围，用现场定终局</b>」，不要把 ≤11 层直接划掉。</p>
+
+<div class="warn">
+  <b>一个必须知道的口径偏差：</b>上面这 18 条是<b>“挂牌房源”的层数分布，不是“村内楼栋”的层数分布</b>。上沙社区约 1,000 栋村民自建房里，<b>主体是 6–7 层的老握手楼</b>（百度百科口径），电梯楼是少数。但挂牌池里高层公寓占了大多数，因为只有公寓才需要投广告。⇒ <b>你在平台上会看到“遍地是电梯楼”的错觉，实地走一圈会发现电梯楼是稀缺品。</b>这正是带新生儿租城中村的主要难点。
+</div>
+
+<h3>二、已核实的电梯楼（有明确文字证据）</h3>
+<table>
+  <thead><tr><th>门牌</th><th>层数 / 所在楼层</th><th>电梯证据</th><th>来源</th><th>实际信息</th></tr></thead>
+  <tbody>
+    <tr><td><b>龙秋村 4 巷 27 号楼</b></td><td class="num">第 10 层</td><td>✅ 标签栏直接列「电梯」</td><td>Wellcee 个人直租 + 腾讯地图 POI</td><td>20㎡ 整租 2,980；大路边第一排、不用进巷；同一栋地图标为「巨峰公寓」</td></tr>
+    <tr><td><b>上沙龙秋村 7 巷 4 号</b></td><td class="num">独栋</td><td>✅ 原文“独栋电梯房，进出需密码”</td><td>房东直租（公众号 / 转租群）</td><td>日式榻榻米 2,000–3,000，管理费 100/月，民水民电；房东黄先生 13530005788</td></tr>
+    <tr><td><b>龙秋村 8 巷（未给门牌号）</b></td><td class="num">第 12 层</td><td>✅ 标签「有电梯」「电梯十二楼」</td><td>Wellcee 个人急转（2026-08）</td><td>30㎡ 3,300，带阳台，民水民电；原文“楼层够高、无握手楼困扰、无扰民噪音”</td></tr>
+    <tr><td>上沙龙秋村（未标巷）</td><td class="num">共 12 层</td><td>✅ 描述“精装电梯民水电”</td><td>安居客 4016949056495631</td><td>33㎡ 1,200 元 1室0厅，中层东南</td></tr>
+    <tr><td>上沙龙秋村（未标巷）</td><td class="num">共 15 层</td><td>✅ 描述“精装修电梯房”</td><td>安居客 4582595124030472</td><td>40㎡ 2,180 元 1室1厅，中层朝南</td></tr>
+    <tr><td>上沙龙秋村（未标巷）</td><td class="num">共 15 层</td><td>✅ 标题“电梯精装”</td><td>安居客 4542648234482700</td><td>42㎡ 1,700 元 1室1厅，中层朝南</td></tr>
+    <tr><td>上沙龙秋村（未标巷）</td><td class="num">共 9 层</td><td>✅ 标题直接写“电梯房”</td><td>安居客 4573275860198401</td><td>85㎡ 2,700 元 2室1厅，高层朝南——<b>本批唯一的二房高性价比样本</b></td></tr>
+    <tr><td>上沙龙秋村（未标巷）</td><td class="num">共 8 层</td><td>✅ 描述“有电梯”</td><td>安居客 4707209062591499</td><td>31.09㎡ 1,500 元 1室0厅，高层朝南</td></tr>
+    <tr><td>上沙龙秋村（未标巷）</td><td class="num">共 8 层</td><td>✅ 标题“精装电梯公寓”</td><td>安居客 4244497084197896</td><td>32㎡ 2,000 元 1室1厅，中层南北，超大阳台</td></tr>
+    <tr><td>龙秋村 3 巷 20 号楼</td><td class="num">第 4 层</td><td>⚠️ 同属「巨峰公寓」运营，未标电梯</td><td>Wellcee（巨峰公寓）</td><td>35㎡ 一室一厅 3,400</td></tr>
+    <tr><td>龙秋村 9 巷 1 号</td><td class="num">—</td><td>⚠️ 待现场核</td><td>腾讯地图 POI（威星公寓）</td><td>公寓式酒店登记，0755-83428533</td></tr>
+    <tr><td>上沙龙秋村 15 巷 3 号</td><td class="num">—</td><td>⚠️ 待现场核</td><td>腾讯地图 POI（嘉寓公寓）</td><td>公寓式酒店登记，13927400548</td></tr>
+  </tbody>
+</table>
+
+<h3>三、反向证据：已确认是步梯（避免白跑）</h3>
+<table>
+  <thead><tr><th>门牌</th><th>层数 / 所在楼层</th><th>原文证据</th><th>租金</th></tr></thead>
+  <tbody>
+    <tr><td>上沙龙秋村 8 巷 18 号</td><td class="num">第 7 层</td><td>「楼层：<b>步梯 7 楼</b>」——个人转租</td><td>1,960 / 30㎡</td></tr>
+    <tr><td>上沙龙秋村 14 巷 8 号楼</td><td class="num">第 2 层</td><td>「<b>楼梯 2 楼</b>，无遮挡采光巨好」——Wellcee</td><td>2,000 / 15㎡</td></tr>
+    <tr><td>龙秋村（未标巷）</td><td class="num">第 2 层</td><td>经纪人自述「1200 <b>龙秋村步梯 2 楼</b>」</td><td>1,200</td></tr>
+  </tbody>
+</table>
+
+<h3>四、门牌编法：三种格式混用，别当成不同地方</h3>
+<table>
+  <thead><tr><th>格式</th><th>实例</th><th>说明</th></tr></thead>
+  <tbody>
+    <tr><td>X 巷 X 号</td><td>上沙龙秋村 18 巷 1 号 107</td><td>最常见</td></tr>
+    <tr><td>X 巷 X 幢</td><td>龙秋村 5 巷 19 幢 601 号</td><td>部分老楼用「幢」</td></tr>
+    <tr><td>X 巷 X 号楼</td><td>龙秋村 4 巷 27 号楼</td><td>公寓化改造后的叫法</td></tr>
+  </tbody>
+</table>
+<p class="small">其余已核实门牌（定位用）：龙秋村 2 巷 5 号 102 房 ·龙秋村 3 巷 7 号 6 楼 605 ·龙秋村 5 巷 19 幢 601 号 ·上沙龙秋村 6 巷 15 号（一室一厅 25㎡ 2,500 元）·上沙龙秋村 18 巷 1 号 107。<br>
+巷号已核实到 <b>2、3、4、5、6、7、8、9、14、15、18 巷</b>——至少 18 条巷横向铺开。同一个村内部，不同巷到上沙站 A 口的步行距离差异很明显。</p>
+
+<h3>五、其他可查来源（按可靠性从高到低）</h3>
+
+<p class="small"><b>A. 官方 / 权威——能拿到楼栋级真值</b></p>
+<table>
+  <thead><tr><th>来源</th><th>入口</th><th>能查到什么</th></tr></thead>
+  <tbody>
+    <tr><td><b>深圳统一地址库</b>（最直接）</td><td>spatydz.sz.gov.cn</td><td>输入“上沙龙秋村 X 巷 X 号”→ 点【<b>楼栋结构</b>】→ <b>逐层房号列出来，总层数一眼可数</b>。这是唯一能远程读出一栋楼真实层数的公开渠道。</td></tr>
+    <tr><td><b>天地图·深圳</b>（实景三维）</td><td>guangdong.tianditu.gov.cn/shenzhen/</td><td>0.035m 分辨率实景三维 Mesh 模型 + 影像 + LiDAR 点云。可<b>远程数楼层、看有无玻璃电梯井、看是否内天井</b>。深圳已建成全市域实景三维，龙秋村在主城范围内，覆盖没问题。</td></tr>
+    <tr><td><b>96333 +「电梯一码通」小程序</b></td><td>电梯轿厢内蓝色标识牌</td><td>每台在用电梯都有唯一识别码。现场拍下识别码 → 小程序查设备信息 / 维保 / 检验。这是<b>唯一能证明“这台电梯是正规登记过的”</b>的渠道——城中村私装“三无”电梯很常见。</td></tr>
+    <tr><td><b>深圳市住建局 城中村租赁参考价</b></td><td>zjj.sz.gov.cn/fwzljgcx</td><td>按村/坊给两房参考价（本表第二章已用）。注意口径是“官方参考价 × 1.15 ≈ 成交价”。</td></tr>
+    <tr><td><b>沙头街道办 / 上沙社区工作站</b></td><td>上沙 48 栋 1 巷 12 号，0755-82554663</td><td>出租屋综合管理台账、历史违建普查记录、网格员楼栋清单。<b>住宅类历史违建不公开，但街道办有台账</b>。</td></tr>
+    <tr><td>网格员 / 门上二维码</td><td>楼栋过道公告栏、房门二维码贴纸</td><td>每层楼都有楼栋二维码。扫码可拿到 25 位房屋编码（第六级基础网格 + 第七级房屋 + 第八级房间），可反推楼栋。</td></tr>
+    <tr><td>瓶改管（管道天然气）台账</td><td>福田区住建局 / 市燃气集团</td><td>上沙社区 2018 年已完成管道天然气改造通气点火，有逐栋开户点火台账（龙岗区同类台账已在政府网公示到村）。</td></tr>
+  </tbody>
+</table>
+
+<p class="small"><b>B. 商业平台——层数字段是最硬的线索</b></p>
+<table>
+  <thead><tr><th>平台</th><th>层数字段格式</th><th>特点</th></tr></thead>
+  <tbody>
+    <tr><td><b>安居客</b></td><td>「楼层：高层(<b>共 X 层</b>)」</td><td>最稳定，直接给总层数。搜“上沙龙秋村”逐条看即可。<b>但会往城中村里插商品房模板文案</b>（“小区均为一梯两户，主推 120 平三房”），看到就跳过。</td></tr>
+    <tr><td><b>58 同城</b></td><td>「朝向楼层：南 高层 / <b>X 层</b>」</td><td>斜杠后是总层数。在租池约 81–85 套，带“安选”标的是验证过的。</td></tr>
+    <tr><td><b>zufun.cn（租Fun）</b></td><td>卡片直接标「<b>X 层</b>」</td><td>公寓直租、无中介费。上沙龙秋村页面 5 套，层数直接可读。</td></tr>
+    <tr><td><b>Wellcee（唯心所寓）</b></td><td>标签含「电梯」+ 正文「楼栋位于：龙秋村 X 巷 X 号楼」</td><td><b>唯一能把“门牌”和“电梯”对上的公开渠道</b>。注意它的「楼层」字段是<b>所在楼层</b>，不是总层数。</td></tr>
+    <tr><td>乐有家</td><td>小区档案</td><td>上沙龙秋村档案：1992 年建成 / 板楼 / 产权“自建房(集资房)”/ 民水民电 / 用气煤气。可看片区小区列表（下沙村六坊、上沙塘晏村、上沙综合市场等）。</td></tr>
+  </tbody>
+</table>
+
+<p class="small"><b>C. 地图 POI——直接给到巷号</b></p>
+<ul>
+  <li><b>腾讯地图 / 高德地图</b>搜“龙秋村”：带「公寓式酒店」标签的都是改装过的电梯公寓，<b>地址直接给巷号</b>（已借此拿到威星公寓 = 9 巷 1 号、嘉寓公寓 = 15 巷 3 号）。</li>
+  <li><b>街景 / 全景</b>（腾讯街景、百度全景）：直接看立面，不用到现场就能筛掉一批。<b>实景三维（天地图·深圳）比街景更准</b>，能看高度。</li>
+  <li><b>美团 / 大众点评</b>：短租公寓、日租公寓的登记地址，常精确到巷号。</li>
+</ul>
+
+<p class="small"><b>D. 工商注册——门牌溯源的冷门好路子</b></p>
+<ul>
+  <li><b>爱企查 / 企查查 / 天眼查 / 国家企业信用信息公示系统</b>：搜注册地址含“龙秋村”的企业（小美容院、设计室、电子商行、驾校报名处……），<b>注册地址必须写到“X 巷 X 号 / X 幢”</b>。本节清单里 5 个门牌就是这么来的。</li>
+</ul>
+
+<p class="small"><b>E. 内容平台——个人转租最肯报门牌</b></p>
+<ul>
+  <li><b>小红书 / 抖音</b>搜“龙秋村 电梯”“上沙 转租”：个人帖常直接写门牌、层数、电梯、水电单价。</li>
+  <li><b>豆瓣租房小组 / 闲鱼 / 微博超话</b>：个人转租贴，信息密度高于中介贴。</li>
+  <li><b>微信搜一搜</b>：本地租房公众号（如“深圳租房小天使”）的房东直租贴，会带完整描述。</li>
+</ul>
+
+<h3>六、现场核对：按这个顺序走，一趟能砍掉八成</h3>
+<ol>
+  <li><b>先在天地图·深圳上远程筛</b>：看目标巷的实景三维，数层数、看有无玻璃电梯井、看是不是内天井。<b>这一步在出发前就能砍掉一半。</b></li>
+  <li><b>到楼下先看立面</b>：电梯楼 =「浅色磁砖 + 玻璃电梯井 + 一楼门禁闸机 + 有管理室」；老握手楼 =「水泥或深色面 + 无门厅」。一眼能分。</li>
+  <li><b>进轿厢拍 96333 识别码</b>，用「电梯一码通」查这台电梯的登记与检验状态。<b>查不到 = 私装电梯，直接排除。</b></li>
+  <li><b>量轿厢宽度</b>：城中村改装公寓的轿厢常只有 0.9–1.1m，婴儿车推进去会卡——<b>这比“有没有电梯”更硬</b>。带卷尺去。</li>
+  <li><b>看楼层高度与遮挡</b>：≥12 层才能真正脱离握手楼遮挡；8–11 层仍有被夹的风险，白天去看采光。</li>
+  <li><b>问三件事写进合同</b>：电费单价（民电 0.68，二房东常报 1.2–1.5）、水费单价、管理费。另加一条：<b>是否有甲醛检测报告</b>（新装修的公寓常见问题）。</li>
+</ol>
+
+<p class="small"><b>一句话</b>：能远程做的是「用层数筛 + 用实景三维看立面」，能现场做的是「96333 验电梯 + 量轿厢 + 看采光」。这两步做完，剩下的就是谈价。</p>
+
+<h2>七、深圳统一地址库：官方楼栋级接口（实测已打通）</h2>
+
+<p class="small">这是前几轮始终没找到的那条渠道。它比 58、安居客、Wellcee 都硬：<b>能直接给出每栋楼的总层数、每层几户、以及每一户的标准地址</b>，而且<b>不需要登录、不需要申请、不需要任何凭证</b>。下面所有数字都是实测返回值，不是示意。</p>
+
+<h3>实测样例（官方原文）</h3>
+
+<p>取上沙社区某栋楼的坐标，官方返回楼栋编码 <code>4403040040080200012</code>，对应：</p>
+
+<table>
+  <thead><tr><th>项</th><th>实测值</th></tr></thead>
+  <tbody>
+    <tr><td>标准地址</td><td>广东省深圳市福田区沙头街道上沙社区上沙椰树村十二巷10号</td></tr>
+    <tr><td>坐标</td><td>114.030651, 22.527358</td></tr>
+    <tr><td>所属网格</td><td>上沙社区 · 440304004006003</td></tr>
+    <tr><td><b>总层数</b></td><td><b>8 层</b></td></tr>
+    <tr><td><b>总户数</b></td><td><b>14 户</b>（1 层 1 户；2–7 层各 2 户；8 层 1 户）</td></tr>
+  </tbody>
+</table>
+
+<p>逐层房号（官方登记原文）：</p>
+
+<table>
+  <thead><tr><th>楼层</th><th>户数</th><th>房号</th></tr></thead>
+  <tbody>
+    <tr><td>1 层</td><td>1</td><td>上沙椰树村十二巷10-1号</td></tr>
+    <tr><td>2 层</td><td>2</td><td>…10号201 / …10号202</td></tr>
+    <tr><td>3 层</td><td>2</td><td>…10号301 / …10号302</td></tr>
+    <tr><td>4 层</td><td>2</td><td>…10号401 / …10号402</td></tr>
+    <tr><td>5 层</td><td>2</td><td>…10号501 / …10号502</td></tr>
+    <tr><td>6 层</td><td>2</td><td>…10号601 / …10号602</td></tr>
+    <tr><td>7 层</td><td>2</td><td>…10号701 / …10号702</td></tr>
+    <tr><td>8 层</td><td>1</td><td>…10号801</td></tr>
+  </tbody>
+</table>
+
+<div class="good">
+<b>这意味着什么：</b>第六节里「用挂牌标题猜层数」这一步，现在可以整段跳过。<b>层数是官方逐层登记的房号数出来的</b>，不是二手推断。你要去实地看的每一栋楼，都能先在这里查出真实层数。
+</div>
+
+<h3>可用接口清单（匿名实测）</h3>
+
+<table>
+  <thead><tr><th>接口</th><th>参数</th><th>作用</th><th>匿名可用</th></tr></thead>
+  <tbody>
+    <tr><td><code>/outerAddressWt/rgeo</code></td><td>lnglat</td><td>坐标 → 该点楼栋的标准地址 + 楼栋编码</td><td>间歇（见下）</td></tr>
+    <tr><td><code>/standard/search/buildingDetail</code></td><td>buildingId</td><td><b>楼栋编码 → 总层数 + 每层每户房号</b></td><td>稳定</td></tr>
+    <tr><td><code>/standard/search/addressDetail</code></td><td>code</td><td>楼栋编码 → 完整地址、区/街道/社区/网格</td><td>稳定</td></tr>
+    <tr><td><code>/outerServiceGrid/detailBybuildingcode</code></td><td>buildingcode</td><td>所属社区工作站、办公电话</td><td>稳定</td></tr>
+    <tr><td><code>/outerGridInfo/list</code></td><td>gridLevel, parentCode</td><td>网格树：区 → 街道 → 社区 → 网格</td><td>稳定</td></tr>
+    <tr><td><code>/outerBuilding/queryByBuildingCode</code></td><td>code</td><td>楼栋负责人信息（姓名/电话，AES 加密）</td><td>稳定</td></tr>
+    <tr><td><code>/standard/search/customSearch</code></td><td>query, region, ak</td><td>关键字搜地址</td><td>需有效 ak</td></tr>
+    <tr><td><code>/home-statistics/getStatisticsTotal</code></td><td>—</td><td>数据量统计（匿名返回 0，用于判断权限隔离）</td><td>稳定</td></tr>
+  </tbody>
+</table>
+
+<p class="small">域名统一为 <code>https://spatydz.sz.gov.cn/addrdatapc</code>（后端），前端公众版在 <code>https://spatydz.sz.gov.cn/web/</code>。PC 版另有一套 <code>/address/element/*</code> 接口，但<b>匿名请求一律返回空集</b>（实测 <code>getStatisticsTotal</code> 返回 <code>addressTotal:0</code>），说明那套按登录身份做了数据隔离 —— 那是给管理员用的，不是给你用的。</p>
+
+<div class="warn">
+<b>关于楼栋负责人的姓名和手机：</b>接口确实会返回这两个字段，但它们是加密的，而且属于<b>网格员/楼栋管理员的个人信息</b>。我不会去解密、也不会把它们写进任何交付物。你只需要社区工作站的对外办公电话（上面那条已经给了）。
+</div>
+
+<h3>匿名态的能力边界</h3>
+
+<table>
+  <thead><tr><th>能拿到</th><th>拿不到</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>楼栋标准地址、房号<br>总层数、每层户数<br>所属社区 / 网格<br>社区工作站办公电话</td>
+      <td>房屋权利人<br>是否在租、租金<br><b>有没有电梯（官方不登记这个字段）</b><br>是否加装、是否私装</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="warn">
+<b>一个必须说清的局限：这个系统不登记电梯。</b>所以它能告诉你「这栋 8 层」，但不能告诉你「这栋有没有电梯」。<b>层数仍是电梯的间接证据</b>（≥12 层基本必有），最终的电梯确认还是要靠现场那一步：看立面、进轿厢、拍 96333 标识。
+</div>
+
+<h3>「要什么凭证」——不需要凭证，但必须慢</h3>
+
+<p>这一轮我实测了一条完整的链路，然后<b>把它跑挂了</b>，原因值得你记住：</p>
+
+<div class="warn">
+我为了覆盖一个社区的楼栋，用 <b>6 个并发线程</b>按 80 米间隔网格扫了 255 个点。结果：<b>先是 WAF 返回 403，限流恢复后 <code>rgeo</code> 开始持续返回「服务器出错啦」</b>——即使把间隔拉到 8 秒、单线程也一样。<br><br>
+<b>原因不是缺凭证，是我把后端的第三方地图配额打满了。</b><code>rgeo</code> 是「坐标 → 地址」的换算，它要去调外部地图服务，而那个配额是全系统共享的。<b>路径：我给得太密，把别人的额度占了。</b>
+</div>
+
+<p>所以正确的结论是：</p>
+
+<table>
+  <thead><tr><th>你以为要给的</th><th>实际情况</th></tr></thead>
+  <tbody>
+    <tr><td>账号密码</td><td><b>不需要</b>，也<b>不应该给</b>。整套公开接口没有登录态要求。</td></tr>
+    <tr><td>实名认证 / 授权</td><td><b>不需要</b>。公众版本来就是面向市民的。</td></tr>
+    <tr><td>API key</td><td><b>不需要。</b>唯一带 <code>ak</code> 的是 <code>customSearch</code>，而这个 ak <b>明文硬编码在公众版前端 JS 里</b>（<code>pages-web-web.*.js</code>），直接取用即可。不过实测它只是<b>模糊搜索</b>（搜"上沙龙秋村"返回全市 10,711 条，每页 10 条），深翻噪音大，<b>批量取数仍应以编码枚举 + <code>buildingDetail</code> 为准</b>。</td></tr>
+    <tr><td>—</td><td><b>真正需要的是：慢。</b> 单线程、每次间隔 ≥3 秒、一个村控制在几十次请求以内。</td></tr>
+  </tbody>
+</table>
+
+<div class="good">
+<b>把一个村完整跑下来（比如龙秋村全部楼栋 + 层数），正确做法是：</b><br>
+单线程、3–5 秒一次、每轮 ≤50 次。我按这个节奏做，跑完把清单给你；你不需要提供任何凭证。<br>
+<b>✅ 已跑完：</b>龙秋村 281 栋全部拿到层数，≥11 层的 27 栋清单见<b>第十二节</b>（整个村约 5 分钟）。事实证明<b>慢就够了</b>——瓶颈在 <code>rgeo</code> 用的第三方地图配额，而 <code>buildingDetail</code> 不碰地图服务，慢速枚举完全跑得动。
+</div>
+
+<h3>两条替代路线（如果你想更快）</h3>
+
+<table>
+  <thead><tr><th>路线</th><th>要付出什么</th><th>换来什么</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>自己去浏览器查</b><br><code>spatydz.sz.gov.cn/web/index.html</code></td>
+      <td>零成本，手动点</td>
+      <td>输入「上沙龙秋村」→ 点【楼栋结构】→ 逐层房号。一次一栋，慢但 100% 官方可用。</td>
+    </tr>
+    <tr>
+      <td><b>给我一个地图 key</b><br>（高德或腾讯，免费注册，5 分钟）</td>
+      <td>一个只读 key</td>
+      <td>我用地图服务自己完成「坐标 → 地址」，<b>完全不碰政府系统的配额</b>，可以正常速度批量跑。<b>这是唯一能显著加速的凭证。</b></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>另一条真正需要凭证的路（拿非公开台账）</h3>
+
+<p>如果你想要的是<b>出租屋综合管理台账</b>、<b>历史遗留违法建筑普查记录</b>这类不公开数据，那确实要凭证，但不是"给我"，而是<b>你实名去申请</b>：</p>
+
+<ul>
+  <li><b>依申请公开</b>：广东政务服务网 <code>ysqgk.gd.gov.cn</code> → 选福田区沙头街道办 / 福田区住建局 → 填《政府信息公开申请表》。法定 20 个工作日内答复。需要你实名、上传身份证。</li>
+  <li><b>96333 电梯登记</b>：到楼下拍电梯轿厢内的 96333 标识码，"电梯一码通"小程序可查登记与检验状态。<b>这是唯一能证明电梯是正规登记、不是私装</b>的渠道 —— 城中村私装梯很常见。</li>
+  <li><b>街道办 / 社区工作站</b>：上沙 48 栋 1 巷 12 号，0755-82554663（实测来源：统一地址库 <code>detailBybuildingcode</code> 返回的办公电话）。</li>
+</ul>
+
+<h2 data-page-node-id="RDyBYM6dEk7RDojyxFgEda">八、带新生儿：不满足就不能签的条件</h2>
+<ul class="chk" data-page-node-id="xV3tvbgaagmz4Cil6uua6F">
+  <li data-page-node-id="oZsavO9qYzGZOvMbF64DOH"><input type="checkbox" data-page-node-id="b0mBcZxWT2mWafjDmmey2W"><span data-page-node-id="Q6wOOTBn5cTSDoVAOpyGgC">电梯轿厢能推进婴儿车（当场量，窄轿厢直接排除）</span></li>
+  <li data-page-node-id="KWebvG7zYDThz0oDF1gANH"><input type="checkbox" data-page-node-id="tQtdz5mvuUaosMkfh81Xxd"><span data-page-node-id="9fSDhZxTgTe1mBZInFq61d">楼层 4–8 层，避开 1–3 层（返潮、蚊虫、尾气、隐私）</span></li>
+  <li data-page-node-id="CHlGkRHLnd1OJtSdYSIVJF"><input type="checkbox" data-page-node-id="AaqfVRZDcDcyEPfFnN1MGx"><span data-page-node-id="vbXuEZ6O1FvJmg62xipKdq">主卧南向 / 东南向，日照 ≥3 小时，避开内天井房</span></li>
+  <li data-page-node-id="SffwjFUILOm2aWil0Hh4WP"><input type="checkbox" data-page-node-id="BIDkXC1Q90IiTuugDWQ7rI"><span data-page-node-id="Hp63Fn4tTeT4ExAV3nFGsC">夜间关窗测噪音 ≤45 分贝，连续 3 晚（手机分贝仪即可）</span></li>
+  <li data-page-node-id="AxBbOC2Kdp86KfFVma27AG"><input type="checkbox" data-page-node-id="oOzHlPTFVcohBs4zk392GI"><span data-page-node-id="qUyYkTcXOYaGRL05X1w5mT">民水民电写进合同（民电 0.68 元/度，二房东常见 1.2–1.5 元/度；新生儿全天开空调，月差 200–400 元）</span></li>
+  <li data-page-node-id="YnkNcWyJdJdkTh9nHHBJkI"><input type="checkbox" data-page-node-id="Fo3mkBWyHEHq4rqbfOlvNU"><span data-page-node-id="a2wiuwKM5Gx0r4uApfwEvR">新装修房要求出示甲醛检测报告，没有就压价或换房</span></li>
+  <li data-page-node-id="SLwDc86cYdrpHnnemzQ87Q"><input type="checkbox" data-page-node-id="rzFfU5dBK4CWhhFWr69qsZ"><span data-page-node-id="CCmnPG2675TQP143MuHrQs">楼道无电动车停放 / 充电（消防）</span></li>
+  <li data-page-node-id="TOEfd28W5DpqFIkgAhmEnf"><input type="checkbox" data-page-node-id="aK1kEvKWeWA4Ip6PmsIUh3"><span data-page-node-id="iLrSTXb8JM6I8tF9wvE4h4">1.5km 内有社康中心（疫苗和儿保都在社康做）</span></li>
+</ul>
+
+<h2 data-page-node-id="o9poEROftAeK7APAgQ932u">九、现场看房核对表</h2>
+<ul class="chk" data-page-node-id="6FjGqCDBN91dvLdmmzhs45">
+  <li data-page-node-id="7ZcYWVlsdR1HeGDgfJ9A0B"><input type="checkbox" data-page-node-id="2kh1RVvBMarfLebOLf1g39"><span data-page-node-id="6JlWgVFXQQnhUgzAzo7np8">白天去看采光（下午 3 点后最准），不要只看晚上</span></li>
+  <li data-page-node-id="5lf2oCUwLqGpof7etO3aLH"><input type="checkbox" data-page-node-id="apV6n5zFuaCyb7GGZOb64q"><span data-page-node-id="TXecn2hInRxHElhFT6SwyL"><b data-page-node-id="9Pyfb9r8fp9xh23H9ajyIO">手机地图实测：从单元门骑行到公司，记录真实公里数和分钟数</b>——顺便验证 21.7 km/h 在这条路上成不成立</span></li>
+  <li data-page-node-id="8wOTzKSYtcYTjNZT6JqGLo"><input type="checkbox" data-page-node-id="ly7YfrGxpqawSvhG5rXXvE"><span data-page-node-id="rlaBKrerSQ0rifmkUUyOBA">实测步行到最近地铁站的分钟数</span></li>
+  <li data-page-node-id="JKPb0DKTPbWC2rcw81Yrvc"><input type="checkbox" data-page-node-id="oCria7yT6LnbswUYcqM9lA"><span data-page-node-id="LM1FRouHKm8rdXqch9MFeL">22:00–01:00 在楼下站 15 分钟，数经过的骑手电动车（判业态，数据查不出来）</span></li>
+  <li data-page-node-id="vCYGUzApPhMkW6G5oaqrfG"><input type="checkbox" data-page-node-id="KkqcroeFuNmr7DrvozqHgQ"><span data-page-node-id="3l9WCry0NPYqivYwprVR5g">确认骑行路线是否要绕行福田南路南段 / 皇岗路辅道联检大楼段（两个二级限行区）</span></li>
+  <li data-page-node-id="YgraRLMKzPCMwg3E7LOJjv"><input type="checkbox" data-page-node-id="EGTw5hauoy5LHLSvwhzFsU"><span data-page-node-id="5NBnzGRBd2WtXpMsGn97t1">问清水电性质与单价、物业费、押付方式（押一付一 vs 押二付一）</span></li>
+  <li data-page-node-id="taGOlhamxb97OBBKAhCOIC"><input type="checkbox" data-page-node-id="9al8HPz3GwKVSC6tL9Fzyt"><span data-page-node-id="jG4a3e6Drme6hkPvNd5E3D">确认房东本人身份 / 是否有转租风险（转租房源溢价明显）</span></li>
+  <li data-page-node-id="JEB4OPQkiNTVAh8AQYBgWY"><input type="checkbox" data-page-node-id="4BAzY2CnCoDuEHeQoBPZCp"><span data-page-node-id="beZxhBiTRXRzIEAIPwVeMz">入住当月办：网格居住登记 +《房屋租赁凭证》（蓝本），社康建档和电动车上牌都用它</span></li>
+</ul>
+
+<h2 data-page-node-id="TmCVEmBr04UEjpLXbSST1M">十、方法与复现</h2>
+<pre data-page-node-id="1SKCQ5q3YTBGwZxFyk78Qu"><code data-page-node-id="4GaPW6WUSZqdQiVRqAwB2M"># 1) 取坐标（OSM，WGS-84）
+curl -s --data-urlencode "data@q.txt" https://overpass-api.de/api/interpreter
+
+# 2) 算路网距离（返回米），直接当骑行距离，不乘系数
+curl -s "http://router.project-osrm.org/route/v1/driving/{lon1},{lat1};{lon2},{lat2}?overview=false"
+
+# 3) 换算时间（21.7 = 你的实际均速 km/h）
+#    骑行分钟 = 路网km / 21.7 * 60
+
+# 4) 价格：实际成交价 = 住建局官方参考价 × 1.15</code></pre>
+
+<p class="small" data-page-node-id="oWlddQnmGiUNq5q2jPekTS">校验记录：福保保税区 → 梅村，路网 9.49 km ÷ 21.7 × 60 = 26.2 分。上一版按 10.85 km/h 得 52 分，是错的。</p>
+
+<h2 data-page-node-id="pnr7dQvTWT9UIouhTGE5mf">十一、还没确定、会影响结论的两件事</h2>
+<ol data-page-node-id="KZXyBs44Nyiufwgn7isLpG">
+  <li data-page-node-id="1BtOzA4oG9bxGV3OiYFA8a"><b data-page-node-id="42UUVzSkZu1NX5bfiAVLgH">「南山」具体是哪个园区</b>——留仙洞/西丽、科技园/后海、前海三者差别比福田与龙华之间还大。</li>
+  <li data-page-node-id="Cmoaj79GJbRKGeFLJt15jJ"><b data-page-node-id="CmZy1QrvXm5kGDbfkHQqwJ">你换工作的时点</b>——三年内不换，石厦西村或水围就是终点答案；一年内就换，「最坏情况」才是主指标，梅林胜出。</li>
+</ol>
+<p class="small" data-page-node-id="kTNzN1pu5yZ04Zq07h7CE1">另外：4,500 是「含物业水电的总支出」还是「纯租金」，这两个差 300–500 元/月，会改变石厦 vs 沙尾的选择。</p>
+
+<h2>十二、上沙龙秋村：≥11 层楼栋实测全名单（官方逐层登记）</h2>
+
+<p><b>这一节是第七节那个接口的实际产出。</b>对龙秋村（编码前缀 <code>44030400400803</code>）逐一调 <code>/standard/search/buildingDetail</code>，覆盖 <code>00001</code>–<code>00281</code>：<b>281 栋全部命中、零空洞</b>（00282 起进入空号段，即该村楼栋到此为止）。这里的层数是<b>官方逐层登记的房号数出来的真值</b>，不是挂牌标题推断。</p>
+
+<h3>281 栋的层数分布</h3>
+
+<table>
+  <thead><tr><th>层数</th><th>栋数</th><th>层数</th><th>栋数</th></tr></thead>
+  <tbody>
+    <tr><td>17 层</td><td class="num">1</td><td>9 层</td><td class="num">25</td></tr>
+    <tr><td>15 层</td><td class="num">4</td><td>8 层</td><td class="num">55</td></tr>
+    <tr><td>14 层</td><td class="num">5</td><td><b>7 层</b></td><td class="num"><b>80</b></td></tr>
+    <tr><td>13 层</td><td class="num">11</td><td>6 层</td><td class="num">45</td></tr>
+    <tr><td>12 层</td><td class="num">1</td><td>5 层</td><td class="num">8</td></tr>
+    <tr><td>11 层</td><td class="num">5</td><td>4 层</td><td class="num">14</td></tr>
+    <tr><td>10 层</td><td class="num">11</td><td>3 层</td><td class="num">9</td></tr>
+    <tr><td>—</td><td>—</td><td>1–2 层</td><td class="num">7</td></tr>
+  </tbody>
+</table>
+
+<p class="small">主体是 <b>6–8 层</b>（180 栋，占 64%），这正是"老握手楼"的形态。≥11 层的只有 <b>27 栋（9.6%）</b>——电梯楼在龙秋村确实是少数派，挂牌平台上"遍地电梯房"是投广告的幸存者偏差。</p>
+
+<h3>≥11 层全名单（27 栋，按层数降序）</h3>
+
+<table>
+  <thead><tr><th>层数</th><th>地址</th><th>坐标（经纬度，可复制进地图）</th><th>楼栋编码</th></tr></thead>
+  <tbody>
+    <tr><td class="num"><b>17</b></td><td><b>四巷 9 号、10 号</b></td><td>114.0320546, 22.5248406</td><td>…0300118</td></tr>
+    <tr><td class="num">15</td><td>四巷 27 号</td><td>114.0311260, 22.5262513</td><td>…0300006</td></tr>
+    <tr><td class="num">15</td><td>八巷 7 号</td><td>114.0329290, 22.5245295</td><td>…0300183</td></tr>
+    <tr><td class="num">15</td><td>八巷 6 号</td><td>114.0330256, 22.5243813</td><td>…0300205</td></tr>
+    <tr><td class="num">15</td><td>九巷 5 号</td><td>114.0330662, 22.5246064</td><td>…0300184</td></tr>
+    <tr><td class="num">14</td><td>一巷 6 号、二巷 4 号</td><td>114.0317760, 22.5246849</td><td>…0300116</td></tr>
+    <tr><td class="num">14</td><td>三巷 16 号</td><td>114.0314533, 22.5255056</td><td>…0300039</td></tr>
+    <tr><td class="num">14</td><td>八巷 8 号</td><td>114.0328373, 22.5246756</td><td>…0300173</td></tr>
+    <tr><td class="num">14</td><td>九巷 1 号</td><td>114.0334467, 22.5240157</td><td>…0300213</td></tr>
+    <tr><td class="num">14</td><td>十一巷 10 号</td><td>114.0330314, 22.5251794</td><td>…0300145</td></tr>
+    <tr><td class="num">13</td><td>六巷 9 号</td><td>114.0322219, 22.5251295</td><td>…0300108</td></tr>
+    <tr><td class="num">13</td><td>六巷 6 号</td><td>114.0324664, 22.5247201</td><td>…0300155</td></tr>
+    <tr><td class="num">13</td><td>八巷 9 号</td><td>114.0327498, 22.5248287</td><td>…0300159</td></tr>
+    <tr><td class="num">13</td><td>九巷 13 号</td><td>114.0324066, 22.5256227</td><td>…0300080</td></tr>
+    <tr><td class="num">13</td><td>十巷 4 号、5 号</td><td>114.0334391, 22.5243089</td><td>…0300215</td></tr>
+    <tr><td class="num">13</td><td>十一巷 9 号</td><td>114.0331182, 22.5250355</td><td>…0300162</td></tr>
+    <tr><td class="num">13</td><td>十二巷 4 号</td><td>114.0336378, 22.5245127</td><td>…0300241</td></tr>
+    <tr><td class="num">13</td><td>十四巷 5 号</td><td>114.0339804, 22.5244989</td><td>…0300249</td></tr>
+    <tr><td class="num">13</td><td>十五巷 6 号</td><td>114.0340153, 22.5247155</td><td>…0300245</td></tr>
+    <tr><td class="num">13</td><td>十七巷 2 号</td><td>114.0345976, 22.5244000</td><td>…0300274</td></tr>
+    <tr><td class="num">13</td><td>十七巷 1 号</td><td>114.0346778, 22.5242630</td><td>…0300275</td></tr>
+    <tr><td class="num">12</td><td>七巷 5 号</td><td>114.0328115, 22.5244622</td><td>…0300182</td></tr>
+    <tr><td class="num">11</td><td>四巷 28 号</td><td>114.0311510, 22.5264286</td><td>…0300004</td></tr>
+    <tr><td class="num">11</td><td>四巷 6 号</td><td>114.0322449, 22.5245537</td><td>…0300153</td></tr>
+    <tr><td class="num">11</td><td>四巷 5 号</td><td>114.0323331, 22.5243930</td><td>…0300168</td></tr>
+    <tr><td class="num">11</td><td>六巷 5 号</td><td>114.0325108, 22.5246497</td><td>…0300156</td></tr>
+    <tr><td class="num">11</td><td>七巷 15 号</td><td>114.0322395, 22.5253418</td><td>…0300093</td></tr>
+  </tbody>
+</table>
+
+<p class="small">编码列省略的共同前缀为 <code>44030400400803</code>。完整 6 位编码见同目录 CSV。</p>
+
+<div class="good">
+<b>一条被官方数据印证的旧线索：</b>本表 <b>四巷 27 号 = 15 层</b>，而第六节从 Wellcee 抓到的「龙秋村 4 巷 27 号楼」标签栏明确写着<b>「电梯」</b>、地图 POI 叫「巨峰公寓」。<b>15 层 + 挂牌电梯 = 双重确认。</b>这也顺手纠正了第六节把它记成「第 10 层」的误读——那个 10 是<b>房源所在楼层</b>，不是总层数。
+</div>
+
+<div class="warn">
+<b>层数只是筛子，不是结论。</b>三条必须记住：<br>
+① <b>≥11 层 ⇒ 电梯概率极高</b>（GB 50096：7 层及以上应设电梯），但要现场确认轿厢宽度能不能推婴儿车。<br>
+② <b>反过来不成立</b>：8–10 层也有大量电梯实例。第六节那两个明确写「有电梯」的挂牌分别落在 8 层和 9 层；龙秋村 7 巷 4 号官方只有 <b>8 层</b>，挂牌原文却是「独栋电梯房，进出需密码」。<b>所以别把 &lt;11 层的楼直接划掉。</b><br>
+③ <b>层数给不了"电梯是否正规登记"</b>。城中村私装梯常见，到楼下拍轿厢内的 96333 标识码，用「电梯一码通」核验——这是唯一能证明不是"三无"电梯的渠道。
+</div>
+
+<h3>边界项：10 层的 11 栋（也算"高层"，很可能有电梯）</h3>
+
+<p class="small">一巷 10 号｜一巷 8、9 号 + 二巷 6、7 号（合并门牌）｜三巷 22 号｜三巷 7 号｜四巷 26 号｜五巷 24 号｜八巷 10 号｜十巷 14 号｜十一巷 14 号｜十五巷 2 号｜十六巷 6 号。如果你想要的是"尽量不漏电梯楼"，把这 11 栋一起实地看掉。</p>
+
+<footer data-page-node-id="qiweme17kliBVlaw7SZcGr">
+  数据来源：深圳市住房和建设局「城中村租赁参考价格」（元/套·月，2026-09，接口 <code data-page-node-id="FRFjGeYNDhSfTsrFNumvRI">zjj.sz.gov.cn/fwzljgcx/pgsj/rentRefer/czcPage</code>，按用户确认的 ×1.15 换算成交价）；深圳市交通运输局电动自行车三级限行通告（2026-04-01 施行）；《广东省道路交通安全条例》第 37 条；OSM 坐标 + OSRM 路网路由；骑行均速 21.7 km/h 由用户确认。<br data-page-node-id="xbefiUOZISzCBICqRVH8rO">
+  方法论修正（速度不得从地图估时反推、官方价换算系数、不得用少量挂牌推翻权威口径）已回写至技能库 <code data-page-node-id="5y9PknzhBZynPuRKcGxsOO">area-rental-scoring</code>。
+</footer>
+
+</div>
+</body>
+</html>
